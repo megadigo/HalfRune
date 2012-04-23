@@ -13,7 +13,7 @@ To do's:
 
 - Choose the framework to do the game - MelonJs(https://github.com/obiot/melonJS) Done
 - Find some free sprites;
-  - http://opengameart.org/content/rpg-item-set;
+  - http://opengameart.org/content/rpg-item-set
   - 
 - Write the history;
 - Blueprint the game;
