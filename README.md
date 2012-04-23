@@ -11,7 +11,7 @@ This is the starting point for a big adventure.
 To do's:
 ========
 
-- Choose the framework to do the game - MelonJs. OK
+- Choose the framework to do the game - MelonJs(https://github.com/obiot/melonJS) Done
 - Find some free sprites;
 - Write the history;
 - Blueprint the game;
