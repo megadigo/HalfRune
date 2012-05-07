@@ -14,6 +14,7 @@ To do's:
 - Choose the framework to do the game - MelonJs(https://github.com/obiot/melonJS) Done
 - Find some free sprites - Well not free i think, u6tiles from ultima 6. Just for know, till i get one better Done
 - Add some basic test features;
+  - Publish to GitHub Done
   - Add some backgroung elements walls, floor Done
   - Add the Avatar with proper animation Done
   - Add some Entity to interact;
