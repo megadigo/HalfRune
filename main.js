@@ -3,6 +3,7 @@
  *   melonJS
  *   http://www.melonjs.org
  *   Porta - The Game
+ *   megadigo - DigoSoft Productions
  *
  **/
 
