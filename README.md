@@ -16,7 +16,6 @@ To do's:
 - Find some free sprites - Well not free i think, u6tiles from ultima 6. Just for now, till i get one better Done
 - Add some basic test features;
   - Publish to GitHub Done
-                      ____
   - Add some backgroung elements walls, floor Done
   - Add the Avatar with proper animation Done
   - Implement the tap/mouse movememt;
