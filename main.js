@@ -11,27 +11,11 @@
 
 // game resources
 var g_resources = [
-// our level tileset
-{
-    name: "u6tiles",
-    type: "image",
-    src: "data/sprites/u6tiles.png"
-},
-{
-    name: "avatar",
-    type: "image",
-    src: "data/sprites/avatar.png"
-},
-{
-    name: "metatiles16x16",
-    type: "image",
-    src: "data/sprites/metatiles16x16.png"
-},
-{
-    name: "MAP0101",
-    type: "tmx",
-    src: "data/MAP0101.tmx"
-}
+	// our level tileset
+	{name: "u6tiles",			type: "image",		src: "data/sprites/u6tiles.png"},
+	{name: "avatar",	    	type: "image",	    src: "data/sprites/avatar.png"},
+	{name: "metatiles16x16",    type: "image",	    src: "data/sprites/metatiles16x16.png"},
+	{name: "MAP0101",		    type: "tmx",	    src: "data/MAP0101.tmx"}
 ];
 
 var jsApp	=

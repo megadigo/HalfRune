@@ -76,7 +76,7 @@ var PlayerEntity = me.ObjectEntity.extend({
             this.parent(this);
             return true;
 	   	} else {
-		 return false;
+		 	return false;
 		} 
     },
 	 
