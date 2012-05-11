@@ -32,9 +32,13 @@ var chest = me.ObjectEntity.extend({
  
     ------ */
    update: function() { 
+		if (this.distanceTo(mainPlayer)<10) { 
+			this.flicker(25);
+			this.updateMovement();
+			return true; 	
+		};
 		// check & update player movement
-		//this.updateMovement();
-		//return false; 
+		
     },
 }
 );
