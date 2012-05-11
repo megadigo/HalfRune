@@ -70,6 +70,11 @@ var jsApp	=
 	// add our player entity in the entity pool
 	me.entityPool.add("mainPlayer", PlayerEntity);
 	
+	// add to entities
+	me.entityPool.add("chest", chest);
+	me.entityPool.add("bedup", bedup);
+	me.entityPool.add("beddown", beddown);
+	
 	// enable the keyboard
 	me.input.bindKey(me.input.KEY.A, "left");
 	me.input.bindKey(me.input.KEY.D, "right");
