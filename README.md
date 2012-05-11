@@ -23,4 +23,4 @@ To do's:
 - Write the history;
 - Blueprint the game;
 
-**megadigo@digosoftProductions 2012**
+**megadigo@digosoftProductions**
