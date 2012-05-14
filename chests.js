@@ -17,18 +17,16 @@ var chest = me.ObjectEntity.extend({
     this.collidable = true;
     this.type = "container";
     //animation
-    //this.addAnimation("normal_up",[0,1,2,3]);
-    //this.addAnimation("normal_right",[4,5,6,7]);
-    //this.addAnimation("normal_down",[8,9,10,11]);
-    //this.addAnimation("normal_left",[12,13,14,15]);
-    // this.setCurrentAnimation(stance + "_" + direction);
+    this.addAnimation("open",[619]);
+    this.addAnimation("close",[620]);
+    this.setCurrentAnimation("close");
     
     // adjust the bounding box x,w,y,h
     //this.updateColRect(2,12 , 2, 5);
     },
  
    	interact: function(obj){
-  		this.flicker(45);	
+  		this.setCurrentAnimation("open");		
   	},
  
     /* -----
@@ -37,11 +35,7 @@ var chest = me.ObjectEntity.extend({
  
     ------ */
    update: function() { 
-		if (this.distanceTo(mainPlayer)<10) { 
-			this.flicker(25);
-			this.updateMovement();
-			return true; 	
-		};
+		return false;
 		// check & update player movement
 		
     },

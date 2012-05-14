@@ -40027,7 +40027,7 @@
    <tile gid="0"/>
   </data>
  </layer>
- <objectgroup color="#00ff00" name="Entities" width="100" height="100" visible="0">
+ <objectgroup color="#00ff00" name="Entities" width="100" height="100">
   <object name="mainPlayer" x="80" y="96" width="16" height="16">
    <properties>
     <property name="image" value="avatar"/>
@@ -40035,7 +40035,13 @@
     <property name="transparent_color" value="ffffff"/>
    </properties>
   </object>
-  <object name="chest" gid="621" x="112" y="80"/>
+  <object name="chest" gid="621" x="112" y="80">
+   <properties>
+    <property name="image" value="u6tiles"/>
+    <property name="spriteheight" value="16"/>
+    <property name="spritewidth" value="16"/>
+   </properties>
+  </object>
   <object name="bedup" gid="711" x="96" y="80"/>
   <object name="beddown" gid="712" x="96" y="96"/>
  </objectgroup>
