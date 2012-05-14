@@ -18,7 +18,8 @@ var PlayerEntity = me.ObjectEntity.extend({
     
     // set the walking  and gravity
     this.setVelocity(2, 2);
-    this.gravity=0
+    this.gravity=0;
+    me.debug.renderHitBox = true;
     
     //animation
     this.addAnimation("normal_up",[0,1,2,3]);
@@ -57,7 +58,16 @@ var PlayerEntity = me.ObjectEntity.extend({
 		
 		// check & update player movement
 		this.updateMovement();
-  		
+		  		
+		// check collition
+		res = me.game.collide(this);
+		if (res)
+		{
+			if (res.obj.type == "container") {
+				res.obj.interact(this);
+			};
+		};
+		  		
   		// update animation if necessary
 	    if (this.vel.x!=0 || this.vel.y!=0) {
 			if (this.vel.x > 0) {
@@ -77,8 +87,8 @@ var PlayerEntity = me.ObjectEntity.extend({
             return true;
 	   	} else {
 		 	return false;
-		} 
-    },
+		};
+	},
 	 
     doWalkHorizontal : function(left) {
 		this.vel.x += (left) ? -this.accel.x * me.timer.tick : this.accel.x * me.timer.tick;
