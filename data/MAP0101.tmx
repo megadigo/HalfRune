@@ -30830,7 +30830,7 @@
    <tile gid="0"/>
    <tile gid="2049"/>
    <tile gid="2049"/>
-   <tile gid="2049"/>
+   <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="2049"/>
    <tile gid="2049"/>
@@ -40040,6 +40040,7 @@
     <property name="image" value="u6tiles"/>
     <property name="spriteheight" value="16"/>
     <property name="spritewidth" value="16"/>
+    <property name="transparent_color" value="ffffff"/>
    </properties>
   </object>
   <object name="bedup" gid="711" x="96" y="80"/>

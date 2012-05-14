@@ -1,8 +1,8 @@
 /**
  * @author megadigo
  */
+
 var chest = me.ObjectEntity.extend({
- 
     /* -----
  
     constructor
@@ -14,6 +14,8 @@ var chest = me.ObjectEntity.extend({
     this.parent(x, y, settings);
     
     // set props
+    this.status = "close";
+    this.updateme = true;
     this.collidable = true;
     this.type = "container";
     //animation
@@ -26,7 +28,9 @@ var chest = me.ObjectEntity.extend({
     },
  
    	interact: function(obj){
-  		this.setCurrentAnimation("open");		
+  		this.setCurrentAnimation("open");
+  		this.status="open"	
+  		this.updateme = true;	
   	},
  
     /* -----
@@ -35,9 +39,9 @@ var chest = me.ObjectEntity.extend({
  
     ------ */
    update: function() { 
-		return false;
+		return this.updateme ;
 		// check & update player movement
-		
+		this.updateme = false;
     },
 }
 );

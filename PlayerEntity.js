@@ -3,6 +3,7 @@ a player entity
 -------------------------------- */
 var direction = "left";
 var stance = "normal";
+var actionActive = 0;
 
 var PlayerEntity = me.ObjectEntity.extend({
  
@@ -19,7 +20,7 @@ var PlayerEntity = me.ObjectEntity.extend({
     // set the walking  and gravity
     this.setVelocity(2, 2);
     this.gravity=0;
-    me.debug.renderHitBox = true;
+    me.debug.renderHitBox = false;
     
     //animation
     this.addAnimation("normal_up",[0,1,2,3]);
@@ -29,7 +30,7 @@ var PlayerEntity = me.ObjectEntity.extend({
     this.setCurrentAnimation(stance + "_" + direction);
     
     // adjust the bounding box x,w,y,h
-    this.updateColRect(2,12 , 2, 5);
+    this.updateColRect(5,10 , 5, 10);
  
     // set the display to follow our position on both axis
     me.game.viewport.follow(this.pos, me.game.viewport.AXIS.BOTH);
@@ -52,21 +53,31 @@ var PlayerEntity = me.ObjectEntity.extend({
 			this.doWalkVertical(true);
 		} else if (me.input.isKeyPressed('down')) {
 			this.doWalkVertical(false);
+		} else if (me.input.isKeyPressed('action')) {
+			actionActive = 1;
 		} else {
+			actionActive = 0;
 		    this.doStand();
 		}
-		
-		// check & update player movement
-		this.updateMovement();
-		  		
+			  		
 		// check collition
 		res = me.game.collide(this);
 		if (res)
 		{
-			if (res.obj.type == "container") {
+			if (res.obj.type == "container" && actionActive == 1) {
 				res.obj.interact(this);
 			};
+			if (res.x!=0 ){
+				this.x -= res.x;
+			}
+			if (res.y!=0 ){
+				this.y -= res.y;
+			};
+		
 		};
+		
+		// check & update player movement
+		this.updateMovement();
 		  		
   		// update animation if necessary
 	    if (this.vel.x!=0 || this.vel.y!=0) {
