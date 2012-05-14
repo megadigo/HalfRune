@@ -59,6 +59,15 @@ var PlayerEntity = me.ObjectEntity.extend({
 		// check & update player movement
 		this.updateMovement();
 		  		
+		// check collition
+		res = me.game.collide(this);
+		if (res)
+		{
+			if (res.type == "container") {
+				res.interact();
+			};
+		};
+		  		
   		// update animation if necessary
 	    if (this.vel.x!=0 || this.vel.y!=0) {
 			if (this.vel.x > 0) {
@@ -78,8 +87,8 @@ var PlayerEntity = me.ObjectEntity.extend({
             return true;
 	   	} else {
 		 	return false;
-		} 
-    },
+		};
+	},
 	 
     doWalkHorizontal : function(left) {
 		this.vel.x += (left) ? -this.accel.x * me.timer.tick : this.accel.x * me.timer.tick;
