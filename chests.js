@@ -15,7 +15,7 @@ var chest = me.ObjectEntity.extend({
     
     // set props
     this.collidable = true;
-    this.type = "container";
+    
     //animation
     //this.addAnimation("normal_up",[0,1,2,3]);
     //this.addAnimation("normal_right",[4,5,6,7]);
@@ -26,7 +26,11 @@ var chest = me.ObjectEntity.extend({
     // adjust the bounding box x,w,y,h
     //this.updateColRect(2,12 , 2, 5);
     },
-
+ 
+  	onCollision: function() {
+ 		this.flicker(45);
+ 	},
+ 
     /* -----
  
     update
@@ -37,9 +41,5 @@ var chest = me.ObjectEntity.extend({
 		//this.updateMovement();
 		//return false; 
     },
-    
-    interact : function(){	
-    	this.flicker(45);
-    }
 }
 );
