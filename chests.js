@@ -13,7 +13,8 @@ var chest = me.ObjectEntity.extend({
     // call the constructor
     this.parent(x, y, settings);
     
-    // set the walking  and gravity
+    // set props
+    this.collidable = true;
     
     //animation
     //this.addAnimation("normal_up",[0,1,2,3]);
@@ -25,6 +26,10 @@ var chest = me.ObjectEntity.extend({
     // adjust the bounding box x,w,y,h
     //this.updateColRect(2,12 , 2, 5);
     },
+ 
+  	onCollision: function() {
+ 		this.flicker(45);
+ 	},
  
     /* -----
  

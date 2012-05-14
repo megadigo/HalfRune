@@ -18,7 +18,8 @@ var PlayerEntity = me.ObjectEntity.extend({
     
     // set the walking  and gravity
     this.setVelocity(2, 2);
-    this.gravity=0
+    this.gravity=0;
+    me.debug.renderHitBox = true;
     
     //animation
     this.addAnimation("normal_up",[0,1,2,3]);
@@ -57,7 +58,7 @@ var PlayerEntity = me.ObjectEntity.extend({
 		
 		// check & update player movement
 		this.updateMovement();
-  		
+		  		
   		// update animation if necessary
 	    if (this.vel.x!=0 || this.vel.y!=0) {
 			if (this.vel.x > 0) {
