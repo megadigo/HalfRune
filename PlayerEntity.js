@@ -63,8 +63,8 @@ var PlayerEntity = me.ObjectEntity.extend({
 		res = me.game.collide(this);
 		if (res)
 		{
-			if (res.type == "container") {
-				res.interact();
+			if (res.obj.type == "container") {
+				res.obj.interact(this);
 			};
 		};
 		  		
