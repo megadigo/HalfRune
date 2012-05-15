@@ -67,12 +67,18 @@ var PlayerEntity = me.ObjectEntity.extend({
 			if (res.obj.type == "container" && actionActive == true) {
 				res.obj.interact(this);
 			};
-			if (res.x!=0 ){
-				this.x -= res.x;
-			}
-			if (res.y!=0 ){
-				this.y -= res.y;
+			if (res.obj.type == "container" && res.x<0 ){
+				this.x -= 1;
 			};
+			if (res.obj.type == "container" && res.x>0 ){
+				this.x += 1;
+			}
+			if (res.obj.type == "container" && res.y<0 ){
+				this.y -= 1;
+			};
+			if (res.obj.type == "container" && res.y>0 ){
+				this.y += 1;
+			}
 		
 		};
 		
