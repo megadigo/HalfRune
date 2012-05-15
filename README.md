@@ -7,7 +7,7 @@ travel to when ever he wish?
 
 This is the starting point for a big adventure
 
-Try it at http://porta.tapjs.com
+Try it at http://porta.tapjs.com or follow project in http://megadigo.github.com/Porta/
 
 To do's:
 ========
