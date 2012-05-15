@@ -64,22 +64,12 @@ var PlayerEntity = me.ObjectEntity.extend({
 		res = me.game.collide(this);
 		if (res)
 		{
-			if (res.obj.type == "container" && actionActive == true) {
-				res.obj.interact(this);
+			// What to do if Collide
+			res.obj.OnCollide(res,this);
+			// What do do if interact
+			if (actionActive == true) {
+				res.obj.OnInteract(res,this);
 			};
-			if (res.obj.type == "container" && res.x<0 ){
-				this.x -= 1;
-			};
-			if (res.obj.type == "container" && res.x>0 ){
-				this.x += 1;
-			}
-			if (res.obj.type == "container" && res.y<0 ){
-				this.y -= 1;
-			};
-			if (res.obj.type == "container" && res.y>0 ){
-				this.y += 1;
-			}
-		
 		};
 		
 		// check & update player movement
@@ -118,6 +108,9 @@ var PlayerEntity = me.ObjectEntity.extend({
     doStand : function(up) {
 		this.vel.y = 0;
 		this.vel.x = 0;
+    },
+    doBounce: function() {
+    	
     }
 }
 );
