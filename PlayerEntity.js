@@ -3,7 +3,7 @@ a player entity
 -------------------------------- */
 var direction = "left";
 var stance = "normal";
-var actionActive = 0;
+var actionActive = false;
 
 var PlayerEntity = me.ObjectEntity.extend({
  
@@ -54,9 +54,9 @@ var PlayerEntity = me.ObjectEntity.extend({
 		} else if (me.input.isKeyPressed('down')) {
 			this.doWalkVertical(false);
 		} else if (me.input.isKeyPressed('action')) {
-			actionActive = 1;
+			actionActive = true;
 		} else {
-			actionActive = 0;
+			actionActive = false;
 		    this.doStand();
 		}
 			  		
@@ -64,7 +64,7 @@ var PlayerEntity = me.ObjectEntity.extend({
 		res = me.game.collide(this);
 		if (res)
 		{
-			if (res.obj.type == "container" && actionActive == 1) {
+			if (res.obj.type == "container" && actionActive == true) {
 				res.obj.interact(this);
 			};
 			if (res.x!=0 ){
