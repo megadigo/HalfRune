@@ -64,9 +64,9 @@ var PlayerEntity = me.ObjectEntity.extend({
 		res = me.game.collide(this);
 		if (res)
 		{
-			// What to do if Collide
+			// What to do if Collides
 			res.obj.OnCollide(res,this);
-			// What do do if interact
+			// What do do if interacts
 			if (actionActive == true) {
 				res.obj.OnInteract(res,this);
 			};
