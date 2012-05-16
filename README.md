@@ -8,7 +8,7 @@ Based in a simple question: **What if instead of fire, man discover a Portal?**
 In what way this will influence the history of the mankind.
 
 Just a few thoughts:
-- Portals connect to a specific source: food, fire, water;
+- Portals connect to a specific source: food, water...;
 - Portals has many shapes and some are bidirectional and other uni-directional;
 - Some are big enough that can be used to travel between places far away;
 - Many mechanisms use this kind of portals - Example: tv with a portal to the tv building to receive broadcasts (one way portal);
