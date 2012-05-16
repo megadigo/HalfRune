@@ -1,7 +1,7 @@
 Porta
 =====
 
-Porta a old project i have. For about 10 years i have this project i would like to finish.It is a classic RPG game.
+Porta is am old project i have. For about 10 years i have this project i would like to finish.It is a classic RPG game.
 
 Based in a simple question: **What if instead of fire, man discover a Portal?**
 
