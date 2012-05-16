@@ -67,7 +67,7 @@ var PlayerEntity = me.ObjectEntity.extend({
 			// What to do if Collides
 			res.obj.OnCollide(res,this);
 			// What do do if interacts
-			if (actionActive == true) {
+			if (actionActive == true && (me.tick/3)==1) {
 				res.obj.OnInteract(res,this);
 			};
 		};
