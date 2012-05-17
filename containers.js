@@ -15,7 +15,8 @@ var chest = me.ObjectEntity.extend({
     // set props
     this.status = "close";
     this.updateme = true;
-
+	this.collidable = true;
+    
     //animation
     this.addAnimation("open",[619]);
     this.addAnimation("close",[620]);
@@ -25,7 +26,7 @@ var chest = me.ObjectEntity.extend({
     //this.updateColRect(2,12 , 2, 5);
     },
  
-   	OnInteract: function(res,obj){
+   	OnInteract: function(obj){
    		if (this.status=="close"){
    			this.setCurrentAnimation("open");
    			this.status="open"	
@@ -35,10 +36,8 @@ var chest = me.ObjectEntity.extend({
    		};	
   		this.updateme = true;	
   	},
-  	OnCollide: function(obj){
-  	if (this.collision="solid") {
-		doBounce(obj)
-	};
+  	OnCollide: function(res,obj){
+  		this.doBounce(res,obj);
   	},
  
     /* -----
@@ -53,24 +52,23 @@ var chest = me.ObjectEntity.extend({
     },
 
     /* -----
- 
+
     bounce
  
     ------ */
-
-   doBounce: function(obj) {
-    		if (this.x<0 && obj.vel.x<0){
+   doBounce: function(res,obj) {
+   		if (res.x<0 && obj.vel.x<0){
 			obj.vel.x = 0;
 		};
-		if (this.x>0 && obj.vel.x>0){
+		if (res.x>0 && obj.vel.x>0){
 			obj.vel.x = 0;
 		}
-		if (this.y<0 && obj.vel.y<0){
+		if (res.y<0 && obj.vel.y<0){
 			obj.vel.y = 0;
 		};
-		if (this.y>0 && obj.vel.y>0){
+		if (res.y>0 && obj.vel.y>0){
 			obj.vel.y = 0;
 		}
-    }
+   }
 }
 );

@@ -66,10 +66,10 @@ var PlayerEntity = me.ObjectEntity.extend({
 		{	
 			// What do do if interacts
 			if (actionActive == true) {
-				res.obj.OnInteract(res,this);
+				res.obj.OnInteract(this);
 			};
 			// What to do if Collides
-			res.obj.OnCollide(this);
+			res.obj.OnCollide(res,this);
 		};
 		// check & update player movement
 		this.updateMovement();

@@ -40037,26 +40037,16 @@
   </object>
   <object name="chest" type="container" gid="621" x="112" y="80">
    <properties>
-    <property name="collision" value="solid"/>
     <property name="image" value="u6tiles"/>
     <property name="spriteheight" value="16"/>
     <property name="spritewidth" value="16"/>
     <property name="transparent_color" value="ffffff"/>
    </properties>
   </object>
-  <object name="bedup" type="furniture" gid="711" x="96" y="80">
-   <properties>
-    <property name="collision" value="solid"/>
-   </properties>
-  </object>
-  <object name="beddown" type="furniture" gid="712" x="96" y="96">
-   <properties>
-    <property name="collision" value="solid"/>
-   </properties>
-  </object>
+  <object name="bedup" type="furniture" gid="711" x="96" y="80"/>
+  <object name="beddown" type="furniture" gid="712" x="96" y="96"/>
   <object name="chest" type="container" gid="621" x="80" y="80">
    <properties>
-    <property name="collision" value="solid"/>
     <property name="image" value="u6tiles"/>
     <property name="spriteheight" value="16"/>
     <property name="spritewidth" value="16"/>
