@@ -1,7 +1,6 @@
 /**
  * @author megadigo
  */
-
 var chest = me.ObjectEntity.extend({
     /* -----
  
@@ -38,18 +37,7 @@ var chest = me.ObjectEntity.extend({
   		this.updateme = true;	
   	},
   	OnCollide: function(res,obj){
-  		if (res.x<0 && obj.vel.x<0){
-			obj.vel.x = 0;
-		};
-		if (res.x>0 && obj.vel.x>0){
-			obj.vel.x = 0;
-		}
-		if (res.y<0 && obj.vel.y<0){
-			obj.vel.y = 0;
-		};
-		if (res.y>0 && obj.vel.y>0){
-			obj.vel.y = 0;
-		}
+  		
   	},
  
     /* -----

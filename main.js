@@ -69,6 +69,7 @@ var jsApp	=
      
 	// add our player entity in the entity pool
 	me.entityPool.add("mainPlayer", PlayerEntity);
+	me.entityPool.add("spider", SpiderEntity);
 	
 	// add to entities
 	me.entityPool.add("chest", chest);
