@@ -80,7 +80,7 @@ var jsApp	=
 	me.input.bindKey(me.input.KEY.D, "right");
 	me.input.bindKey(me.input.KEY.W, "up");
 	me.input.bindKey(me.input.KEY.S, "down");
-	me.input.bindKey(me.input.KEY.P, "action");
+	me.input.bindKey(me.input.KEY.P, "action",true);
      
 	// display the menu title
 	me.state.change(me.state.PLAY);
