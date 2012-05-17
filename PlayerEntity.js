@@ -60,21 +60,16 @@ var PlayerEntity = me.ObjectEntity.extend({
 		    this.doStand();
 		}
 			  		
-		// check collition
+		// check collision
 		res = me.game.collide(this);
 		if (res)
-		{
-			// What to do if Collides
-			res.obj.OnCollide(res,this);
-			
+		{	
 			// What do do if interacts
 			if (actionActive == true) {
 				res.obj.OnInteract(res,this);
 			};
-			// If solid bounce
-			if (res.Obj.collision=="solid"){
-				doBounce(res);
-			}
+			// What to do if Collides
+			res.obj.OnCollide(this);
 		};
 		// check & update player movement
 		this.updateMovement();
@@ -112,20 +107,6 @@ var PlayerEntity = me.ObjectEntity.extend({
     doStand : function(up) {
 		this.vel.y = 0;
 		this.vel.x = 0;
-    },
-    doBounce: function(res) {
-    	if (res.x<0 && this.vel.x<0){
-			obj.vel.x = 0;
-		};
-		if (res.x>0 && this.vel.x>0){
-			obj.vel.x = 0;
-		}
-		if (res.y<0 && this.vel.y<0){
-			obj.vel.y = 0;
-		};
-		if (res.y>0 && this.vel.y>0){
-			obj.vel.y = 0;
-		}
     }
 }
 );

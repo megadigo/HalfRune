@@ -15,8 +15,7 @@ var chest = me.ObjectEntity.extend({
     // set props
     this.status = "close";
     this.updateme = true;
-    this.collidable = true;
-    this.type = "container";
+
     //animation
     this.addAnimation("open",[619]);
     this.addAnimation("close",[620]);
@@ -36,8 +35,10 @@ var chest = me.ObjectEntity.extend({
    		};	
   		this.updateme = true;	
   	},
-  	OnCollide: function(res,obj){
-  		
+  	OnCollide: function(obj){
+  	if (this.collision="solid") {
+		doBounce(obj)
+	};
   	},
  
     /* -----
@@ -50,5 +51,26 @@ var chest = me.ObjectEntity.extend({
 		// check & update player movement
 		this.updateme = false;
     },
+
+    /* -----
+ 
+    bounce
+ 
+    ------ */
+
+   doBounce: function(obj) {
+    		if (this.x<0 && obj.vel.x<0){
+			obj.vel.x = 0;
+		};
+		if (this.x>0 && obj.vel.x>0){
+			obj.vel.x = 0;
+		}
+		if (this.y<0 && obj.vel.y<0){
+			obj.vel.y = 0;
+		};
+		if (this.y>0 && obj.vel.y>0){
+			obj.vel.y = 0;
+		}
+    }
 }
 );
