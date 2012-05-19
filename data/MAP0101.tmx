@@ -40058,6 +40058,7 @@
   <object name="spider" type="enemy" gid="1385" x="416" y="192">
    <properties>
     <property name="image" value="u6tiles"/>
+    <property name="spriteheight" value="16"/>
     <property name="spritewidth" value="16"/>
     <property name="transparent_color" value="ffffff"/>
    </properties>

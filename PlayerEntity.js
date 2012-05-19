@@ -1,9 +1,6 @@
 /*------------------- 
 a player entity
 -------------------------------- */
-var direction = "left";
-var stance = "normal";
-var actionActive = false;
 
 var PlayerEntity = me.ObjectEntity.extend({
  
@@ -20,6 +17,10 @@ var PlayerEntity = me.ObjectEntity.extend({
     // set the walking  and gravity
     this.setVelocity(2, 2);
     this.gravity=0;
+    this.direction = "left";
+	this.stance = "normal";
+	this.actionActive = false;
+
     me.debug.renderHitBox = false;
     
     //animation
@@ -27,7 +28,7 @@ var PlayerEntity = me.ObjectEntity.extend({
     this.addAnimation("normal_right",[4,5,6,7]);
     this.addAnimation("normal_down",[8,9,10,11]);
     this.addAnimation("normal_left",[12,13,14,15]);
-    this.setCurrentAnimation(stance + "_" + direction);
+    this.setCurrentAnimation(this.stance + "_" + this.direction);
     
     // adjust the bounding box x,w,y,h
     this.updateColRect(5,10 , 5, 10);
@@ -54,9 +55,9 @@ var PlayerEntity = me.ObjectEntity.extend({
 		} else if (me.input.isKeyPressed('down')) {
 			this.doWalkVertical(false);
 		} else if (me.input.isKeyPressed('action')) {
-			actionActive = true;
+			this.actionActive = true;
 		} else {
-			actionActive = false;
+			this.actionActive = false;
 		    this.doStand();
 		}
 			  		
@@ -65,7 +66,7 @@ var PlayerEntity = me.ObjectEntity.extend({
 		if (res)
 		{	
 			// What do do if interacts
-			if (actionActive == true) {
+			if (this.actionActive == true) {
 				res.obj.OnInteract(this);
 			};
 			// What to do if Collides
@@ -77,18 +78,18 @@ var PlayerEntity = me.ObjectEntity.extend({
   		// update animation if necessary
 	    if (this.vel.x!=0 || this.vel.y!=0) {
 			if (this.vel.x > 0) {
-			    direction="right";
+			    this.direction="right";
 			};
 			if (this.vel.x < 0) {
-			    direction="left";
+			    this.direction="left";
 			};
 			if (this.vel.y > 0) {
-			    direction="down";
+			    this.direction="down";
 			};
 			if (this.vel.y < 0) {
-			    direction="up";
+			    this.direction="up";
 			};
-            this.setCurrentAnimation(stance + "_" + direction);
+            this.setCurrentAnimation(this.stance + "_" + this.direction);
             this.parent(this);
             return true;
 	   	} else {

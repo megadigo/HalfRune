@@ -22,8 +22,6 @@ var chest = me.ObjectEntity.extend({
     this.addAnimation("close",[620]);
     this.setCurrentAnimation("close");
     
-    // adjust the bounding box x,w,y,h
-    //this.updateColRect(2,12 , 2, 5);
     },
  
    	OnInteract: function(obj){
