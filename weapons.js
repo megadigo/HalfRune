@@ -1,7 +1,7 @@
 /**
- * @author megadigo
+ * @author RCordeiro
  */
-var chestEntity = me.ObjectEntity.extend({
+var weaponEntity = me.ObjectEntity.extend({
     /* -----
  
     constructor
@@ -70,3 +70,5 @@ var chestEntity = me.ObjectEntity.extend({
    }
 }
 );
+
+

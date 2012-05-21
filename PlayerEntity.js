@@ -2,7 +2,7 @@
 a player entity
 -------------------------------- */
 
-var PlayerEntity = me.ObjectEntity.extend({
+var playerEntity = me.ObjectEntity.extend({
  
     /* -----
  

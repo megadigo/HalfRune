@@ -62,19 +62,19 @@ var jsApp	=
     loaded: function() {
      
 	// set the "Play/Ingame" Screen Object
-	me.state.set(me.state.PLAY, new PlayScreen());
+	me.state.set(me.state.PLAY, new playScreen());
      
 	// set a global fading transition for the screen
 	me.state.transition("fade", "#FFFFFF", 250);
      
 	// add our player entity in the entity pool
-	me.entityPool.add("mainPlayer", PlayerEntity);
-	me.entityPool.add("spider", SpiderEntity);
+	me.entityPool.add("mainPlayer", playerEntity);
+	me.entityPool.add("spider", spiderEntity);
 	
 	// add to entities
-	me.entityPool.add("chest", chest);
-	me.entityPool.add("bedup", bedup);
-	me.entityPool.add("beddown", beddown);
+	me.entityPool.add("chest", chestEntity);
+	me.entityPool.add("bed", bedEntity);
+	me.entityPool.add("sword", weaponEntity);
 	
 	// enable the keyboard
 	me.input.bindKey(me.input.KEY.A, "left");

@@ -3,7 +3,7 @@
  */
 
 
-var SpiderEntity = me.ObjectEntity.extend({
+var spiderEntity = me.ObjectEntity.extend({
 /* -----
  
     constructor

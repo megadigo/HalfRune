@@ -3,7 +3,7 @@
     Play Screen
  
   ----------------------*/
-var PlayScreen = me.ScreenObject.extend({
+var playScreen = me.ScreenObject.extend({
     
     onResetEvent: function() {
 	 // play the audio track
