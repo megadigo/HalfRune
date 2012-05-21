@@ -13,37 +13,37 @@ var weaponEntity = me.ObjectEntity.extend({
     this.parent(x, y, settings);
     
     // set props
-    this.status = "close";
-    this.updateme = true;
-	this.collidable = true;
+    this.status = "stop";
+    this.updateme = false;
+	this.collidable = false;
     
     //animation
-    this.addAnimation("open",[619]);
-    this.addAnimation("close",[620]);
-    this.setCurrentAnimation("close");
+    this.addAnimation("stop",[546]);
+    this.addAnimation("swing",[546]);
+    this.setCurrentAnimation("stop");
     
     },
  
    	OnInteract: function(obj){
-   		if (this.status=="close"){
-   			this.setCurrentAnimation("open");
-   			this.status="open"	
-   		} else {
-   			this.setCurrentAnimation("close");
-   			this.status="close"
-   		};	
   		this.updateme = true;	
   	},
   	OnCollide: function(res,obj){
-  		this.doBounce(res,obj);
+  		//this.doBounce(res,obj);
   	},
  
+ 	followEntity: function(obj){
+ 		this.pos.x=obj.pos.x;
+ 		this.pos.y=obj.pos.y-20;
+ 		
+ 	},
     /* -----
  
     update
  
     ------ */
    update: function() { 
+		this.pos.x=playerX;
+ 		this.pos.y= playerY - 10;
 		return this.updateme ;
 		// check & update player movement
 		this.updateme = false;

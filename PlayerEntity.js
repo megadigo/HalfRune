@@ -1,6 +1,8 @@
 /*------------------- 
 a player entity
 -------------------------------- */
+var playerX = 0;
+var playerY = 0;
 
 var playerEntity = me.ObjectEntity.extend({
  
@@ -74,7 +76,8 @@ var playerEntity = me.ObjectEntity.extend({
 		};
 		// check & update player movement
 		this.updateMovement();
-		  		
+		playerX = this.pos.x;
+		playerY = this.pos.y;
   		// update animation if necessary
 	    if (this.vel.x!=0 || this.vel.y!=0) {
 			if (this.vel.x > 0) {

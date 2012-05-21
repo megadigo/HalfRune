@@ -37,7 +37,7 @@ var bedEntity = me.ObjectEntity.extend({
 		
 		
 		// check & update player movement
-		this.updateMovement();
+		//this.updateMovement();
 		return false; 
     }
 }

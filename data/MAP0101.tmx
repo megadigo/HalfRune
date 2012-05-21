@@ -40063,7 +40063,6 @@
     <property name="transparent_color" value="ffffff"/>
    </properties>
   </object>
-  <object gid="547" x="163" y="194"/>
   <object name="sword" type="weapon" gid="547" x="82" y="99">
    <properties>
     <property name="image" value="u6tiles"/>
