@@ -70,7 +70,7 @@ var weaponEntity = me.ObjectEntity.extend({
     },
     
 	// draw
-	/*draw: function(context) {        
+	draw: function(context) {        
 		context.save(); 
 			if (this.direction == "right") {
 				context.rotate(90);	
@@ -84,7 +84,7 @@ var weaponEntity = me.ObjectEntity.extend({
 			this.parent(context);       
 		context.restore();                           
 	 },
-	 */
+	 
     /* -----
 
     bounce
