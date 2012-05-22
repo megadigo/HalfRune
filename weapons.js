@@ -14,6 +14,7 @@ var weaponEntity = me.ObjectEntity.extend({
     
     // set props
     this.status = "stop";
+    this.direction = "left";
     this.updateme = false;
 	this.collidable = false;
     
@@ -42,13 +43,48 @@ var weaponEntity = me.ObjectEntity.extend({
  
     ------ */
    update: function() { 
-		this.pos.x=playerX;
- 		this.pos.y= playerY - 10;
+	   	var ents = me.game.getEntityByName("mainPlayer");
+	   	if (ents[0].direction == "up"){
+	   		this.pos.x= ents[0].pos.x;
+ 			this.pos.y= ents[0].pos.y - 10;	
+ 			this.direction = "up"
+	   	};
+	   	if (ents[0].direction == "down"){
+	   		this.pos.x= ents[0].pos.x;
+ 			this.pos.y= ents[0].pos.y + 10;
+ 			this.direction = "down"	
+	   	}
+		if (ents[0].direction == "left"){
+	   		this.pos.x= ents[0].pos.x - 10;
+ 			this.pos.y= ents[0].pos.y;
+ 			this.direction = "left"	
+	   	}
+	   	if (ents[0].direction == "right"){
+	   		this.pos.x= ents[0].pos.x + 10;
+ 			this.pos.y= ents[0].pos.y;
+ 			this.direction = "right"	
+	   	}
 		return this.updateme ;
 		// check & update player movement
 		this.updateme = false;
     },
-
+    
+	// draw
+	/*draw: function(context) {        
+		context.save(); 
+			if (this.direction == "right") {
+				context.rotate(90);	
+			};
+			if (this.direction == "down") {
+				context.rotate(180);	
+			};           
+			if (this.direction == "left") {
+				context.rotate(270);	
+			};
+			this.parent(context);       
+		context.restore();                           
+	 },
+	 */
     /* -----
 
     bounce
@@ -70,5 +106,4 @@ var weaponEntity = me.ObjectEntity.extend({
    }
 }
 );
-
 
