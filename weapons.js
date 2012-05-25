@@ -14,7 +14,6 @@ var weaponEntity = me.ObjectEntity.extend({
     
     // set props
     this.status = "stop";
-    this.prevdirection = "left";
     this.direction = "left";
     
     this.updateme = false;
@@ -45,7 +44,6 @@ var weaponEntity = me.ObjectEntity.extend({
  
     ------ */
    update: function() {
-   		this.prevdirection=this.direction;  
 	   	var ents = me.game.getEntityByName("mainPlayer");
 	   	if (ents[0].direction == "up"){
 	   		this.pos.x= ents[0].pos.x;
@@ -94,11 +92,12 @@ var weaponEntity = me.ObjectEntity.extend({
 	  rotate sprite
 	 
 	 * */
-	 doRotateMySprite: function(obj,context,angle)	{
-		var xpos = obj.left + obj.hWidth, ypos = obj.top + obj.hHeight;
+	 doRotateMySprite: function(obj, context, angle)	{
+		var xpos = obj.left + obj.hWidth
+		var ypos = obj.top + obj.hHeight;
 		context.translate( xpos, ypos );
 		context.rotate( angle * Math.PI / 180 );
-		context.translate( -xpos, -ypos );
+		context.translate( -xpos , -ypos );
 
 	},
 	
