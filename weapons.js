@@ -14,7 +14,9 @@ var weaponEntity = me.ObjectEntity.extend({
     
     // set props
     this.status = "stop";
+    this.prevdirection = "left";
     this.direction = "left";
+    
     this.updateme = false;
 	this.collidable = false;
     
@@ -42,24 +44,25 @@ var weaponEntity = me.ObjectEntity.extend({
     update
  
     ------ */
-   update: function() { 
+   update: function() {
+   		this.prevdirection=this.direction;  
 	   	var ents = me.game.getEntityByName("mainPlayer");
 	   	if (ents[0].direction == "up"){
 	   		this.pos.x= ents[0].pos.x;
  			this.pos.y= ents[0].pos.y - 10;	
  			this.direction = "up"
 	   	};
-	   	if (ents[0].direction == "down"){
+	   	if (ents[0].direction == "down" ){
 	   		this.pos.x= ents[0].pos.x;
  			this.pos.y= ents[0].pos.y + 10;
  			this.direction = "down"	
 	   	}
-		if (ents[0].direction == "left"){
+		if (ents[0].direction == "left" ){
 	   		this.pos.x= ents[0].pos.x - 10;
  			this.pos.y= ents[0].pos.y;
  			this.direction = "left"	
 	   	}
-	   	if (ents[0].direction == "right"){
+	   	if (ents[0].direction == "right" ){
 	   		this.pos.x= ents[0].pos.x + 10;
  			this.pos.y= ents[0].pos.y;
  			this.direction = "right"	
@@ -70,21 +73,35 @@ var weaponEntity = me.ObjectEntity.extend({
     },
     
 	// draw
-	draw: function(context) {        
-		context.save(); 
-			if (this.direction == "right") {
-				context.rotate(90);	
-			};
-			if (this.direction == "down") {
-				context.rotate(180);	
-			};           
-			if (this.direction == "left") {
-				context.rotate(270);	
-			};
-			this.parent(context);       
-		context.restore();                           
+	
+	draw: function(context) { 
+		context.save();     
+		if (this.direction == "right") {
+			this.doRotateMySprite(this,context,90);	
+		};
+		if (this.direction == "down") {
+			this.doRotateMySprite(this,context,180);	
+		};           
+		if (this.direction == "left") {
+			this.doRotateMySprite(this,context,270);
+		};
+		this.parent(context );
+		context.restore();
 	 },
 	 
+	 /* ------
+	 
+	  rotate sprite
+	 
+	 * */
+	 doRotateMySprite: function(obj,context,angle)	{
+		var xpos = obj.left + obj.hWidth, ypos = obj.top + obj.hHeight;
+		context.translate( xpos, ypos );
+		context.rotate( angle * Math.PI / 180 );
+		context.translate( -xpos, -ypos );
+
+	},
+	
     /* -----
 
     bounce
