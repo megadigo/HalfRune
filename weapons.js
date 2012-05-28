@@ -16,7 +16,6 @@ var weaponEntity = me.ObjectEntity.extend({
     this.status = "stop";
     this.direction = "left";
     
-    this.updateme = false;
 	this.collidable = false;
     
     //animation
@@ -27,7 +26,7 @@ var weaponEntity = me.ObjectEntity.extend({
     },
  
    	OnInteract: function(obj){
-  		this.updateme = true;	
+   		
   	},
   	OnCollide: function(res,obj){
   		//this.doBounce(res,obj);
@@ -65,41 +64,25 @@ var weaponEntity = me.ObjectEntity.extend({
  			this.pos.y= ents[0].pos.y;
  			this.direction = "right"	
 	   	}
-		return this.updateme ;
-		// check & update player movement
-		this.updateme = false;
-    },
-    
-	// draw
-	
-	draw: function(context) { 
-		context.save();     
+		this.updateme = true;
+		// rotate sword
+		if (this.direction == "up") {
+			this.angle = Number.prototype.degToRad(0);
+		};
 		if (this.direction == "right") {
-			this.doRotateMySprite(this,context,90);	
+			this.angle = Number.prototype.degToRad(90);
 		};
 		if (this.direction == "down") {
-			this.doRotateMySprite(this,context,180);	
+			this.angle = Number.prototype.degToRad(180);
 		};           
 		if (this.direction == "left") {
-			this.doRotateMySprite(this,context,270);
+			this.angle = Number.prototype.degToRad(270);
 		};
-		this.parent(context );
-		context.restore();
-	 },
-	 
-	 /* ------
-	 
-	  rotate sprite
-	 
-	 * */
-	 doRotateMySprite: function(obj, context, angle)	{
-		var xpos = obj.left + obj.hWidth
-		var ypos = obj.top + obj.hHeight;
-		context.translate( xpos, ypos );
-		context.rotate( angle * Math.PI / 180 );
-		context.translate( -xpos , -ypos );
-
-	},
+		this.parent();
+		return true;
+		
+    },
+    
 	
     /* -----
 
