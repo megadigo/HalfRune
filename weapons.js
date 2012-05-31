@@ -19,8 +19,8 @@ var weaponEntity = me.ObjectEntity.extend({
 	this.collidable = false;
     
     //animation
-    this.addAnimation("stop",[546]);
-    this.addAnimation("swing",[546]);
+    this.addAnimation("stop",[0]);
+    this.addAnimation("swing",[1,2,3]);
     this.setCurrentAnimation("stop");
     
     },
@@ -45,23 +45,23 @@ var weaponEntity = me.ObjectEntity.extend({
    update: function() {
 	   	var ents = me.game.getEntityByName("mainPlayer");
 	   	if (ents[0].direction == "up"){
-	   		this.pos.x= ents[0].pos.x;
+	   		this.pos.x= ents[0].pos.x - 5;
  			this.pos.y= ents[0].pos.y - 10;	
  			this.direction = "up"
 	   	};
 	   	if (ents[0].direction == "down" ){
-	   		this.pos.x= ents[0].pos.x;
+	   		this.pos.x= ents[0].pos.x + 5;
  			this.pos.y= ents[0].pos.y + 10;
  			this.direction = "down"	
 	   	}
 		if (ents[0].direction == "left" ){
 	   		this.pos.x= ents[0].pos.x - 10;
- 			this.pos.y= ents[0].pos.y;
+ 			this.pos.y= ents[0].pos.y + 5;
  			this.direction = "left"	
 	   	}
 	   	if (ents[0].direction == "right" ){
 	   		this.pos.x= ents[0].pos.x + 10;
- 			this.pos.y= ents[0].pos.y;
+ 			this.pos.y= ents[0].pos.y - 5;
  			this.direction = "right"	
 	   	}
 		this.updateme = true;

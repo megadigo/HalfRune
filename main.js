@@ -14,6 +14,7 @@ var g_resources = [
 	// our level tileset
 	{name: "u6tiles",			type: "image",		src: "data/sprites/u6tiles.png"},
 	{name: "avatar",	    	type: "image",	    src: "data/sprites/avatar.png"},
+	{name: "sword",             type: "image",      src: "data/sprites/sword.png"},
 	{name: "metatiles16x16",    type: "image",	    src: "data/sprites/metatiles16x16.png"},
 	{name: "MAP0101",		    type: "tmx",	    src: "data/MAP0101.tmx"}
 ];
@@ -29,7 +30,7 @@ var jsApp	=
 	{
 
 		// init the video
-		if (!me.video.init('jsapp',320, 240, false, 2.0))
+		if (!me.video.init('jsapp',320, 240, true, 1.2))
 		{
 			alert("Sorry but your browser does not support html 5 canvas.");
 	 return;
