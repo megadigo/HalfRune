@@ -40056,7 +40056,7 @@
     <property name="transparent_color" value="ffffff"/>
    </properties>
   </object>
-  <object name="sword" gid="2055" x="80" y="95">
+  <object name="sword" type ="weapon" gid="2055" x="80" y="95">
    <properties>
     <property name="image" value="sword"/>
     <property name="spriteheight" value="16"/>

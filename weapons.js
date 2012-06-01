@@ -13,6 +13,7 @@ var weaponEntity = me.ObjectEntity.extend({
     this.parent(x, y, settings);
     
     // set props
+    this.type = "weapon";
     this.status = "stop";
     this.direction = "left";
     
@@ -20,7 +21,8 @@ var weaponEntity = me.ObjectEntity.extend({
     
     //animation
     this.addAnimation("stop",[0]);
-    this.addAnimation("swing",[1,2,3]);
+    this.addAnimation("moving",[0,1]);
+    this.addAnimation("swing",[2,3,4,5,6,7]);
     this.setCurrentAnimation("stop");
     
     },
@@ -78,12 +80,15 @@ var weaponEntity = me.ObjectEntity.extend({
 		if (this.direction == "left") {
 			this.angle = Number.prototype.degToRad(270);
 		};
+		// check if need to swing;
+		if (ents[0].swing == true && ents[0].actionActive == true) {
+		    this.setCurrentAnimation("swing")
+		};
 		this.parent();
 		return true;
 		
     },
     
-	
     /* -----
 
     bounce

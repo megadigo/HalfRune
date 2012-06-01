@@ -12,7 +12,7 @@ var bedEntity = me.ObjectEntity.extend({
     init: function(x, y, settings) {
     // call the constructor
     this.parent(x, y, settings);
-    
+    this.type = "furniture";
     // set the walking  and gravity
     
     //animation

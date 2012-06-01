@@ -16,7 +16,7 @@ var chestEntity = me.ObjectEntity.extend({
     this.status = "close";
     this.updateme = true;
 	this.collidable = true;
-    
+    this.type = "container";
     //animation
     this.addAnimation("open",[619]);
     this.addAnimation("close",[620]);

@@ -21,6 +21,7 @@ var spiderEntity = me.ObjectEntity.extend({
     this.collidable = true;
     this.direction = "right";
 	this.stance = "normal";
+	this.type = "enemy";
 
     me.debug.renderHitBox = false;
     

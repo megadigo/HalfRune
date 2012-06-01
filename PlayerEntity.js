@@ -19,6 +19,8 @@ var playerEntity = me.ObjectEntity.extend({
     this.direction = "left";
 	this.stance = "normal";
 	this.actionActive = false;
+	this.swing = false;
+	this.type = "player";
 
     me.debug.renderHitBox = false;
     
@@ -43,7 +45,6 @@ var playerEntity = me.ObjectEntity.extend({
  
     ------ */
    update: function() { 
-		
 		// Handle Inputs
 		if (me.input.isKeyPressed('left')) {
 		    this.doWalkHorizontal(true);
@@ -59,17 +60,42 @@ var playerEntity = me.ObjectEntity.extend({
 			this.actionActive = false;
 		    this.doStand();
 		}
-			  		
+	    //
+	    //
 		// check collision
+		//
+		//
+		
 		res = me.game.collide(this);
 		if (res)
 		{	
-			// What do do if interacts
-			if (this.actionActive == true) {
-				res.obj.OnInteract(this);
+		    this.swing = false;
+		    // enemy collition
+		    if (res.obj.type == "enemy") {
+		        this.swing = true;
+		    }
+		    // furniture collition
+		    else if (res.obj.type == "furniture") {
+                this.swing = true;
+            }
+		    // container collition
+		    else if (res.obj.type == "container"){
+		        this.swing = false;
+    			// What do do if interacts
+    			if (this.actionActive == true) {
+    				res.obj.OnInteract(this);
+    			};
+    			// What to do if Collides
+    			res.obj.OnCollide(res,this);
+			}
+			// npc
+			else if (res.obj.type == "npc") {
+			  this.swing = false;
+			    
+			}
+			else {
+			 this.swing = true;
 			};
-			// What to do if Collides
-			res.obj.OnCollide(res,this);
 		};
 		// check & update player movement
 		this.updateMovement();
