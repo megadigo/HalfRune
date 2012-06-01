@@ -65,11 +65,10 @@ var playerEntity = me.ObjectEntity.extend({
 		// check collision
 		//
 		//
-		
+		this.swing = true;
 		res = me.game.collide(this);
 		if (res)
 		{	
-		    this.swing = false;
 		    // enemy collition
 		    if (res.obj.type == "enemy") {
 		        this.swing = true;

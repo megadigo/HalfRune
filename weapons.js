@@ -80,15 +80,22 @@ var weaponEntity = me.ObjectEntity.extend({
 		if (this.direction == "left") {
 			this.angle = Number.prototype.degToRad(270);
 		};
+		
+		
+		
 		// check if need to swing;
 		if (ents[0].swing == true && ents[0].actionActive == true) {
-		    this.setCurrentAnimation("swing")
+		    console.log("swing");
+		    this.setCurrentAnimation("swing",this.OnAfterSwing);
 		};
 		this.parent();
 		return true;
-		
+			
     },
     
+    OnAfterSwing: function() {
+         this.setCurrentAnimation("stop");
+    },
     /* -----
 
     bounce
