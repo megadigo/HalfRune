@@ -92,23 +92,9 @@ var spiderEntity = me.ObjectEntity.extend({
 	
 	/* -----
 
-    bounce
+    Change direction
  
     ------ */
-   doBounce: function(res,obj) {
-   		if (res.x<0 && obj.vel.x<0){
-			obj.vel.x = 0;
-		};
-		if (res.x>0 && obj.vel.x>0){
-			obj.vel.x = 0;
-		}
-		if (res.y<0 && obj.vel.y<0){
-			obj.vel.y = 0;
-		};
-		if (res.y>0 && obj.vel.y>0){
-			obj.vel.y = 0;
-		}
-   },
    
    doChangeDirection: function(res,obj) {
    		if (res.x<0 && obj.vel.x<0){
@@ -143,5 +129,6 @@ var spiderEntity = me.ObjectEntity.extend({
 			obj.vel.y = 0;
 		}
    }
+   
 }
 )
