@@ -21,31 +21,19 @@ var weaponEntity = me.ObjectEntity.extend({
     
     //animation
     this.animationspeed = 3;
-    this.addAnimation("stop",[0]);
+    this.addAnimation("idle",[0]);
     this.addAnimation("swing",[1,3]);
-    this.setCurrentAnimation("stop");
+    this.setCurrentAnimation("idle");
     
     },
  
-   	OnInteract: function(obj){
-   		
-  	},
-  	OnCollide: function(res,obj){
-  		//this.doBounce(res,obj);
-  	},
- 
- 	followEntity: function(obj){
- 		this.pos.x=obj.pos.x;
- 		this.pos.y=obj.pos.y-20;
- 		
- 	},
     /* -----
  
     update
  
     ------ */
    update: function() {
-	   	var ents = me.game.getEntityByName("mainPlayer");
+       var ents = me.game.getEntityByName("mainPlayer");
 	   	if (ents[0].direction == "up"){
 	   		this.pos.x= ents[0].pos.x - 5;
  			this.pos.y= ents[0].pos.y - 10;	
@@ -85,7 +73,6 @@ var weaponEntity = me.ObjectEntity.extend({
 		
 		// check if need to swing;
 		if (ents[0].swing == true && ents[0].actionActive == true) {
-		    console.log("swing");
 		    this.setCurrentAnimation("swing",this.OnAfterSwing);
 		};
 		this.parent();
@@ -94,7 +81,7 @@ var weaponEntity = me.ObjectEntity.extend({
     },
     
     OnAfterSwing: function() {
-         this.setCurrentAnimation("stop");
+         this.setCurrentAnimation("idle");
     },
     /* -----
 

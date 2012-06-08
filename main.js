@@ -6,8 +6,8 @@
  *   megadigo - DigoSoft Productions
  *
  **/
+// Global vars
 
-//game resources
 
 // game resources
 var g_resources = [
@@ -71,9 +71,6 @@ var jsApp	=
 	// add our player entity in the entity pool
 	me.entityPool.add("mainPlayer", playerEntity);
 	me.entityPool.add("spider", spiderEntity);
-	// set mainplayer
-	
-
 	
 	
 	// add to entities

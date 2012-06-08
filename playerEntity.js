@@ -17,6 +17,7 @@ var playerEntity = me.ObjectEntity.extend({
     this.setVelocity(2, 2);
     this.gravity=0;
     this.direction = "left";
+    this.moving = false;
 	this.stance = "normal";
 	this.actionActive = false;
 	this.swing = false;
@@ -45,21 +46,25 @@ var playerEntity = me.ObjectEntity.extend({
  
     ------ */
    update: function() { 
+        //
+        //
 		// Handle Inputs
+		//
+		//
 		if (me.input.isKeyPressed('left')) {
-		    this.doWalkHorizontal(true);
+		    this.doWalk("left");
 		} else if (me.input.isKeyPressed('right')) {
-		    this.doWalkHorizontal(false);
+		    this.doWalk("right");
 		} else if (me.input.isKeyPressed('up')) {
-			this.doWalkVertical(true);
+			this.doWalk("up");
 		} else if (me.input.isKeyPressed('down')) {
-			this.doWalkVertical(false);
+			this.doWalk("down");
 		} else if (me.input.isKeyPressed('action')) {
 			this.actionActive = true;
 		} else {
 			this.actionActive = false;
 		    this.doStand();
-		}
+		};
 	    //
 	    //
 		// check collision
@@ -97,39 +102,32 @@ var playerEntity = me.ObjectEntity.extend({
 			 this.swing = true;
 			};
 		};
-		// check & update player movement
-		this.updateMovement();
-  		// update animation if necessary
-	    if (this.vel.x!=0 || this.vel.y!=0) {
-			if (this.vel.x > 0) {
-			    this.direction="right";
-			};
-			if (this.vel.x < 0) {
-			    this.direction="left";
-			};
-			if (this.vel.y > 0) {
-			    this.direction="down";
-			};
-			if (this.vel.y < 0) {
-			    this.direction="up";
-			};
-            this.setCurrentAnimation(this.stance + "_" + this.direction);
-            this.parent(this);
-            return true;
-	   	} else {
-		 	return false;
-		};
+		
+		// update player movement
+		if (this.moving == true) {
+    	   this.updateMovement();
+           this.parent(this);
+           return true;
+        } else {    
+    	   return false	    
+		}
 	},
-	 
-    doWalkHorizontal : function(left) {
-		this.vel.x += (left) ? -this.accel.x * me.timer.tick : this.accel.x * me.timer.tick;
-    },
-    
-    doWalkVertical : function(up) {
-		this.vel.y += (up) ? -this.accel.y * me.timer.tick : this.accel.y * me.timer.tick;
-    },
-    
+	doWalk: function(newDirection){
+	    this.moving = true;
+	    this.direction=newDirection;
+	    if (this.direction == "left") {
+	       this.vel.x +=  -this.accel.x * me.timer.tick
+	    } else if (this.direction == "right") {
+	       this.vel.x +=  this.accel.x * me.timer.tick
+	    } else if (this.direction == "up") {
+	       this.vel.y +=  -this.accel.y * me.timer.tick
+	    } else if (this.direction == "down") {
+	       this.vel.y +=  this.accel.y * me.timer.tick
+	    }
+	    this.setCurrentAnimation(this.stance + "_" + this.direction)
+	}, 
     doStand : function(up) {
+        this.moving = false;
 		this.vel.y = 0;
 		this.vel.x = 0;
     }

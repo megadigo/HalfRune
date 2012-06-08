@@ -128,6 +128,23 @@ var spiderEntity = me.ObjectEntity.extend({
 		if (res.y>0 && obj.vel.y>0){
 			obj.vel.y = 0;
 		}
+   },
+   doRandomMove: function(){
+       
+       
+       
+       
+       
+       
+       
+       
+       
+   },
+   doAttack: function(){
+       
+       
+       
+       
    }
    
 }
