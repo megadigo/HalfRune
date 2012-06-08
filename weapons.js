@@ -20,9 +20,9 @@ var weaponEntity = me.ObjectEntity.extend({
 	this.collidable = false;
     
     //animation
+    this.animationspeed = 3;
     this.addAnimation("stop",[0]);
-    this.addAnimation("moving",[0,1]);
-    this.addAnimation("swing",[2,3,4,5,6,7]);
+    this.addAnimation("swing",[1,3]);
     this.setCurrentAnimation("stop");
     
     },
