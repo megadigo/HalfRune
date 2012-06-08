@@ -16,7 +16,10 @@ var g_resources = [
 	{name: "avatar",	    	type: "image",	    src: "data/sprites/avatar.png"},
 	{name: "sword",             type: "image",      src: "data/sprites/sword.png"},
 	{name: "metatiles16x16",    type: "image",	    src: "data/sprites/metatiles16x16.png"},
-	{name: "MAP0101",		    type: "tmx",	    src: "data/MAP0101.tmx"}
+	{name: "MAP0101",		    type: "tmx",	    src: "data/MAP0101.tmx"},
+	{name: "swing",             type: "audio",      src: "data/sounds/",              channel:1},
+	{name: "walk",             type: "audio",      src: "data/sounds/",              channel:1}
+	  
 ];
 
 var jsApp	=

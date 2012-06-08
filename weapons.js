@@ -73,6 +73,7 @@ var weaponEntity = me.ObjectEntity.extend({
 		
 		// check if need to swing;
 		if (ents[0].swing == true && ents[0].actionActive == true) {
+		    me.audio.play("swing");
 		    this.setCurrentAnimation("swing",this.OnAfterSwing);
 		};
 		this.parent();
