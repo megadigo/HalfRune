@@ -114,7 +114,7 @@ var playerEntity = me.ObjectEntity.extend({
 	},
 	doWalk: function(newDirection){
 	    this.moving = true;
-	    me.audio.play("walk",true)
+	    //me.audio.play("walk",true)
 	    this.direction=newDirection;
 	    if (this.direction == "left") {
 	       this.vel.x +=  -this.accel.x * me.timer.tick
