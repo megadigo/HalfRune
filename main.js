@@ -17,8 +17,8 @@ var g_resources = [
 	{name: "sword",             type: "image",      src: "data/sprites/sword.png"},
 	{name: "metatiles16x16",    type: "image",	    src: "data/sprites/metatiles16x16.png"},
 	{name: "MAP0101",		    type: "tmx",	    src: "data/MAP0101.tmx"},
-	{name: "swing",             type: "audio",      src: "data/sounds/",              channel:1},
-	{name: "walk",             type: "audio",      src: "data/sounds/",              channel:1}
+	{name: "swing",             type: "audio",      src: "data/sounds/",              channel:2},
+	{name: "heroicdemise",      type: "audio",      src: "data/sounds/",              channel:1}
 	  
 ];
 
@@ -89,6 +89,7 @@ var jsApp	=
 	me.input.bindKey(me.input.KEY.P, "action",true);
      
 	// display the menu title
+	me.audio.playTrack("heroicdemise");
 	me.state.change(me.state.PLAY);
 }
 
