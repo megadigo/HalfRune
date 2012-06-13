@@ -8,13 +8,13 @@
  **/
 // Global vars
 
-
 // game resources
 var g_resources = [
 	// our level tileset
 	{name: "u6tiles",			type: "image",		src: "data/sprites/u6tiles.png"},
 	{name: "avatar",	    	type: "image",	    src: "data/sprites/avatar.png"},
 	{name: "sword",             type: "image",      src: "data/sprites/sword.png"},
+	{name: "axe",               type: "image",      src: "data/sprites/axe.png"},
 	{name: "metatiles16x16",    type: "image",	    src: "data/sprites/metatiles16x16.png"},
 	{name: "MAP0101",		    type: "tmx",	    src: "data/MAP0101.tmx"},
 	{name: "swing",             type: "audio",      src: "data/sounds/",              channel:2},
@@ -73,13 +73,16 @@ var jsApp	=
      
 	// add our player entity in the entity pool
 	me.entityPool.add("mainPlayer", playerEntity);
-	me.entityPool.add("spider", spiderEntity);
+	me.entityPool.add("sword", weaponEntity);
+	me.entityPool.add("axe", weaponEntity);
 	
+	
+	// add enemies
+	me.entityPool.add("spider", spiderEntity);
 	
 	// add to entities
 	me.entityPool.add("chest", chestEntity);
 	me.entityPool.add("bed", bedEntity);
-	me.entityPool.add("sword", weaponEntity);
 	
 	// enable the keyboard
 	me.input.bindKey(me.input.KEY.A, "left");

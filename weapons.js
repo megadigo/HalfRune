@@ -1,6 +1,7 @@
 /**
  * @author RCordeiro
  */
+
 var weaponEntity = me.ObjectEntity.extend({
     /* -----
  
@@ -16,8 +17,8 @@ var weaponEntity = me.ObjectEntity.extend({
     this.type = "weapon";
     this.status = "stop";
     this.direction = "left";
-    
-	this.collidable = false;
+    this.entityEquip = {};
+	this.collidable = true;
     
     //animation
     this.animationspeed = 3;
@@ -27,31 +28,31 @@ var weaponEntity = me.ObjectEntity.extend({
     
     },
  
+
     /* -----
  
     update
  
     ------ */
-   update: function() {
-       var ents = me.game.getEntityByName("mainPlayer");
-	   	if (ents[0].direction == "up"){
-	   		this.pos.x= ents[0].pos.x - 5;
- 			this.pos.y= ents[0].pos.y - 10;	
+   update: function() { 
+	   	if (this.entityEquip.direction == "up"){
+	   		this.pos.x= this.entityEquip.pos.x - 5;
+ 			this.pos.y= this.entityEquip.pos.y - 10;	
  			this.direction = "up"
 	   	};
-	   	if (ents[0].direction == "down" ){
-	   		this.pos.x= ents[0].pos.x + 5;
- 			this.pos.y= ents[0].pos.y + 10;
+	   	if (this.entityEquip.direction == "down" ){
+	   		this.pos.x= this.entityEquip.pos.x + 5;
+ 			this.pos.y= this.entityEquip.pos.y + 10;
  			this.direction = "down"	
 	   	}
-		if (ents[0].direction == "left" ){
-	   		this.pos.x= ents[0].pos.x - 10;
- 			this.pos.y= ents[0].pos.y + 5;
+		if (this.entityEquip.direction == "left" ){
+	   		this.pos.x= this.entityEquip.pos.x - 10;
+ 			this.pos.y= this.entityEquip.pos.y + 5;
  			this.direction = "left"	
 	   	}
-	   	if (ents[0].direction == "right" ){
-	   		this.pos.x= ents[0].pos.x + 10;
- 			this.pos.y= ents[0].pos.y - 5;
+	   	if (this.entityEquip.direction == "right" ){
+	   		this.pos.x= this.entityEquip.pos.x + 10;
+ 			this.pos.y= this.entityEquip.pos.y - 5;
  			this.direction = "right"	
 	   	}
 		this.updateme = true;
@@ -69,10 +70,8 @@ var weaponEntity = me.ObjectEntity.extend({
 			this.angle = Number.prototype.degToRad(270);
 		};
 		
-		
-		
 		// check if need to swing;
-		if (ents[0].swing == true && ents[0].actionActive == true) {
+		if (this.entityEquip.swing == true && this.entityEquip.actionActive == true) {
 		    me.audio.play("swing");
 		    this.setCurrentAnimation("swing",this.OnAfterSwing);
 		};
@@ -102,7 +101,16 @@ var weaponEntity = me.ObjectEntity.extend({
 		if (res.y>0 && obj.vel.y>0){
 			obj.vel.y = 0;
 		}
-   }
+   },
+   
+   doEquip: function(guid){
+        this.entityEquip = me.game.getEntityByGUID(guid);
+        this.collidable = false;
+    },
+   doUnEquip: function(){
+        this.entityEquip = {};
+        this.collidable = true;
+    },
 }
 );
 

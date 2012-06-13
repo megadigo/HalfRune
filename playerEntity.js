@@ -20,9 +20,15 @@ var playerEntity = me.ObjectEntity.extend({
     this.moving = false;
 	this.stance = "normal";
 	this.actionActive = false;
-	this.swing = false;
+	
 	this.type = "player";
 
+    //weapon
+    this.swing = false;
+    this.weapon = {};
+    this.equipweapon = false;
+    
+    
     me.debug.renderHitBox = false;
     
     //animation
@@ -74,6 +80,21 @@ var playerEntity = me.ObjectEntity.extend({
 		res = me.game.collide(this);
 		if (res)
 		{	
+		    // weapon collition
+		    if (res.obj.type == "weapon") {
+		        if (this.actionActive == true) {
+		            this.swing = false;
+    		        // unequip
+    		        if(this.equipweapon){
+    		          this.weapon.obj.doUnEquip();
+    		          this.equipweapon = false;
+    		        };
+    		        // equip  
+    		        this.weapon = res;
+    		        res.obj.doEquip(this.GUID);
+    		        this.equipweapon=true;
+		        };
+		    };
 		    // enemy collition
 		    if (res.obj.type == "enemy") {
 		        this.swing = true;
