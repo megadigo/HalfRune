@@ -19,6 +19,8 @@ var weaponEntity = me.ObjectEntity.extend({
     this.direction = "left";
     this.entityEquip = {};
 	this.collidable = true;
+    console.log(this.damage);
+    
     
     //animation
     this.animationspeed = 3;

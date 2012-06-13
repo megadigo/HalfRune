@@ -1,6 +1,9 @@
 /*------------------- 
+
 a player entity
--------------------------------- */
+
+-------------------- */
+
 var playerEntity = me.ObjectEntity.extend({
  
     /* -----
