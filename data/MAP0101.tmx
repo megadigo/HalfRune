@@ -3659,17 +3659,36 @@
     <property name="transparent_color" value="ffffff"/>
    </properties>
   </object>
-  <object name="sword" type="weapon" gid="2055" x="64" y="79">
+  <object name="door" gid="1045" x="77" y="143"/>
+  <object name="door" gid="1050" x="94" y="143"/>
+ </objectgroup>
+ <objectgroup name="Enemies" width="30" height="30">
+  <object name="spider" type="enemy" gid="1385" x="416" y="192">
    <properties>
-    <property name="damage" value="1"/>
-    <property name="hci" value="1"/>
-    <property name="image" value="sword"/>
+    <property name="image" value="u6tiles"/>
     <property name="spriteheight" value="16"/>
     <property name="spritewidth" value="16"/>
-    <property name="swingspeed" value="3"/>
     <property name="transparent_color" value="ffffff"/>
    </properties>
   </object>
+  <object name="spider" type="enemy" gid="1385" x="349" y="247">
+   <properties>
+    <property name="image" value="u6tiles"/>
+    <property name="spriteheight" value="16"/>
+    <property name="spritewidth" value="16"/>
+    <property name="transparent_color" value="ffffff"/>
+   </properties>
+  </object>
+  <object name="spider" type="enemy" gid="1385" x="415" y="268">
+   <properties>
+    <property name="image" value="u6tiles"/>
+    <property name="spriteheight" value="16"/>
+    <property name="spritewidth" value="16"/>
+    <property name="transparent_color" value="ffffff"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup color="#ffffff" name="Weapons" width="30" height="30">
   <object name="axe" type="weapon" gid="2063" x="224" y="79">
    <properties>
     <property name="damage" value="+2"/>
@@ -3681,13 +3700,14 @@
     <property name="transparent_color" value="ffffff"/>
    </properties>
   </object>
- </objectgroup>
- <objectgroup name="Enemies" width="30" height="30">
-  <object name="spider" type="enemy" gid="1385" x="416" y="192">
+  <object name="sword" type="weapon" gid="2055" x="64" y="79">
    <properties>
-    <property name="image" value="u6tiles"/>
+    <property name="damage" value="1"/>
+    <property name="hci" value="1"/>
+    <property name="image" value="sword"/>
     <property name="spriteheight" value="16"/>
     <property name="spritewidth" value="16"/>
+    <property name="swingspeed" value="3"/>
     <property name="transparent_color" value="ffffff"/>
    </properties>
   </object>
