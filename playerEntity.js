@@ -23,7 +23,16 @@ var playerEntity = me.ObjectEntity.extend({
     this.moving = false;
 	this.stance = "normal";
 	this.actionActive = false;
-	
+	//stats
+	this.hp=100;
+	this.mp = 40;
+	this.str = 120;
+	this.itl = 40;
+	this.dex = 120
+	this.damage = 0;
+	this.hci = 0;
+	this.swingspeed = 0;
+
 	this.type = "player";
 
     //weapon
@@ -96,6 +105,7 @@ var playerEntity = me.ObjectEntity.extend({
     		        this.weapon = res;
     		        res.obj.doEquip(this.GUID);
     		        this.equipweapon=true;
+    		        console.log('damage ' + this.damage)
 		        };
 		    };
 		    // enemy collition

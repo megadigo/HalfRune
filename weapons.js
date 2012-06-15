@@ -19,11 +19,14 @@ var weaponEntity = me.ObjectEntity.extend({
     this.direction = "left";
     this.entityEquip = {};
 	this.collidable = true;
-    console.log(this.damage);
+	this.damage = settings.damage;
+	this.hci = settings.hci;
+	this.swingspeed = settings.swingspeed;
+	
     
     
     //animation
-    this.animationspeed = 3;
+    this.animationspeed = this.swingspeed;
     this.addAnimation("idle",[0]);
     this.addAnimation("swing",[1,3]);
     this.setCurrentAnimation("idle");
@@ -74,16 +77,25 @@ var weaponEntity = me.ObjectEntity.extend({
 		
 		// check if need to swing;
 		if (this.entityEquip.swing == true && this.entityEquip.actionActive == true) {
-		    me.audio.play("swing");
 		    this.setCurrentAnimation("swing",this.OnAfterSwing);
-		};
+		};	
 		this.parent();
 		return true;
 			
     },
     
     OnAfterSwing: function() {
-         this.setCurrentAnimation("idle");
+    	 me.audio.play("swing");
+    	 this.setCurrentAnimation("idle");
+    	 //check collition
+		res = me.game.collide(this);
+		if (res)
+		{
+			// enemy collition
+		    if (res.obj.type == "enemy") {
+		        res.obj.doDamage(this.hci,this.damage);
+		    }	
+		};
     },
     /* -----
 
@@ -107,10 +119,16 @@ var weaponEntity = me.ObjectEntity.extend({
    
    doEquip: function(guid){
         this.entityEquip = me.game.getEntityByGUID(guid);
+        this.entityEquip.damage += this.damage;
+        this.entityEquip.hci += this.hci;
+        this.entityEquip.swingspeed += this.swingspeed;
         this.collidable = false;
     },
    doUnEquip: function(){
         this.entityEquip = {};
+        this.entityEquip.damage -= this.damage;
+        this.entityEquip.hci -= this.hci;
+        this.entityEquip.swingspeed -= this.swingspeed;
         this.collidable = true;
     },
 }

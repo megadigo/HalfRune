@@ -3659,8 +3659,6 @@
     <property name="transparent_color" value="ffffff"/>
    </properties>
   </object>
-  <object name="door" gid="1045" x="77" y="143"/>
-  <object name="door" gid="1050" x="94" y="143"/>
  </objectgroup>
  <objectgroup name="Enemies" width="30" height="30">
   <object name="spider" type="enemy" gid="1385" x="416" y="192">
@@ -3669,6 +3667,7 @@
     <property name="spriteheight" value="16"/>
     <property name="spritewidth" value="16"/>
     <property name="transparent_color" value="ffffff"/>
+    <property name="hp" value="100"/>
    </properties>
   </object>
   <object name="spider" type="enemy" gid="1385" x="349" y="247">
@@ -3677,6 +3676,7 @@
     <property name="spriteheight" value="16"/>
     <property name="spritewidth" value="16"/>
     <property name="transparent_color" value="ffffff"/>
+    <property name="hp" value="120"/>
    </properties>
   </object>
   <object name="spider" type="enemy" gid="1385" x="415" y="268">
@@ -3685,6 +3685,7 @@
     <property name="spriteheight" value="16"/>
     <property name="spritewidth" value="16"/>
     <property name="transparent_color" value="ffffff"/>
+    <property name="hp" value="110"/>
    </properties>
   </object>
  </objectgroup>
@@ -3696,7 +3697,7 @@
     <property name="image" value="axe"/>
     <property name="spriteheight" value="16"/>
     <property name="spritewidth" value="18"/>
-    <property name="swingspeed" value="6"/>
+    <property name="swingspeed" value="10"/>
     <property name="transparent_color" value="ffffff"/>
    </properties>
   </object>

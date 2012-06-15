@@ -21,6 +21,7 @@ var spiderEntity = me.ObjectEntity.extend({
     this.collidable = true;
     this.direction = "right";
 	this.stance = "normal";
+	this.hp = settings.hp;
 	this.type = "enemy";
 
     me.debug.renderHitBox = false;
@@ -145,6 +146,13 @@ var spiderEntity = me.ObjectEntity.extend({
        
        
        
+   },
+   doDamage: function(hci,damage) {
+   	this.hp -= damage;
+   	console.log('hp ' + this.hp);
+   	if(this.hp<=0){
+   		this.destroy;
+   	}
    }
    
 }
