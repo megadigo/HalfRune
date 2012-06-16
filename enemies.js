@@ -19,7 +19,7 @@ var spiderEntity = me.ObjectEntity.extend({
     this.gravity=0;
     this.updateme = true;
     this.collidable = true;
-    this.direction = "right";
+    this.direction = "left";
 	this.stance = "normal";
 	this.hp = settings.hp;
 	this.type = "enemy";
@@ -147,13 +147,23 @@ var spiderEntity = me.ObjectEntity.extend({
        
        
    },
-   doDamage: function(hci,damage) {
-   	this.hp -= damage;
-   	console.log('hp ' + this.hp);
-   	if(this.hp<=0){
-   		this.destroy;
-   	}
-   }
-   
+   doDamage: function(attacker,hci,damage) {
+   		// calculate hc and do damage;   		
+   		this.hp -= damage;
+   		console.log('hp ' + this.hp);
+   		// little bounce
+		if (attacker.direction == "left") {
+			this.pos.x-=5
+		}; 
+		if (attacker.direction == "right") {
+			this.pos.x+=5
+		};
+		if (attacker.direction == "up") {
+			this.pos.y-=5
+		};
+		if (attacker.direction == "down") { 
+			this.pos.y+=5
+		};
+	}
 }
 )

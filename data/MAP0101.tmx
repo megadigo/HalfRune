@@ -3667,7 +3667,7 @@
     <property name="spriteheight" value="16"/>
     <property name="spritewidth" value="16"/>
     <property name="transparent_color" value="ffffff"/>
-    <property name="hp" value="100"/>
+    <property name="hp" value="10"/>
    </properties>
   </object>
   <object name="spider" type="enemy" gid="1385" x="349" y="247">
@@ -3676,7 +3676,7 @@
     <property name="spriteheight" value="16"/>
     <property name="spritewidth" value="16"/>
     <property name="transparent_color" value="ffffff"/>
-    <property name="hp" value="120"/>
+    <property name="hp" value="12"/>
    </properties>
   </object>
   <object name="spider" type="enemy" gid="1385" x="415" y="268">
@@ -3685,15 +3685,15 @@
     <property name="spriteheight" value="16"/>
     <property name="spritewidth" value="16"/>
     <property name="transparent_color" value="ffffff"/>
-    <property name="hp" value="110"/>
+    <property name="hp" value="11"/>
    </properties>
   </object>
  </objectgroup>
  <objectgroup color="#ffffff" name="Weapons" width="30" height="30">
   <object name="axe" type="weapon" gid="2063" x="224" y="79">
    <properties>
-    <property name="damage" value="+2"/>
-    <property name="hci" value="+1"/>
+    <property name="damage" value="8"/>
+    <property name="hci" value="1"/>
     <property name="image" value="axe"/>
     <property name="spriteheight" value="16"/>
     <property name="spritewidth" value="18"/>
@@ -3703,7 +3703,7 @@
   </object>
   <object name="sword" type="weapon" gid="2055" x="64" y="79">
    <properties>
-    <property name="damage" value="1"/>
+    <property name="damage" value="5"/>
     <property name="hci" value="1"/>
     <property name="image" value="sword"/>
     <property name="spriteheight" value="16"/>
