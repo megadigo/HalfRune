@@ -108,8 +108,8 @@ var playerEntity = me.ObjectEntity.extend({
     		        console.log('damage ' + this.damage)
 		        };
 		    };
-		    // enemy collition
-		    if (res.obj.type == "enemy") {
+		    // mob collition
+		    if (res.obj.type == "mob") {
 		        this.swing = true;
 		        res.obj.OnCollide(res,this);
 		    }

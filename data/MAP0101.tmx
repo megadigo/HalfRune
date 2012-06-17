@@ -3661,31 +3661,31 @@
   </object>
  </objectgroup>
  <objectgroup name="Enemies" width="30" height="30">
-  <object name="spider" type="enemy" gid="1385" x="416" y="192">
+  <object name="spider" type="mob" gid="1385" x="370" y="116">
    <properties>
-    <property name="image" value="u6tiles"/>
-    <property name="spriteheight" value="16"/>
-    <property name="spritewidth" value="16"/>
-    <property name="transparent_color" value="ffffff"/>
     <property name="hp" value="10"/>
-   </properties>
-  </object>
-  <object name="spider" type="enemy" gid="1385" x="349" y="247">
-   <properties>
     <property name="image" value="u6tiles"/>
     <property name="spriteheight" value="16"/>
     <property name="spritewidth" value="16"/>
     <property name="transparent_color" value="ffffff"/>
+   </properties>
+  </object>
+  <object name="spider" type="mob" gid="1385" x="53" y="394">
+   <properties>
     <property name="hp" value="12"/>
-   </properties>
-  </object>
-  <object name="spider" type="enemy" gid="1385" x="415" y="268">
-   <properties>
     <property name="image" value="u6tiles"/>
     <property name="spriteheight" value="16"/>
     <property name="spritewidth" value="16"/>
     <property name="transparent_color" value="ffffff"/>
+   </properties>
+  </object>
+  <object name="spider" type="mob" gid="1385" x="319" y="397">
+   <properties>
     <property name="hp" value="11"/>
+    <property name="image" value="u6tiles"/>
+    <property name="spriteheight" value="16"/>
+    <property name="spritewidth" value="16"/>
+    <property name="transparent_color" value="ffffff"/>
    </properties>
   </object>
  </objectgroup>
@@ -3696,7 +3696,7 @@
     <property name="hci" value="1"/>
     <property name="image" value="axe"/>
     <property name="spriteheight" value="16"/>
-    <property name="spritewidth" value="18"/>
+    <property name="spritewidth" value="16"/>
     <property name="swingspeed" value="10"/>
     <property name="transparent_color" value="ffffff"/>
    </properties>
@@ -3709,6 +3709,19 @@
     <property name="spriteheight" value="16"/>
     <property name="spritewidth" value="16"/>
     <property name="swingspeed" value="3"/>
+    <property name="transparent_color" value="ffffff"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup name="Portals" width="30" height="30">
+  <object name="porta" type="porta" gid="604" x="32" y="32">
+   <properties>
+    <property name="image" value="u6tiles"/>
+    <property name="spriteheight" value="16"/>
+    <property name="spritewidth" value="32"/>
+    <property name="toMap" value="MAP0101"/>
+    <property name="toX" value="20"/>
+    <property name="toY" value="20"/>
     <property name="transparent_color" value="ffffff"/>
    </properties>
   </object>

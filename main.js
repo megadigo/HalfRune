@@ -83,6 +83,7 @@ var jsApp	=
 	// add to entities
 	me.entityPool.add("chest", chestEntity);
 	me.entityPool.add("bed", bedEntity);
+	me.entityPool.add("porta", portaEntity);
 	
 	// enable the keyboard
 	me.input.bindKey(me.input.KEY.A, "left");

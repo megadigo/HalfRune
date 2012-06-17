@@ -1,7 +1,7 @@
 /**
  * @author megadigo
  */
-var bedEntity = me.ObjectEntity.extend({
+var portaEntity = me.ObjectEntity.extend({
  
     /* -----
  
@@ -12,7 +12,7 @@ var bedEntity = me.ObjectEntity.extend({
     init: function(x, y, settings) {
     // call the constructor
     this.parent(x, y, settings);
-    this.type = "furniture";
+    this.type = "porta";
     
     //animation
     //this.addAnimation("normal_up",[0,1,2,3]);

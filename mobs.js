@@ -22,7 +22,7 @@ var spiderEntity = me.ObjectEntity.extend({
     this.direction = "left";
 	this.stance = "normal";
 	this.hp = settings.hp;
-	this.type = "enemy";
+	this.type = "mob";
 
     me.debug.renderHitBox = false;
     
@@ -153,16 +153,16 @@ var spiderEntity = me.ObjectEntity.extend({
    		console.log('hp ' + this.hp);
    		// little bounce
 		if (attacker.direction == "left") {
-			this.pos.x-=5
+			this.pos.x-=10
 		}; 
 		if (attacker.direction == "right") {
-			this.pos.x+=5
+			this.pos.x+=10
 		};
 		if (attacker.direction == "up") {
-			this.pos.y-=5
+			this.pos.y-=10
 		};
 		if (attacker.direction == "down") { 
-			this.pos.y+=5
+			this.pos.y+=10
 		};
 	}
 }
