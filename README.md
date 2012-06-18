@@ -18,7 +18,7 @@ The intent of the game is to follow the history of this different reality.
 
 Begins in early days in the caves when man discover portal and fire (in this order :) offcourse) to a point in history somehow similar to the mediaeval epoch. 
 
-It will be a sand-box game in chapters in a open world. To move on in the game i will implement a logic i call **Fuzzy Chapters**(kind of a percentage done and actions to change chapters).
+It will be a sand-box game in chapters in a open world. The game will use a logic called **Fuzzy Chapters**(kind of a percentage done and actions to change chapters) to progress.
 
 This is the starting point for a big adventure i hope…
 
