@@ -13,13 +13,15 @@ var playScreen = me.ScreenObject.extend({
         me.levelDirector.loadLevel("MAP0101");
  
         // add a default HUD to the game mngr
-        //me.game.addHUD(0, 430, 640, 60);
+        me.game.addHUD(0, 0, 320, 240);
  
         // add a new HUD item
+        me.game.HUD.addItem("hud", new hudBase(0,0));
+        
         //me.game.HUD.addItem("score", new ScoreObject(620, 10));
  
         // make sure everyhting is in the right order
-        //me.game.sort();
+        me.game.sort();
  
     },
  

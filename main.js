@@ -15,11 +15,11 @@ var g_resources = [
 	{name: "avatar",	    	type: "image",	    src: "data/sprites/avatar.png"},
 	{name: "sword",             type: "image",      src: "data/sprites/sword.png"},
 	{name: "axe",               type: "image",      src: "data/sprites/axe.png"},
+	{name: "hud",               type: "image",      src: "data/sprites/hud.png"}, 
 	{name: "metatiles16x16",    type: "image",	    src: "data/sprites/metatiles16x16.png"},
 	{name: "MAP0101",		    type: "tmx",	    src: "data/MAP0101.tmx"},
 	{name: "swing",             type: "audio",      src: "data/sounds/",              channel:2},
 	{name: "heroicdemise",      type: "audio",      src: "data/sounds/",              channel:1}
-	  
 ];
 
 var jsApp	=
@@ -33,7 +33,7 @@ var jsApp	=
 	{
 
 		// init the video
-		if (!me.video.init('jsapp',320, 240, true, 2))
+		if (!me.video.init('jsapp',320, 240, true, 1))
 		{
 			alert("Sorry but your browser does not support html 5 canvas.");
 	 return;
