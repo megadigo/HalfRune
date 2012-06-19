@@ -145,6 +145,11 @@ var playerEntity = me.ObjectEntity.extend({
         } else {    
     	   return false	    
 		}
+		// Update Hp
+		me.game.HUD.setItemValue("hp", this.hp);
+		
+		
+		
 	},
 	doWalk: function(newDirection){
 	    this.moving = true;

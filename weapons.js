@@ -92,7 +92,7 @@ var weaponEntity = me.ObjectEntity.extend({
 		if (res)
 		{
 			// enemy collition
-		    if (res.obj.type == "enemy") {
+		    if (res.obj.type == "mob") {
 		        res.obj.doDamage(this, this.hci, this.damage);
 		    }	
 		};

@@ -20,9 +20,11 @@ var spiderEntity = me.ObjectEntity.extend({
     this.updateme = true;
     this.collidable = true;
     this.direction = "left";
+    this.nextrandom = 0;
 	this.stance = "normal";
 	this.hp = settings.hp;
 	this.type = "mob";
+	this.stage = "random"; //chase, attacking, dead, respawning
 
     me.debug.renderHitBox = false;
     
@@ -55,6 +57,10 @@ var spiderEntity = me.ObjectEntity.extend({
     ------ */
    
    update: function() { 
+		
+		// stage
+	
+		
 		
 		// move
 			if (this.direction == "right"){
@@ -164,6 +170,11 @@ var spiderEntity = me.ObjectEntity.extend({
 		if (attacker.direction == "down") { 
 			this.pos.y+=10
 		};
+		// check if die
+		if (this.hp<=0){
+		    this.collidable = false;
+            me.game.remove(this);
+		}
 	}
 }
 )
