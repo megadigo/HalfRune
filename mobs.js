@@ -24,7 +24,7 @@ var spiderEntity = me.ObjectEntity.extend({
 	this.stance = "normal";
 	this.hp = settings.hp;
 	this.type = "mob";
-	this.stage = "random"; //chase, attacking, dead, respawning
+	this.stage = "random"; //chase, attack, dead, respawn
 
     me.debug.renderHitBox = false;
     
@@ -58,9 +58,12 @@ var spiderEntity = me.ObjectEntity.extend({
    
    update: function() { 
 		
-		// stage
-	
-		
+		// do stage
+    		if (this.stage == "random")   doRandomWalk();
+    		if (this.stage == "chase")    doChaseWalk();
+    		if (this.stage == "attack")   doAttack();
+    		if (this.stage == "dead")     doDead();
+    		if (this.stage == "respawn")  doRespawn();
 		
 		// move
 			if (this.direction == "right"){
