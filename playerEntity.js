@@ -171,6 +171,5 @@ var playerEntity = me.ObjectEntity.extend({
         //me.audio.pause("walk");
 		this.vel.y = 0;
 		this.vel.x = 0;
-    }
-}
-);
+    },
+});

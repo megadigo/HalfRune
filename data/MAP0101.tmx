@@ -3663,6 +3663,7 @@
  <objectgroup name="Mobs" width="30" height="30">
   <object name="spider" type="mob" gid="1385" x="150" y="200">
    <properties>
+    <property name="transparent_color" value="ffffff"/>
     <property name="hp" value="10"/>
     <property name="image" value="u6tiles"/>
     <property name="spriteheight" value="16"/>
