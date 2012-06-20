@@ -3633,43 +3633,16 @@
    <tile gid="0"/>
   </data>
  </layer>
- <objectgroup color="#00ff00" name="Entities" width="30" height="30">
-  <object name="mainPlayer" type="player" x="80" y="96" width="16" height="16">
-   <properties>
-    <property name="image" value="avatar"/>
-    <property name="spritewidth" value="16"/>
-    <property name="transparent_color" value="ffffff"/>
-   </properties>
-  </object>
-  <object name="chest" type="container" gid="621" x="112" y="80">
-   <properties>
-    <property name="image" value="u6tiles"/>
-    <property name="spriteheight" value="16"/>
-    <property name="spritewidth" value="16"/>
-    <property name="transparent_color" value="ffffff"/>
-   </properties>
-  </object>
-  <object name="bed" type="furniture" gid="711" x="96" y="80"/>
-  <object name="bed" type="furniture" gid="712" x="96" y="96"/>
-  <object name="chest" type="container" gid="621" x="80" y="80">
-   <properties>
-    <property name="image" value="u6tiles"/>
-    <property name="spriteheight" value="16"/>
-    <property name="spritewidth" value="16"/>
-    <property name="transparent_color" value="ffffff"/>
-   </properties>
-  </object>
- </objectgroup>
  <objectgroup name="Mobs" width="30" height="30">
   <object name="spider" type="mob" gid="1385" x="150" y="200">
    <properties>
-    <property name="transparent_color" value="ffffff"/>
-    <property name="hp" value="10"/>
+    <property name="hp" value="30"/>
     <property name="image" value="u6tiles"/>
-    <property name="spriteheight" value="16"/>
-    <property name="spritewidth" value="16"/>
     <property name="respawnX" value="150"/>
     <property name="respawnY" value="200"/>
+    <property name="spriteheight" value="16"/>
+    <property name="spritewidth" value="16"/>
+    <property name="transparent_color" value="ffffff"/>
    </properties>
   </object>
  </objectgroup>
@@ -3693,6 +3666,33 @@
     <property name="spriteheight" value="16"/>
     <property name="spritewidth" value="16"/>
     <property name="swingspeed" value="3"/>
+    <property name="transparent_color" value="ffffff"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup color="#00ff00" name="Entities" width="30" height="30">
+  <object name="mainPlayer" type="player" x="80" y="96" width="16" height="16">
+   <properties>
+    <property name="image" value="avatar"/>
+    <property name="spritewidth" value="16"/>
+    <property name="transparent_color" value="ffffff"/>
+   </properties>
+  </object>
+  <object name="chest" type="container" gid="621" x="112" y="80">
+   <properties>
+    <property name="image" value="u6tiles"/>
+    <property name="spriteheight" value="16"/>
+    <property name="spritewidth" value="16"/>
+    <property name="transparent_color" value="ffffff"/>
+   </properties>
+  </object>
+  <object name="bed" type="furniture" gid="711" x="96" y="80"/>
+  <object name="bed" type="furniture" gid="712" x="96" y="96"/>
+  <object name="chest" type="container" gid="621" x="80" y="80">
+   <properties>
+    <property name="image" value="u6tiles"/>
+    <property name="spriteheight" value="16"/>
+    <property name="spritewidth" value="16"/>
     <property name="transparent_color" value="ffffff"/>
    </properties>
   </object>

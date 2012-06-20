@@ -25,6 +25,8 @@ var spiderEntity = me.ObjectEntity.extend({
 	this.type = "mob";
 	this.stage = "random"; //chase, attack, dead, respawn
 	this.randomlenght = 0;
+	this.respawnX=settings.respawnX;
+	this.respawnY=settings.respawnY;
 
     me.debug.renderHitBox = false;
     
@@ -145,7 +147,7 @@ var spiderEntity = me.ObjectEntity.extend({
    // STAGES
     doRandomWalk: function (){
        if (this.randomlenght == 0){
-            this.randomlenght = (32 + Math.round(Math.random()*5*16),0);
+            this.randomlenght = 200 + Math.round(Math.random()*100,0);
             switch (Math.round(Math.random() * 4,0)){
                 case 0: 
                     this.direction="left";
@@ -171,11 +173,22 @@ var spiderEntity = me.ObjectEntity.extend({
        
    },
    doDead: function(){
+       this.randomlenght = 0
        this.collidable = false;
        this.direction="stand";
+       if (this.randomlenght == 0){
+            this.stage = "respawn"
+       } else {
+           this.randomlenght -=1
+       };
    },
    doRespawn: function(){
-            
+         this.pos.x =  this.respawnX;
+         this.pos.y =  this.respawnY;
+         this.direction ="left";
+         this.stage = "random";
+         this.hp=Math.random()*50;
+         this.collidable = true;
    },
   
    // Receive Damage
