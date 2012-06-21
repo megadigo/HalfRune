@@ -16,6 +16,15 @@ var playerEntity = me.ObjectEntity.extend({
     // call the constructor
     this.parent(x, y, settings);
     
+    // reserve player to a var
+    //var ents = me.game.getEntityByName("mainPlayer");
+    //var player = ents[0];
+    
+    player = this;
+    console.log(player.pos.x);
+    console.log(player.pos.y);
+    
+    
     // set the walking  and gravity
     this.setVelocity(2, 2);
     this.gravity=0;

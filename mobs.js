@@ -20,6 +20,7 @@ var spiderEntity = me.ObjectEntity.extend({
     this.updateme = true;
     this.collidable = true;
     this.direction = "left";
+    this.spritedirection = "left";
 	this.stance = "normal";
 	this.hp = settings.hp;
 	this.type = "mob";
@@ -27,6 +28,7 @@ var spiderEntity = me.ObjectEntity.extend({
 	this.randomlenght = 0;
 	this.respawnX=this.pos.x;
 	this.respawnY=this.pos.y;
+	this.sensedistance = 64;
 
     me.debug.renderHitBox = false;
     
@@ -164,10 +166,33 @@ var spiderEntity = me.ObjectEntity.extend({
            }
        } else {
            this.randomlenght -=1;
-       }
+       };
+      // test if player is near
+    
+     var distplayer = this.distanceTo(player)
+     
+     if (distplayer<=this.sensedistance) {
+         this.stage = "chase"
+         
+     }
+       
+       
+       
    },
    doChaseWalk: function (){
        
+       if(this.pos.x > player.pos.x){
+           this.direction = "left"          
+       };
+       if(this.pos.x < player.pos.x){
+           this.direction = "right"
+       };
+       if(this.pos.y < player.pos.y){
+           this.direction = "up"
+       };
+       if (this.pos.y > player.pos.y){
+           this.direction = "down"
+       }
    },
    doAttack: function(){
        

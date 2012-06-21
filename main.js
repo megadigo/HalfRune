@@ -7,7 +7,8 @@
  *
  **/
 // Global vars
-
+ var player = {};
+ 
 // game resources
 var g_resources = [
 	// our level tileset
@@ -74,9 +75,10 @@ var jsApp	=
      
 	// add our player entity in the entity pool
 	me.entityPool.add("mainPlayer", playerEntity);
+	
+	// add weapons
 	me.entityPool.add("sword", weaponEntity);
 	me.entityPool.add("axe", weaponEntity);
-	
 	
 	// add enemies
 	me.entityPool.add("spider", spiderEntity);
