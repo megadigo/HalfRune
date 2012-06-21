@@ -181,19 +181,17 @@ var spiderEntity = me.ObjectEntity.extend({
    },
    doChaseWalk: function (){
        
-       if(this.pos.x > player.pos.x){
+       if (this.pos.x > player.pos.x){
            this.direction = "left"          
-       };
-       if(this.pos.x < player.pos.x){
+       } else if (this.pos.x < player.pos.x){
            this.direction = "right"
-       };
-       if(this.pos.y < player.pos.y){
+       } else if (this.pos.y > player.pos.y){
            this.direction = "up"
-       };
-       if (this.pos.y > player.pos.y){
+       } else if (this.pos.y < player.pos.y){
            this.direction = "down"
        }
    },
+
    doAttack: function(){
        
    },
