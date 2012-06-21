@@ -25,8 +25,8 @@ var spiderEntity = me.ObjectEntity.extend({
 	this.type = "mob";
 	this.stage = "random"; //chase, attack, dead, respawn
 	this.randomlenght = 0;
-	this.respawnX=settings.respawnX;
-	this.respawnY=settings.respawnY;
+	this.respawnX=this.pos.x;
+	this.respawnY=this.pos.y;
 
     me.debug.renderHitBox = false;
     
@@ -183,11 +183,11 @@ var spiderEntity = me.ObjectEntity.extend({
        };
    },
    doRespawn: function(){
-         this.pos.x =  this.respawnX;
-         this.pos.y =  this.respawnY;
+         this.pos.x =  (this.respawnX - 64) + (Math.random() * 128)
+         this.pos.y =  (this.respawnY - 64) + (Math.random() * 128);
          this.direction ="left";
          this.stage = "random";
-         this.hp=Math.random()*50;
+         this.hp = Math.random() * 50;
          this.collidable = true;
    },
   

@@ -3638,8 +3638,231 @@
    <properties>
     <property name="hp" value="30"/>
     <property name="image" value="u6tiles"/>
-    <property name="respawnX" value="150"/>
-    <property name="respawnY" value="200"/>
+    <property name="spriteheight" value="16"/>
+    <property name="spritewidth" value="16"/>
+    <property name="transparent_color" value="ffffff"/>
+   </properties>
+  </object>
+  <object name="spider" type="mob" gid="1385" x="227" y="213">
+   <properties>
+    <property name="hp" value="30"/>
+    <property name="image" value="u6tiles"/>
+    <property name="spriteheight" value="16"/>
+    <property name="spritewidth" value="16"/>
+    <property name="transparent_color" value="ffffff"/>
+   </properties>
+  </object>
+  <object name="spider" type="mob" gid="1385" x="274" y="148">
+   <properties>
+    <property name="hp" value="30"/>
+    <property name="image" value="u6tiles"/>
+    <property name="spriteheight" value="16"/>
+    <property name="spritewidth" value="16"/>
+    <property name="transparent_color" value="ffffff"/>
+   </properties>
+  </object>
+  <object name="spider" type="mob" gid="1385" x="265" y="261">
+   <properties>
+    <property name="hp" value="30"/>
+    <property name="image" value="u6tiles"/>
+    <property name="spriteheight" value="16"/>
+    <property name="spritewidth" value="16"/>
+    <property name="transparent_color" value="ffffff"/>
+   </properties>
+  </object>
+  <object name="spider" type="mob" gid="1385" x="320" y="268">
+   <properties>
+    <property name="hp" value="30"/>
+    <property name="image" value="u6tiles"/>
+    <property name="spriteheight" value="16"/>
+    <property name="spritewidth" value="16"/>
+    <property name="transparent_color" value="ffffff"/>
+   </properties>
+  </object>
+  <object name="spider" type="mob" gid="1385" x="101" y="299">
+   <properties>
+    <property name="hp" value="30"/>
+    <property name="image" value="u6tiles"/>
+    <property name="spriteheight" value="16"/>
+    <property name="spritewidth" value="16"/>
+    <property name="transparent_color" value="ffffff"/>
+   </properties>
+  </object>
+  <object name="spider" type="mob" gid="1385" x="200" y="333">
+   <properties>
+    <property name="hp" value="30"/>
+    <property name="image" value="u6tiles"/>
+    <property name="spriteheight" value="16"/>
+    <property name="spritewidth" value="16"/>
+    <property name="transparent_color" value="ffffff"/>
+   </properties>
+  </object>
+  <object name="spider" type="mob" gid="1385" x="281" y="345">
+   <properties>
+    <property name="hp" value="30"/>
+    <property name="image" value="u6tiles"/>
+    <property name="spriteheight" value="16"/>
+    <property name="spritewidth" value="16"/>
+    <property name="transparent_color" value="ffffff"/>
+   </properties>
+  </object>
+  <object name="spider" type="mob" gid="1385" x="181" y="258">
+   <properties>
+    <property name="hp" value="30"/>
+    <property name="image" value="u6tiles"/>
+    <property name="spriteheight" value="16"/>
+    <property name="spritewidth" value="16"/>
+    <property name="transparent_color" value="ffffff"/>
+   </properties>
+  </object>
+  <object name="spider" type="mob" gid="1385" x="419" y="333">
+   <properties>
+    <property name="hp" value="30"/>
+    <property name="image" value="u6tiles"/>
+    <property name="spriteheight" value="16"/>
+    <property name="spritewidth" value="16"/>
+    <property name="transparent_color" value="ffffff"/>
+   </properties>
+  </object>
+  <object name="spider" type="mob" gid="1385" x="366" y="245">
+   <properties>
+    <property name="hp" value="30"/>
+    <property name="image" value="u6tiles"/>
+    <property name="spriteheight" value="16"/>
+    <property name="spritewidth" value="16"/>
+    <property name="transparent_color" value="ffffff"/>
+   </properties>
+  </object>
+  <object name="spider" type="mob" gid="1385" x="389" y="174">
+   <properties>
+    <property name="hp" value="30"/>
+    <property name="image" value="u6tiles"/>
+    <property name="spriteheight" value="16"/>
+    <property name="spritewidth" value="16"/>
+    <property name="transparent_color" value="ffffff"/>
+   </properties>
+  </object>
+  <object name="spider" type="mob" gid="1385" x="341" y="126">
+   <properties>
+    <property name="hp" value="30"/>
+    <property name="image" value="u6tiles"/>
+    <property name="spriteheight" value="16"/>
+    <property name="spritewidth" value="16"/>
+    <property name="transparent_color" value="ffffff"/>
+   </properties>
+  </object>
+  <object name="spider" type="mob" gid="1385" x="323" y="73">
+   <properties>
+    <property name="hp" value="30"/>
+    <property name="image" value="u6tiles"/>
+    <property name="spriteheight" value="16"/>
+    <property name="spritewidth" value="16"/>
+    <property name="transparent_color" value="ffffff"/>
+   </properties>
+  </object>
+  <object name="spider" type="mob" gid="1385" x="405" y="62">
+   <properties>
+    <property name="hp" value="30"/>
+    <property name="image" value="u6tiles"/>
+    <property name="spriteheight" value="16"/>
+    <property name="spritewidth" value="16"/>
+    <property name="transparent_color" value="ffffff"/>
+   </properties>
+  </object>
+  <object name="spider" type="mob" gid="1385" x="257" y="401">
+   <properties>
+    <property name="hp" value="30"/>
+    <property name="image" value="u6tiles"/>
+    <property name="spriteheight" value="16"/>
+    <property name="spritewidth" value="16"/>
+    <property name="transparent_color" value="ffffff"/>
+   </properties>
+  </object>
+  <object name="spider" type="mob" gid="1385" x="338" y="434">
+   <properties>
+    <property name="hp" value="30"/>
+    <property name="image" value="u6tiles"/>
+    <property name="spriteheight" value="16"/>
+    <property name="spritewidth" value="16"/>
+    <property name="transparent_color" value="ffffff"/>
+   </properties>
+  </object>
+  <object name="spider" type="mob" gid="1385" x="426" y="435">
+   <properties>
+    <property name="hp" value="30"/>
+    <property name="image" value="u6tiles"/>
+    <property name="spriteheight" value="16"/>
+    <property name="spritewidth" value="16"/>
+    <property name="transparent_color" value="ffffff"/>
+   </properties>
+  </object>
+  <object name="spider" type="mob" gid="1385" x="38" y="449">
+   <properties>
+    <property name="hp" value="30"/>
+    <property name="image" value="u6tiles"/>
+    <property name="spriteheight" value="16"/>
+    <property name="spritewidth" value="16"/>
+    <property name="transparent_color" value="ffffff"/>
+   </properties>
+  </object>
+  <object name="spider" type="mob" gid="1385" x="100" y="395">
+   <properties>
+    <property name="hp" value="30"/>
+    <property name="image" value="u6tiles"/>
+    <property name="spriteheight" value="16"/>
+    <property name="spritewidth" value="16"/>
+    <property name="transparent_color" value="ffffff"/>
+   </properties>
+  </object>
+  <object name="spider" type="mob" gid="1385" x="32" y="364">
+   <properties>
+    <property name="hp" value="30"/>
+    <property name="image" value="u6tiles"/>
+    <property name="spriteheight" value="16"/>
+    <property name="spritewidth" value="16"/>
+    <property name="transparent_color" value="ffffff"/>
+   </properties>
+  </object>
+  <object name="spider" type="mob" gid="1385" x="56" y="230">
+   <properties>
+    <property name="hp" value="30"/>
+    <property name="image" value="u6tiles"/>
+    <property name="spriteheight" value="16"/>
+    <property name="spritewidth" value="16"/>
+    <property name="transparent_color" value="ffffff"/>
+   </properties>
+  </object>
+  <object name="spider" type="mob" gid="1385" x="25" y="41">
+   <properties>
+    <property name="hp" value="30"/>
+    <property name="image" value="u6tiles"/>
+    <property name="spriteheight" value="16"/>
+    <property name="spritewidth" value="16"/>
+    <property name="transparent_color" value="ffffff"/>
+   </properties>
+  </object>
+  <object name="spider" type="mob" gid="1385" x="140" y="31">
+   <properties>
+    <property name="hp" value="30"/>
+    <property name="image" value="u6tiles"/>
+    <property name="spriteheight" value="16"/>
+    <property name="spritewidth" value="16"/>
+    <property name="transparent_color" value="ffffff"/>
+   </properties>
+  </object>
+  <object name="spider" type="mob" gid="1385" x="193" y="118">
+   <properties>
+    <property name="hp" value="30"/>
+    <property name="image" value="u6tiles"/>
+    <property name="spriteheight" value="16"/>
+    <property name="spritewidth" value="16"/>
+    <property name="transparent_color" value="ffffff"/>
+   </properties>
+  </object>
+  <object name="spider" type="mob" gid="1385" x="424" y="118">
+   <properties>
+    <property name="hp" value="30"/>
+    <property name="image" value="u6tiles"/>
     <property name="spriteheight" value="16"/>
     <property name="spritewidth" value="16"/>
     <property name="transparent_color" value="ffffff"/>
