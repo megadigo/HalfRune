@@ -86,12 +86,14 @@ var playerEntity = me.ObjectEntity.extend({
 			this.doWalk("up");
 		} else if (me.input.isKeyPressed('down')) {
 			this.doWalk("down");
-		} else if (me.input.isKeyPressed('action')) {
+		} else {
+            this.doStand();
+        };
+		if (me.input.isKeyPressed('action')) {
 			this.actionActive = true;
 		} else {
-			this.actionActive = false;
-		    this.doStand();
-		};
+		    this.actionActive = false;
+		} 
 	    //
 	    //
 		// check collision

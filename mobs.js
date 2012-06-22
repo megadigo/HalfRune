@@ -181,14 +181,28 @@ var spiderEntity = me.ObjectEntity.extend({
    },
    doChaseWalk: function (){
        
-       if (this.pos.x > player.pos.x){
-           this.direction = "left"          
-       } else if (this.pos.x < player.pos.x){
-           this.direction = "right"
-       } else if (this.pos.y > player.pos.y){
-           this.direction = "up"
-       } else if (this.pos.y < player.pos.y){
-           this.direction = "down"
+       // find preference direction
+       var difx = (this.pos.x - player.pos.x)
+       var dify = (this.pos.y - player.pos.y)
+       console.log(difx & "," & dify)
+       
+       if (Math.abs(difx) >= Math.abs(dify) && Math.abs(difx) > 16){
+            if (difx >= 0) {
+              this.direction = "left"; 
+            } else {
+              this.direction = "right";
+            }
+       }
+       
+       if (Math.abs(dify) > Math.abs(difx) && Math.abs(dify) > 16) {
+           if (dify >= 0) {
+              this.direction = "up" 
+            } else {
+              this.direction = "down"
+            }
+       }
+       if(Math.abs(difx) <=16 && Math.abs(difx) <= 16){
+           //this.stage="attack"
        }
    },
 
