@@ -32,8 +32,10 @@ var playerEntity = me.ObjectEntity.extend({
     this.moving = false;
 	this.stance = "normal";
 	this.actionActive = false;
+	this.collidable=true;
 	//stats
-	this.hp=100;
+	this.stage = "alive";
+	this.hp = 100;
 	this.mp = 40;
 	this.str = 120;
 	this.itl = 40;
@@ -183,4 +185,28 @@ var playerEntity = me.ObjectEntity.extend({
 		this.vel.y = 0;
 		this.vel.x = 0;
     },
+    // Receive Damage
+       doDamage: function(attacker,hci,damage) {
+       		// calculate hc and do damage;   		
+       		this.hp -= damage;
+       		console.log('hp ' + this.hp);
+       		// little bounce
+    		if (attacker.direction == "left") {
+    			this.pos.x-=10
+    		}; 
+    		if (attacker.direction == "right") {
+    			this.pos.x+=10
+    		};
+    		if (attacker.direction == "up") {
+    			this.pos.y-=10
+    		};
+    		if (attacker.direction == "down") { 
+    			this.pos.y+=10
+    		};
+    		// check if die
+    		if (this.hp<=0){
+    		    this.stage = "dead"
+                me.game.remove(this);
+    		}
+    	}
 });

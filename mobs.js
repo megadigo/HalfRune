@@ -15,7 +15,7 @@ var spiderEntity = me.ObjectEntity.extend({
     this.parent(x, y, settings);
     
     // set prods
-    this.setVelocity(0.1, 0.1);
+    this.setVelocity(0.5, 0.5);
     this.gravity=0;
     this.updateme = true;
     this.collidable = true;
@@ -23,6 +23,8 @@ var spiderEntity = me.ObjectEntity.extend({
     this.spritedirection = "left";
 	this.stance = "normal";
 	this.hp = settings.hp;
+	this.hci = 1;
+	this.damage=5;
 	this.type = "mob";
 	this.stage = "random"; //chase, attack, dead, respawn
 	this.randomlenght = 0;
@@ -92,6 +94,17 @@ var spiderEntity = me.ObjectEntity.extend({
                 this.vel.x = 0;
             };
 
+
+
+		//check collition and attack
+		res = me.game.collide(this);
+		if (res) {
+			if (res.obj.type == "player") {
+				//if (Math.random()<0.1) {
+		        	res.obj.doDamage(this, this.hci, this.damage);
+		       //}
+		    }
+		}
 		// check & update spider movement
 		this.updateMovement();
 		  		
@@ -202,14 +215,18 @@ var spiderEntity = me.ObjectEntity.extend({
 	            }
 	       }
        }
-   		if(Math.abs(difx) <=16 && Math.abs(difx) <= 16){
+   		if(Math.abs(difx) <=8 && Math.abs(difx) <= 8){
    			this.stage="attack"
-   			this.direction ="stand"
    		}
    },
 
    doAttack: function(){
        
+       
+       
+       
+       
+       this.stage="chase"
    },
    doDead: function(){
        this.randomlenght = 0
