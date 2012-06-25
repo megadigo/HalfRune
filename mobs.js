@@ -184,26 +184,28 @@ var spiderEntity = me.ObjectEntity.extend({
        // find preference direction
        var difx = (this.pos.x - player.pos.x)
        var dify = (this.pos.y - player.pos.y)
-       console.log(difx & "," & dify)
        
-       if (Math.abs(difx) >= Math.abs(dify) && Math.abs(difx) > 16){
-            if (difx >= 0) {
-              this.direction = "left"; 
-            } else {
-              this.direction = "right";
-            }
+       if (Math.abs(Math.abs(difx)-Math.abs(dify)) >= 16) {
+	       if (Math.abs(difx) >= Math.abs(dify) && Math.abs(difx) > 16){
+	            if (difx >= 0) {
+	              this.direction = "left"; 
+	            } else {
+	              this.direction = "right";
+	            }
+	       }
+	       
+	       if (Math.abs(dify) > Math.abs(difx) && Math.abs(dify) > 16) {
+	           if (dify >= 0) {
+	              this.direction = "up" 
+	            } else {
+	              this.direction = "down"
+	            }
+	       }
        }
-       
-       if (Math.abs(dify) > Math.abs(difx) && Math.abs(dify) > 16) {
-           if (dify >= 0) {
-              this.direction = "up" 
-            } else {
-              this.direction = "down"
-            }
-       }
-       if(Math.abs(difx) <=16 && Math.abs(difx) <= 16){
-           //this.stage="attack"
-       }
+   		if(Math.abs(difx) <=16 && Math.abs(difx) <= 16){
+   			this.stage="attack"
+   			this.direction ="stand"
+   		}
    },
 
    doAttack: function(){
