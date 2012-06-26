@@ -16,13 +16,8 @@ var playerEntity = me.ObjectEntity.extend({
     // call the constructor
     this.parent(x, y, settings);
     
-    // reserve player to a var
-    //var ents = me.game.getEntityByName("mainPlayer");
-    //var player = ents[0];
-    
+    // reserve player to global var
     player = this;
-    console.log(player.pos.x);
-    console.log(player.pos.y);
     
     
     // set the walking  and gravity
@@ -53,6 +48,11 @@ var playerEntity = me.ObjectEntity.extend({
     
     
     me.debug.renderHitBox = false;
+    
+    
+    // head info
+    
+    this.hpValue = new me.Font('font8', 8, 'white');
     
     //animation
     this.addAnimation("normal_up",[0,1,2,3]);
@@ -157,13 +157,21 @@ var playerEntity = me.ObjectEntity.extend({
            return true;
         } else {    
     	   return false	    
-		}
-		// Update Hp
-		me.game.HUD.setItemValue("hp", this.hp);
-		
-		
-		
+		}	
 	},
+	
+	draw: function (context) 
+	{    
+	   //context.drawImage(me.loader.getImage("bar100"), this.pos.x - me.game.viewport.pos.x, this.pos.y - me.game.viewport.pos.y-(6+1));         
+	   this.hpValue.draw(context, this.hp, this.pos.x - me.game.viewport.pos.x, this.pos.y - me.game.viewport.pos.y);
+	   this.parent(context);
+	},
+	
+	
+	
+	
+	
+	
 	doWalk: function(newDirection){
 	    this.moving = true;
 	    //me.audio.play("walk",true)
