@@ -85,7 +85,7 @@ var weaponEntity = me.ObjectEntity.extend({
     },
     
     OnAfterSwing: function() {
-    	 me.audio.play("swing");
+    	 me.audio.play("sword_swing_a");
     	 this.setCurrentAnimation("idle");
     	 //check collition
 		res = me.game.collide(this);
@@ -93,6 +93,8 @@ var weaponEntity = me.ObjectEntity.extend({
 		{
 			// enemy collition
 		    if (res.obj.type == "mob") {
+		        me.audio.play("sword_hit_metal_a");
+		        sword_swing_a
 		        res.obj.doDamage(this, this.hci, this.damage);
 		    }	
 		};
