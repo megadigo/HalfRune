@@ -40,7 +40,8 @@ var playerEntity = me.ObjectEntity.extend({
 	this.swingspeed = 0;
 
 	this.type = "player";
-
+	
+	
     //weapon
     this.swing = false;
     this.weapon = {};
@@ -49,6 +50,7 @@ var playerEntity = me.ObjectEntity.extend({
     
     me.debug.renderHitBox = false;
     
+    this.playing= false
     
     // head info
     
@@ -174,7 +176,10 @@ var playerEntity = me.ObjectEntity.extend({
 	
 	doWalk: function(newDirection){
 	    this.moving = true;
-	    me.audio.play((Math.Random<0.5) ? "fs_dirt_a": "fs_dirt_b")
+	    if (this.playing == false) {
+	        this.playing=true;
+	        me.audio.play((Math.Random<0.5) ? "fs_dirt_a": "fs_dirt_b",new function() {this.playing=false})
+	        }
 	    this.direction=newDirection;
 	    if (this.direction == "left") {
 	       this.vel.x +=  -this.accel.x * me.timer.tick
