@@ -26,9 +26,11 @@ var chestEntity = me.ObjectEntity.extend({
  
    	OnInteract: function(obj){
    		if (this.status=="close"){
+   		    me.audio.play("chest_wood_open");
    			this.setCurrentAnimation("open");
    			this.status="open"	
    		} else {
+   			me.audio.play("chest_wood_closed");
    			this.setCurrentAnimation("close");
    			this.status="close"
    		};	

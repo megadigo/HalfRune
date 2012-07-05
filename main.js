@@ -29,6 +29,7 @@ var g_resources = [
     {name: "sword_hit_metal_a",        type: "audio",      src: "data/sounds/",    channel:1},
     {name: "sword_hit_wood_a",         type: "audio",      src: "data/sounds/",    channel:1},
     {name: "sword_swing_a",            type: "audio",      src: "data/sounds/",    channel:1},
+    {name: "swing",                     type: "audio",      src: "data/sounds/",    channel:1},
     {name: "male_pain_hit_1",                 type: "audio",      src: "data/sounds/",    channel:1},
     {name: "coins_pickup",                 type: "audio",      src: "data/sounds/",    channel:1},
     {name: "equip_accessory",              type: "audio",      src: "data/sounds/",    channel:1},
@@ -52,7 +53,7 @@ var jsApp	=
 	{
 
 		// init the video
-		if (!me.video.init('jsapp',320, 240, true, 2))
+		if (!me.video.init('jsapp',320, 240, true, 1))
 		{
 			alert("Sorry but your browser does not support html 5 canvas.");
 	 return;

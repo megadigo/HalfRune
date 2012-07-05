@@ -85,7 +85,7 @@ var weaponEntity = me.ObjectEntity.extend({
     },
     
     OnAfterSwing: function() {
-    	 me.audio.play("sword");
+    	 me.audio.play("swing");
     	 this.setCurrentAnimation("idle");
     	 //check collition
 		res = me.game.collide(this);

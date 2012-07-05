@@ -22,7 +22,7 @@ ScoreObject = me.HUD_Item.extend(
       // call the parent constructor
       this.parent(x, y);
       // create a font
-      this.font = new me.BitmapFont("font16px", 16);
+      this.font = new me.BitmapFont("font16", 16);
    },
    // draw function
    draw : function (context, x, y)
