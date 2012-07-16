@@ -15,9 +15,7 @@ var playScreen = me.ScreenObject.extend({
          // reserve player to a var
             var ents = me.game.getEntityByName("mainPlayer");
             var player = ents[0];
-            console.log(player.pos.x);
-            console.log(player.pos.y);
-           
+            
         // add a default HUD to the game mngr
         me.game.addHUD(0, 0, 320, 240);
  
