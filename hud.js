@@ -1,20 +1,10 @@
 /**
  * @author RCordeiro
  */
-var hudBase = me.HUD_Item.extend({
-    init: function(x, y) {
-        this.parent(x, y);
-        this.image = me.loader.getImage("hud");
-    },
-    draw: function(context, x, y) {
-        context.drawImage(this.image, 0, 0);
-    }
-});
-
-
 // create a "score object" that will use a Bitmap font
 // to display the score value
-ScoreObject = me.HUD_Item.extend(
+
+var hpObject = me.HUD_Item.extend(
 {   
    // constructor
    init: function(x, y)
@@ -22,11 +12,11 @@ ScoreObject = me.HUD_Item.extend(
       // call the parent constructor
       this.parent(x, y);
       // create a font
-      this.font = new me.BitmapFont("font16", 16);
+      this.font = new me.BitmapFont("font8", 8);
    },
    // draw function
    draw : function (context, x, y)
    {
-      this.font.draw (context, this.value, this.pos.x +x, this.pos.y +y);
+      this.font.draw (context, this.value, this.pos.x + x, this.pos.y + y);
    }
 });

@@ -16,7 +16,6 @@ var g_resources = [
 	{name: "avatar",	    	                   type: "image",	   src: "data/sprites/avatar.png"},
 	{name: "sword",                                type: "image",      src: "data/sprites/sword.png"},
 	{name: "axe",                                  type: "image",      src: "data/sprites/axe.png"},
-	{name: "hud",                                  type: "image",      src: "data/sprites/hud.png"},
 	{name: "font16",                               type: "image",      src: "data/sprites/font16.png"},
 	{name: "font8",                                type: "image",      src: "data/sprites/font8.png"},
 	{name: "bar100",		                       type: "image",      src: "data/sprites/bar100.png"},

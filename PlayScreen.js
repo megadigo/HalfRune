@@ -17,12 +17,10 @@ var playScreen = me.ScreenObject.extend({
             var player = ents[0];
             
         // add a default HUD to the game mngr
-        me.game.addHUD(0, 0, 320, 240);
+        me.game.addHUD(0, 0, 100, 100);
  
-        // add a new HUD item
-        //me.game.HUD.addItem("hud", new hudBase(0,0));
         
-        me.game.HUD.addItem("hp", new ScoreObject(0, 0));
+        me.game.HUD.addItem("hp", new hpObject(0, 0));
         me.game.HUD.setItemValue("hp", 0);
  
         // make sure everyhting is in the right order
@@ -37,7 +35,7 @@ var playScreen = me.ScreenObject.extend({
     --- */
     onDestroyEvent: function() {
         // remove the HUD
-        //me.game.disableHUD();
+        me.game.disableHUD();
 	// stop the current audio track
 	//me.audio.stopTrack();
     }

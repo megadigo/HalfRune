@@ -196,6 +196,7 @@ var playerEntity = me.ObjectEntity.extend({
        doDamage: function(attacker,hci,damage) {
        		// calculate hc and do damage;   		
        		this.hp -= damage;
+       		me.game.HUD.setItemValue("hp", this.hp);
        		console.log('hp ' + this.hp);
        		// little bounce
     		if (attacker.direction == "left") {
