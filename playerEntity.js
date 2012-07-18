@@ -119,7 +119,6 @@ var playerEntity = me.ObjectEntity.extend({
     		        this.weapon = res;
     		        res.obj.doEquip(this.GUID);
     		        this.equipweapon=true;
-    		        console.log('damage ' + this.damage)
 		        };
 		    };
 		    // mob collition
@@ -197,7 +196,6 @@ var playerEntity = me.ObjectEntity.extend({
        		// calculate hc and do damage;   		
        		this.hp -= damage;
        		me.game.HUD.setItemValue("hp", this.hp);
-       		console.log('hp ' + this.hp);
        		// little bounce
     		if (attacker.direction == "left") {
     			this.pos.x-=10

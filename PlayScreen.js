@@ -20,7 +20,7 @@ var playScreen = me.ScreenObject.extend({
         me.game.addHUD(0, 0, 320, 240);
  
         
-        me.game.HUD.addItem("hp", new hpObject(50, 50));
+        me.game.HUD.addItem("hp", new hpObject(10, 0));
         me.game.HUD.setItemValue("hp", 0);
  
         // make sure everyhting is in the right order

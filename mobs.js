@@ -251,7 +251,6 @@ var spiderEntity = me.ObjectEntity.extend({
        doDamage: function(attacker,hci,damage) {
        		// calculate hc and do damage;   		
        		this.hp -= damage;
-       		console.log('hp ' + this.hp);
        		// little bounce
     		if (attacker.direction == "left") {
     			this.pos.x-=10
