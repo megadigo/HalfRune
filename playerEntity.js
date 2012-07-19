@@ -53,7 +53,7 @@ var playerEntity = me.ObjectEntity.extend({
     
     // head info
     
-    this.hpValue = new me.Font('font8', 8, 'white');
+    //this.hpValue = new me.Font('font8', 8, 'white');
     
     //animation
     this.addAnimation("normal_up",[0,1,2,3]);
@@ -76,6 +76,7 @@ var playerEntity = me.ObjectEntity.extend({
  
     ------ */
    update: function() { 
+       
         //
         //
 		// Handle Inputs
@@ -163,7 +164,7 @@ var playerEntity = me.ObjectEntity.extend({
 	draw: function (context) 
 	{    
 	   //context.drawImage(me.loader.getImage("bar100"), this.pos.x - me.game.viewport.pos.x, this.pos.y - me.game.viewport.pos.y-(6+1));         
-	   this.hpValue.draw(context, this.hp, this.pos.x - me.game.viewport.pos.x, this.pos.y - me.game.viewport.pos.y);
+	   //this.hpValue.draw(context, this.hp, this.pos.x - me.game.viewport.pos.x, this.pos.y - me.game.viewport.pos.y);
 	   this.parent(context);
 	},
 	

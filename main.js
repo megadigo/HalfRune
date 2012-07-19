@@ -15,6 +15,9 @@ var g_resources = [
 	{name: "u6tiles",			                   type: "image",	   src: "data/sprites/u6tiles.png"},
 	{name: "avatar",	    	                   type: "image",	   src: "data/sprites/avatar.png"},
 	{name: "sword",                                type: "image",      src: "data/sprites/sword.png"},
+	{name: "hp",                                   type: "image",      src: "data/sprites/hp.png"},
+	{name: "armor",                                type: "image",      src: "data/sprites/armor.png"},
+	{name: "damage",                               type: "image",      src: "data/sprites/damage.png"},
 	{name: "axe",                                  type: "image",      src: "data/sprites/axe.png"},
 	{name: "font16",                               type: "image",      src: "data/sprites/font16.png"},
 	{name: "font8",                                type: "image",      src: "data/sprites/font8.png"},
@@ -111,10 +114,8 @@ var jsApp	=
 	me.input.bindKey(me.input.KEY.W, "up");
 	me.input.bindKey(me.input.KEY.S, "down");
 	me.input.bindKey(me.input.KEY.P, "action",true);
-     
-	// display the menu title
-	me.audio.playTrack("heroicdemise");
-	me.state.change(me.state.PLAY);
+ 
+     me.state.change(me.state.PLAY);    
 }
 
 }; // jsApp

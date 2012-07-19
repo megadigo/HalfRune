@@ -6,8 +6,8 @@
 var playScreen = me.ScreenObject.extend({
     
     onResetEvent: function() {
-	 // play the audio track
-	//me.audio.playTrack("DST-InertExponent");
+        
+    	me.audio.playTrack("heroicdemise");
 	
         // load a level
         me.levelDirector.loadLevel("MAP0101");
@@ -20,7 +20,7 @@ var playScreen = me.ScreenObject.extend({
         me.game.addHUD(0, 0, 320, 240);
  
         
-        me.game.HUD.addItem("hp", new hpObject(10, 0));
+        me.game.HUD.addItem("hp", new hpObject(0, 0));
         me.game.HUD.setItemValue("hp", 0);
  
         // make sure everyhting is in the right order

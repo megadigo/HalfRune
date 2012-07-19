@@ -12,12 +12,14 @@ var hpObject = me.HUD_Item.extend(
       // call the parent constructor
       this.parent(x, y);
       // create a font
-      //this.font = new me.BitmapFont("font8", 8);
-      this.font = new me.Font('Tahoma', 16, 'white');
+      this.font = new me.BitmapFont("font8", 8);
+      this.icon = me.loader.getImage("hp")
+     
    },
    // draw function
    draw : function (context, x, y)
    {
-      this.font.draw(context, this.value, this.pos.x + x, this.pos.y + y);
+      context.drawImage(this.icon, this.pos.x + 0, this.pos.y + 0);
+      this.font.draw(context, this.value, this.pos.x + 36, this.pos.y + 4);
    }
 });
