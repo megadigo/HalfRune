@@ -17,10 +17,11 @@ var playScreen = me.ScreenObject.extend({
             var player = ents[0];
             
         // add a default HUD to the game mngr
-        me.game.addHUD(0, 0, 320, 240);
- 
+        me.game.addHUD(0, 0, 160, 120);
+      
+        me.game.HUD.addItem("border", new borderObject(0,0))
         
-        me.game.HUD.addItem("hp", new hpObject(0, 0));
+        me.game.HUD.addItem("hp", new hpObject(5, 5));
         me.game.HUD.setItemValue("hp", 0);
  
         // make sure everyhting is in the right order

@@ -19,7 +19,25 @@ var hpObject = me.HUD_Item.extend(
    // draw function
    draw : function (context, x, y)
    {
-      context.drawImage(this.icon, this.pos.x + 0, this.pos.y + 0);
-      this.font.draw(context, this.value, this.pos.x + 36, this.pos.y + 4);
+      context.drawImage(this.icon, this.pos.x + x, this.pos.y + y);
+      this.font.draw(context, this.value, this.pos.x + x + 36, this.pos.y + y + 4);
+   }
+});
+
+var borderObject = me.HUD_Item.extend(
+{   
+   // constructor
+   init: function(x, y)
+   {
+      // call the parent constructor
+      this.parent(x, y);
+      // create a font
+      this.border = me.loader.getImage("border")
+     
+   },
+   // draw function
+   draw : function (context, x, y)
+   {
+      context.drawImage(this.border, this.pos.x + x, this.pos.y + y);
    }
 });
