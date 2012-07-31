@@ -19,6 +19,8 @@ var playerEntity = me.ObjectEntity.extend({
     // reserve player to global var
     player = this;
     
+    //quest object
+    this.quest = new quest();
     
     // set the walking  and gravity
     this.setVelocity(2, 2);
@@ -76,6 +78,12 @@ var playerEntity = me.ObjectEntity.extend({
  
     ------ */
    update: function() { 
+       
+       
+        //update quest
+            
+            this.quest.update; 
+        
        
         //
         //

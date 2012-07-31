@@ -39,6 +39,5 @@ var playScreen = me.ScreenObject.extend({
         me.game.disableHUD();
 	// stop the current audio track
 	//me.audio.stopTrack();
-    }
- 
+    },
 });
