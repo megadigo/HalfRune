@@ -1,12 +1,20 @@
 /**
  * @author rcordeiro
  */
-var quest =  Object.extend({
+var questEntity =  Object.extend({
   init: function() {
-      this.counter=0;
+      this.counterupdate=0;
+      this.counterdraw=0;
   },
   update: function() {
-      this.counter +=1;
-      console.log(this.counter)
+      this.counterupdate +=1;
+      console.log("update " + this.counterupdate)
+  },
+  
+  draw : function(context){
+      this.counterdraw +=1;
+      console.log("draw " + this.counterdraw)
   }  
 });
+
+

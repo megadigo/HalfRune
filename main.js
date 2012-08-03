@@ -8,6 +8,7 @@
  **/
 // Global vars
  var player = {};
+ var quests = {};
  
 // game resources
 var g_resources = [
@@ -117,7 +118,14 @@ var jsApp	=
 	me.input.bindKey(me.input.KEY.S, "down");
 	me.input.bindKey(me.input.KEY.P, "action",true);
  
-     me.state.change(me.state.PLAY);    
+    // quests
+    
+    quests = new questEntity();
+    me.game.add(quests);
+    me.game.sort();
+ 
+    // Menu Screen
+    me.state.change(me.state.PLAY);    
 }
 
 }; // jsApp
