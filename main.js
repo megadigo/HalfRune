@@ -13,7 +13,7 @@
 // game resources
 var g_resources = [
 	// our level tileset
-	{name: "border",                    type: "image",     src: "data/sprites/border.png"},
+	{name: "border",                    type: "image",     src: "data/sprites/border3.png"},
 	{name: "u6tiles",			        type: "image",	   src: "data/sprites/u6tiles.png"},
 	{name: "avatar",	    	        type: "image",	   src: "data/sprites/avatar.png"},
 	{name: "sword",                     type: "image",     src: "data/sprites/sword.png"},
