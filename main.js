@@ -119,9 +119,12 @@ var jsApp	=
 	me.input.bindKey(me.input.KEY.P, "action",true);
  
     // quests
-    
     quests = new questEntity();
     me.game.add(quests);
+    
+    
+    
+    // sort objects
     me.game.sort();
  
     // Menu Screen
