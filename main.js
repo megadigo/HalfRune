@@ -118,17 +118,10 @@ var jsApp	=
 	me.input.bindKey(me.input.KEY.S, "down");
 	me.input.bindKey(me.input.KEY.P, "action",true);
  
-    // quests
-    quests = new questEntity();
-    me.game.add(quests);
-    
-    
-    
-    // sort objects
-    me.game.sort();
- 
+
     // Menu Screen
-    me.state.change(me.state.PLAY);    
+    me.state.change(me.state.PLAY);  
+       
 }
 
 }; // jsApp

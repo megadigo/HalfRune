@@ -6,6 +6,7 @@ var questEntity =  Object.extend({
       this.counterupdate=0;
       this.counterdraw=0;
   },
+  
   update: function() {
       this.counterupdate +=1;
       console.log("update " + this.counterupdate)
