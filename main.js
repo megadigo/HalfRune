@@ -9,6 +9,8 @@
 // Global vars
  var player = {};
  var quests = {};
+ var currentlevel ="";
+ var prevLevel="";
  
 // game resources
 var g_resources = [
@@ -91,7 +93,14 @@ var jsApp	=
  
     --- */
     loaded: function() {
-     
+    
+    
+    // start vars
+    
+    currentLevel="CAVE0101";
+    //currentLevel="MAP0101";
+    
+    
 	// set the "Play/Ingame" Screen Object
 	me.state.set(me.state.PLAY, new playScreen());
      

@@ -2722,12 +2722,6 @@
   </data>
  </layer>
  <objectgroup color="#00aa00" name="Entities" width="30" height="30">
-  <object name="mainPlayer" type="player" x="272" y="160">
-   <properties>
-    <property name="image" value="avatar"/>
-    <property name="spritewidth" value="16"/>
-    <property name="transparent_color" value="ffffff"/>
-   </properties>
-  </object>
+  <object name="mainPlayer" gid="352" x="256" y="176"/>
  </objectgroup>
 </map>

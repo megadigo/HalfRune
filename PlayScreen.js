@@ -9,13 +9,8 @@ var playScreen = me.ScreenObject.extend({
         
     	me.audio.playTrack("heroicdemise");
 	
-        // load a level
-        me.levelDirector.loadLevel("CAVE0101");
- 
-         // reserve player to a var
-            var ents = me.game.getEntityByName("mainPlayer");
-            var player = ents[0];
-            
+        this.loadLevel(currentLevel);
+    
         // add a default HUD to the game mngr
         me.game.addHUD(0, 0, 320, 240);
       
@@ -32,9 +27,32 @@ var playScreen = me.ScreenObject.extend({
         me.game.sort();
  
     },
+    
+    loadLevel: function(level) {
+        // load a level
+        me.levelDirector.loadLevel(level);
+        // reserve player to a var
+        var player = me.game.getEntityByName("mainPlayer")[0]; 
+    },
+    
+    nextLevel: function(nextLevel, RespawnX, RespawnY){
+       // Despawn Player
+        var prevPlayer = player;
+               
+       //loadlevel
+        this.loadLevel(nextLevel);
+      
+       // RespawnPlayer    
+       this.RespawPlayer(player, prevPlayer, RespawnX, RespawnY);    
+    },
+    
+    RespawnPlayer: function(currentPlayer,prevPlayer,x, y) {
+        currentPlayer.pos.x=x;
+        currentPlayer.pos.y=y;
+        //prevPlayer;
+    },
  
-    /* ---
- 
+    /*  
     action to perform when game is finished (state change)
  
     --- */
@@ -43,5 +61,6 @@ var playScreen = me.ScreenObject.extend({
         me.game.disableHUD();
 	// stop the current audio track
 	//me.audio.stopTrack();
-    },
+    }
+        
 });

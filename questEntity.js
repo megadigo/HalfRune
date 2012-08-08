@@ -9,7 +9,7 @@ var questEntity =  Object.extend({
   
   update: function() {
       this.counterupdate +=1;
-      console.log("update " + this.counterupdate)
+      //console.log("update " + this.counterupdate)
       return true
   },
   

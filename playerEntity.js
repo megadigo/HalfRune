@@ -13,15 +13,19 @@ var playerEntity = me.ObjectEntity.extend({
     ------ */
    
     init: function(x, y, settings) {
+        
+    // settings
+    settings.type = "player";
+    settings.image = "avatar";
+    settings.spritewidth = 16;
+    settings.spriteheight = 16;
+    // this.transparent_color="ffffff";
     // call the constructor
     this.parent(x, y, settings);
-    
-    // reserve player to global var
-    player = this;
-    
-    // set the walking  and gravity
+
     this.setVelocity(2, 2);
     this.gravity=0;
+    
     this.direction = "left";
     this.moving = false;
 	this.stance = "normal";
@@ -38,7 +42,7 @@ var playerEntity = me.ObjectEntity.extend({
 	this.hci = 0;
 	this.swingspeed = 0;
 
-	this.type = "player";
+	
 	
 	
     //weapon
@@ -159,6 +163,11 @@ var playerEntity = me.ObjectEntity.extend({
         } else {    
     	   return false	    
 		}	
+		
+	  // check next level 
+	  
+	  // me.state.current().nextLevel();
+		
 	},
 	
 	draw: function (context) 
