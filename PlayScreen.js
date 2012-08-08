@@ -10,7 +10,7 @@ var playScreen = me.ScreenObject.extend({
     	me.audio.playTrack("heroicdemise");
 	
         // load a level
-        me.levelDirector.loadLevel("MAP0101");
+        me.levelDirector.loadLevel("CAVE0101");
  
          // reserve player to a var
             var ents = me.game.getEntityByName("mainPlayer");

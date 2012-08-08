@@ -15,6 +15,7 @@ var g_resources = [
 	// our level tileset
 	{name: "border",                    type: "image",     src: "data/sprites/border3.png"},
 	{name: "u6tiles",			        type: "image",	   src: "data/sprites/u6tiles.png"},
+	{name: "cave",                      type: "image",     src: "data/sprites/cave.png"},
 	{name: "avatar",	    	        type: "image",	   src: "data/sprites/avatar.png"},
 	{name: "sword",                     type: "image",     src: "data/sprites/sword.png"},
 	{name: "hp",                        type: "image",     src: "data/sprites/hp.png"},
@@ -27,6 +28,7 @@ var g_resources = [
 	{name: "bar100",		            type: "image",     src: "data/sprites/bar100.png"},
 	{name: "metatiles16x16",            type: "image",	   src: "data/sprites/metatiles16x16.png"},
 	{name: "MAP0101",		            type: "tmx",	   src: "data/MAP0101.tmx"},
+	{name: "CAVE0101",                  type: "tmx",       src: "data/CAVE0101.tmx"},
 	{name: "heroicdemise",              type: "audio",     src: "data/sounds/",    channel:1},
 	{name: "fs_dirt_a",                 type: "audio",     src: "data/sounds/",    channel:1},
 	{name: "fs_dirt_b",                 type: "audio",     src: "data/sounds/",    channel:1},
