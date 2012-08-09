@@ -16,9 +16,9 @@ var chestEntity = me.ObjectEntity.extend({
         settings.spriteheight = 16;
         this.parent(x, y, settings);
         // set props
+        this.collidable = true;
         this.status = "close";
         this.updateme = true;
-    	this.collidable = true;
         //animation
         this.addAnimation("open",[619]);
         this.addAnimation("close",[620]);
@@ -82,6 +82,16 @@ var vaseEntity = me.ObjectEntity.extend({
     settings.spritewidth = 16;
     settings.spriteheight = 16;
     this.parent(x, y, settings);
+    
+    // set props
+    this.collidable = true;
+    this.status = "close";
+    //animation
+    this.addAnimation("close",[755]);
+    this.setCurrentAnimation("close");
+    
+    
+    
     },
     OnInteract: function(obj){
         
@@ -112,6 +122,7 @@ var vaseEntity = me.ObjectEntity.extend({
     },
     
 });
+
 var barrelEntity = me.ObjectEntity.extend({
     init: function(x, y, settings) {
         // call the constructor
@@ -120,6 +131,13 @@ var barrelEntity = me.ObjectEntity.extend({
         settings.spritewidth = 16;
         settings.spriteheight = 16;
         this.parent(x, y, settings);
+
+        // set props
+        this.collidable = true;
+        this.status = "close";
+        //animation
+        this.addAnimation("close",[757]);
+        this.setCurrentAnimation("close");
     },
     OnInteract: function(obj){
         
@@ -159,6 +177,12 @@ var packageEntity = me.ObjectEntity.extend({
         settings.spritewidth = 16;
         settings.spriteheight = 16;
         this.parent(x, y, settings);
+        // set props
+        this.collidable = true;
+        this.status = "close";
+        //animation
+        this.addAnimation("close",[758]);
+        this.setCurrentAnimation("close");
     },
     OnInteract: function(obj){
         

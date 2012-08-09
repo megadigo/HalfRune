@@ -9,7 +9,14 @@ var helmetEntity = me.ObjectEntity.extend({
         settings.image = "u6tiles";
         settings.spritewidth = 16;
         settings.spriteheight = 16;
-        this.parent(x, y, settings);   
+        this.parent(x, y, settings);  
+        
+        // set props
+        this.collidable = true;
+        this.status = "stand";
+        //animation
+        this.addAnimation("stand",[515]);
+        this.setCurrentAnimation("stand"); 
     },
     OnInteract: function(obj){
         
