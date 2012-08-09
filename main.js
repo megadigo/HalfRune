@@ -97,8 +97,8 @@ var jsApp	=
     
     // start vars
     
-    currentLevel="CAVE0101";
-    //currentLevel="MAP0101";
+    //currentLevel="CAVE0101";
+    currentLevel="MAP0101";
     
     
 	// set the "Play/Ingame" Screen Object
@@ -114,13 +114,23 @@ var jsApp	=
 	me.entityPool.add("sword", weaponEntity);
 	me.entityPool.add("axe", weaponEntity);
 	
+	// armors
+	me.entityPool.add("helmet", helmetEntity);
+	
 	// add enemies
 	me.entityPool.add("spider", spiderEntity);
 	
-	// add to entities
+	// add furnitures
 	me.entityPool.add("chest", chestEntity);
 	me.entityPool.add("bed", bedEntity);
 	me.entityPool.add("porta", portaEntity);
+	me.entityPool.add("fountain", fountainEntity);
+	me.entityPool.add("chair", chairEntity);
+	me.entityPool.add("table", tableEntity);
+	me.entityPool.add("candle", candleEntity);
+	me.entityPool.add("barrel", barrelEntity);
+	me.entityPool.add("package", packageEntity);
+	me.entityPool.add("vase", vaseEntity);
 	
 	// enable the keyboard
 	me.input.bindKey(me.input.KEY.A, "left");

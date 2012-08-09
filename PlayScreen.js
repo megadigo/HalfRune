@@ -32,7 +32,8 @@ var playScreen = me.ScreenObject.extend({
         // load a level
         me.levelDirector.loadLevel(level);
         // reserve player to a var
-        var player = me.game.getEntityByName("mainPlayer")[0]; 
+        player = me.game.getEntityByName("mainPlayer")[0]; 
+        
     },
     
     nextLevel: function(nextLevel, RespawnX, RespawnY){

@@ -20,7 +20,7 @@
  <tileset firstgid="2071" name="avatar" tilewidth="16" tileheight="16">
   <image source="sprites/avatar.png" trans="ff00ff" width="256" height="16"/>
  </tileset>
- <layer name="collision" width="30" height="30" visible="0">
+ <layer name="collision" width="30" height="30">
   <data>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -2783,31 +2783,27 @@
     <property name="transparent_color" value="ffffff"/>
    </properties>
   </object>
-  <object gid="741" x="304" y="224"/>
-  <object gid="741" x="288" y="224"/>
-  <object gid="741" x="272" y="224"/>
-  <object gid="648" x="304" y="224"/>
-  <object gid="555" x="288" y="224"/>
-  <object gid="515" x="272" y="224"/>
-  <object gid="741" x="320" y="224"/>
-  <object gid="758" x="80" y="224"/>
-  <object gid="755" x="80" y="240"/>
-  <object gid="755" x="128" y="224"/>
-  <object gid="755" x="128" y="256"/>
-  <object gid="757" x="112" y="224"/>
-  <object gid="688" x="400" y="32"/>
-  <object gid="688" x="432" y="64"/>
-  <object gid="796" x="352" y="224"/>
-  <object gid="796" x="352" y="240"/>
-  <object gid="701" x="384" y="64"/>
-  <object gid="773" x="336" y="368"/>
-  <object gid="774" x="352" y="368"/>
-  <object gid="775" x="336" y="384"/>
-  <object gid="776" x="352" y="384"/>
-  <object gid="769" x="416" y="384"/>
-  <object gid="770" x="432" y="384"/>
-  <object gid="771" x="416" y="400"/>
-  <object gid="772" x="432" y="400"/>
+  <object name="table" gid="741" x="304" y="224"/>
+  <object name="table" gid="741" x="288" y="224"/>
+  <object name="table" gid="741" x="272" y="224"/>
+  <object name="candle" gid="648" x="304" y="224"/>
+  <object name="sword" gid="555" x="288" y="224"/>
+  <object name="helmet" gid="515" x="272" y="224"/>
+  <object name="table" gid="741" x="320" y="224"/>
+  <object name="package" gid="758" x="80" y="224"/>
+  <object name="vase" gid="755" x="80" y="240"/>
+  <object name="vase" gid="755" x="128" y="224"/>
+  <object name="vase" gid="755" x="128" y="256"/>
+  <object name="barrel" gid="757" x="112" y="224"/>
+  <object name="vase" gid="688" x="400" y="32"/>
+  <object name="vase" gid="688" x="432" y="64"/>
+  <object name="fountain" gid="796" x="352" y="224"/>
+  <object name="fountain" gid="796" x="352" y="240"/>
+  <object name="chair" gid="701" x="384" y="64"/>
+  <object name="barrel" gid="769" x="416" y="384"/>
+  <object name="barrel" gid="770" x="432" y="384"/>
+  <object name="barrel" gid="771" x="416" y="400"/>
+  <object name="barrel" gid="772" x="432" y="400"/>
  </objectgroup>
  <objectgroup name="Mobs" width="30" height="30">
   <object name="spider" type="mob" gid="1385" x="160" y="192">
