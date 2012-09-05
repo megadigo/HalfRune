@@ -11,10 +11,12 @@ var weaponEntity = me.ObjectEntity.extend({
    
     init: function(x, y, settings) {
     // call the constructor
+    settings.spritewidth = 16;
+    settings.spriteheight = 16;
     this.parent(x, y, settings);
     
     // set props
-    this.type = "weapon";
+    this.type="weapon";
     this.status = "stop";
     this.direction = "left";
     this.entityEquip = {};

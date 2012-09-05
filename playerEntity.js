@@ -134,6 +134,8 @@ var playerEntity = me.ObjectEntity.extend({
 		    // furniture collition
 		    else if (res.obj.type == "furniture") {
                 this.swing = true;
+                // What to do if Collides
+                res.obj.OnCollide(res,this);
             }
 		    // container collition
 		    else if (res.obj.type == "container"){

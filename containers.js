@@ -10,12 +10,12 @@ var chestEntity = me.ObjectEntity.extend({
    
     init: function(x, y, settings) {
         // call the constructor
-        settings.type = "container";
         settings.image = "u6tiles";
         settings.spritewidth = 16;
         settings.spriteheight = 16;
         this.parent(x, y, settings);
         // set props
+        this.type="container";
         this.collidable = true;
         this.status = "close";
         this.updateme = true;
@@ -77,13 +77,13 @@ var chestEntity = me.ObjectEntity.extend({
 var vaseEntity = me.ObjectEntity.extend({
     init: function(x, y, settings) {
     // call the constructor
-    settings.type = "container";
     settings.image = "u6tiles";
     settings.spritewidth = 16;
     settings.spriteheight = 16;
     this.parent(x, y, settings);
     
     // set props
+    this.type="container";
     this.collidable = true;
     this.status = "close";
     //animation
@@ -126,13 +126,13 @@ var vaseEntity = me.ObjectEntity.extend({
 var barrelEntity = me.ObjectEntity.extend({
     init: function(x, y, settings) {
         // call the constructor
-        settings.type = "container";
         settings.image = "u6tiles";
         settings.spritewidth = 16;
         settings.spriteheight = 16;
         this.parent(x, y, settings);
 
         // set props
+        this.type="container";
         this.collidable = true;
         this.status = "close";
         //animation
@@ -172,12 +172,12 @@ var barrelEntity = me.ObjectEntity.extend({
 var packageEntity = me.ObjectEntity.extend({
     init: function(x, y, settings) {
         // call the constructor
-        settings.type = "container";
         settings.image = "u6tiles";
         settings.spritewidth = 16;
         settings.spriteheight = 16;
         this.parent(x, y, settings);
         // set props
+        this.type="container";
         this.collidable = true;
         this.status = "close";
         //animation

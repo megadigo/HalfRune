@@ -12,9 +12,13 @@ var spiderEntity = me.ObjectEntity.extend({
    
     init: function(x, y, settings) {
     // call the constructor
+    settings.image = "u6tiles";
+    settings.spritewidth = 16;
+    settings.spriteheight = 16;
     this.parent(x, y, settings);
     
     // set prods
+    this.type='mobs';
     this.setVelocity(0.5, 0.5);
     this.gravity=0;
     this.updateme = true;
