@@ -56,7 +56,7 @@ var spiderEntity = me.ObjectEntity.extend({
   		this.updateme = true;	
   	},
   	
-  	OnCollide: function(res,obj){
+  OnCollide: function(res,obj){
   		//this.doChangeDirection(res,obj);
   		this.doBounce(res,obj);
   	},
@@ -67,7 +67,7 @@ var spiderEntity = me.ObjectEntity.extend({
  
     ------ */
    
-   update: function() { 
+  update: function() { 
 		
 		// do stage
     		if (this.stage == "random")   this.doRandomWalk();
@@ -128,7 +128,7 @@ var spiderEntity = me.ObjectEntity.extend({
  
     ------ */
    
-   doChangeDirection: function(res,obj) {
+  doChangeDirection: function(res,obj) {
    		if (res.x<0 && obj.vel.x<0){
 			this.direction = "left";
 		};
@@ -147,7 +147,7 @@ var spiderEntity = me.ObjectEntity.extend({
     bounce
  
     ------ */
-   doBounce: function(res,obj) {
+  doBounce: function(res,obj) {
    		if (res.x<0 && obj.vel.x<0){
 			obj.vel.x = 0;
 		};
@@ -171,7 +171,7 @@ var spiderEntity = me.ObjectEntity.extend({
                 case 0: 
                     this.direction="left";
                     break;
-                case 1:
+                  case 1:
                     this.direction="right";
                     break;
                 case 2:
@@ -257,10 +257,10 @@ var spiderEntity = me.ObjectEntity.extend({
        		this.hp -= damage;
        		// little bounce
     		if (attacker.direction == "left") {
-    			this.pos.x-=10
+          this.pos.x-=10
     		}; 
     		if (attacker.direction == "right") {
-    			this.pos.x+=10
+          this.pos.x+=10
     		};
     		if (attacker.direction == "up") {
     			this.pos.y-=10
