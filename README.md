@@ -22,6 +22,6 @@ It will be a sand-box game in chapters in a open world. The game will use a logi
 
 This is the starting point for a big adventure i hope…
 
-Try it at http://porta.tapjs.com or follow project in http://megadigo.github.com/Porta/
+Try it at http://www.megadigo.pt or follow project in http://megadigo.github.com/Porta/
 
 **megadigo@digosoftProductions**
