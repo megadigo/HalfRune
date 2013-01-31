@@ -52,14 +52,14 @@ var spiderEntity = me.ObjectEntity.extend({
  
     ------ */
    
- 	OnInteract: function(obj){	
-  		this.updateme = true;	
-  	},
+	OnInteract: function(obj){	
+		this.updateme = true;	
+	},
   	
-  OnCollide: function(res,obj){
-  		//this.doChangeDirection(res,obj);
-  		this.doBounce(res,obj);
-  	},
+	OnCollide: function(res,obj){
+		//this.doChangeDirection(res,obj);
+		this.doBounce(res,obj);
+	},
    
     /* -----
  
