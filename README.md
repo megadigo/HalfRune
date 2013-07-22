@@ -1,7 +1,7 @@
-Porta
+Half Rune
 =====
 
-Porta is an old project i have. For about 10 years i have this project i would like to finish.It is a classic RPG game.
+Half Rune is an old project i have. For about 10 years i have this project i would like to finish.It is a classic RPG game.
 
 Based in a simple question: **What if instead of fire, man discover a Portal?**
 
@@ -13,6 +13,7 @@ Just a few thoughts:
 - Some are big enough that can be used to travel between places far away;
 - Many mechanisms use this kind of portals - Example: tv with a portal to the tv building to receive broadcasts (one way portal);
 - Even fire(heat) could be redirected to a machine that allow to use it in our houses;
+- Half Rune because half of a special stone keeps connections to the other half.
 
 The intent of the game is to follow the history of this different reality.
 
