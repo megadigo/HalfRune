@@ -15,16 +15,15 @@ var spiderEntity = me.ObjectEntity.extend({
     settings.image = "u6tiles";
     settings.spritewidth = 16;
     settings.spriteheight = 16;
-    this.parent(x, y, settings);
-    
-    // set prods
-    this.type='mobs';
-    this.setVelocity(0.5, 0.5);
-    this.gravity=0;
-    this.updateme = true;
-    this.collidable = true;
-    this.direction = "left";
-    this.spritedirection = "left";
+    this.parent(x, y, settings);  
+  // set prods
+  this.type='mobs';
+  this.setVelocity(0.5, 0.5);
+  this.gravity=0;
+  this.updateme = true;
+  this.collidable = true;
+  this.direction = "left";
+  this.spritedirection = "left";
 	this.stance = "normal";
 	this.hp = settings.hp;
 	this.hci = 1;

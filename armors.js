@@ -6,7 +6,7 @@ var helmetEntity = me.ObjectEntity.extend({
     init: function(x, y, settings) {
         // call the constructor
         settings.type = "container";
-        settings.image = "u6tiles";
+        //settings.image = "u6tiles";
         settings.spritewidth = 16;
         settings.spriteheight = 16;
         this.parent(x, y, settings);  
