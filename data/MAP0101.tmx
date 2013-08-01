@@ -2924,5 +2924,6 @@
  </objectgroup>
  <objectgroup color="#00ff00" name="Entities" width="30" height="30">
   <object name="mainPlayer" gid="2080" x="80" y="96"/>
+  <object name="portal" gid="2000" x="200" y="96"/>
  </objectgroup>
 </map>

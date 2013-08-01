@@ -5,11 +5,11 @@
   ----------------------*/
 var playScreen = me.ScreenObject.extend({
     
-    onResetEvent: function() {
+    onResetEvent: function(newlevel) {
         
     	me.audio.playTrack("heroicdemise");
 	
-        this.loadLevel(currentLevel);
+        this.loadLevel(newlevel);
     
         // add a default HUD to the game mngr
         me.game.addHUD(0, 0, 320, 240);
@@ -44,7 +44,7 @@ var playScreen = me.ScreenObject.extend({
         this.loadLevel(nextLevel);
       
        // RespawnPlayer    
-       this.RespawPlayer(player, prevPlayer, RespawnX, RespawnY);    
+       this.RespawPlayer(player, RespawnX, RespawnY);    
     },
     
     RespawnPlayer: function(currentPlayer,prevPlayer,x, y) {

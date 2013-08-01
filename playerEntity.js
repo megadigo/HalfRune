@@ -150,7 +150,17 @@ var playerEntity = me.ObjectEntity.extend({
 			// npc
 			else if (res.obj.type == "npc") {
 			  this.swing = false;
-			    
+			}
+			// portal
+			else if (res.obj.type == "portal"){
+		        this.swing = false;
+    			// What do do if interacts
+    			if (this.actionActive == true) {
+    				res.obj.OnInteract(this);
+    			};
+    			// What to do if Collides
+    			res.obj.OnCollide(res,this);
+			   
 			}
 			else {
 			 this.swing = true;

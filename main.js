@@ -9,6 +9,7 @@
 // Global vars
  var player = {};
  var quests = {};
+ var levels = {};
  var currentlevel ="";
  var prevLevel="";
  
@@ -123,7 +124,7 @@ var jsApp	=
 	// add furnitures
 	me.entityPool.add("chest", chestEntity);
 	me.entityPool.add("bed", bedEntity);
-	me.entityPool.add("porta", portaEntity);
+	me.entityPool.add("portal", portalEntity);
 	me.entityPool.add("fountain", fountainEntity);
 	me.entityPool.add("chair", chairEntity);
 	me.entityPool.add("table", tableEntity);
@@ -141,8 +142,7 @@ var jsApp	=
  
 
     // Menu Screen
-    me.state.change(me.state.PLAY);  
-       
+    me.state.change(me.state.PLAY,"MAP0101");     
 }
 
 }; // jsApp
