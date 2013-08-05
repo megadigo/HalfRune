@@ -31,6 +31,7 @@ var spiderEntity = me.ObjectEntity.extend({
 	this.type = "mob";
 	this.stage = "random"; //chase, attack, dead, respawn
 	this.randomlenght = 0;
+  this.timetospawn = 100+Math.round(Math.random()*100,0);
 	this.respawnX=this.pos.x;
 	this.respawnY=this.pos.y;
 	this.sensedistance = 64;
@@ -42,7 +43,7 @@ var spiderEntity = me.ObjectEntity.extend({
     this.addAnimation("normal_right",[1386,1387]);
     this.addAnimation("normal_down",[1388,1389]);
     this.addAnimation("normal_left",[1390,1391]);
-    this.addAnimation("normal_stand",[1000]);
+    this.addAnimation("dead_stand",[1261]);
     this.setCurrentAnimation(this.stance + "_" + this.direction);
     },
 	/* -----
@@ -101,14 +102,16 @@ var spiderEntity = me.ObjectEntity.extend({
 
 		//check collition and attack
 		res = me.game.collide(this);
-		if (res) {
-			if (res.obj.type == "player") {
-				//if (Math.random()<0.1) {
-		        	res.obj.doDamage(this, this.hci, this.damage);
-		       //}
-		    }
-		}
-		// check & update spider movement
+    if (this.stance == 'normal') {
+  		if (res) {
+  			if (res.obj.type == "player") {
+  				//if (Math.random()<0.1) {
+  		        	res.obj.doDamage(this, this.hci, this.damage);
+  		       //}
+  		    }
+  		}
+    }
+	 	// check & update spider movement
 		this.updateMovement();
 		  		
   		// update animation if necessary
@@ -232,19 +235,23 @@ var spiderEntity = me.ObjectEntity.extend({
        this.stage="chase"
    },
    doDead: function(){
-       this.randomlenght = 0
+       //this.randomlenght = 0
        this.collidable = false;
+       this.stance='dead'
        this.direction="stand";
-       if (this.randomlenght == 0){
-            this.stage = "respawn"
+       this.setCurrentAnimation(this.stance + "_" + this.direction)
+       if (this.timetospawn == 0){
+            this.stage = "respawn";
+            this.timetospawn=100+Math.round(Math.random()*100,0);
        } else {
-           this.randomlenght -=1
+           this.timetospawn -=1
        };
    },
    doRespawn: function(){
          this.pos.x =  (this.respawnX - 64) + (Math.random() * 128)
          this.pos.y =  (this.respawnY - 64) + (Math.random() * 128);
          this.direction ="left";
+         this.stance ="normal";
          this.stage = "random";
          this.hp = Math.random() * 50;
          this.collidable = true;
