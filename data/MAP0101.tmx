@@ -2898,26 +2898,25 @@
  <objectgroup color="#ffffff" name="Weapons" width="30" height="30">
   <object name="axe" type="weapon" gid="2063" x="224" y="79">
    <properties>
-    <property name="image" value="axe"/>
     <property name="damage" value="8"/>
     <property name="hci" value="1"/>
+    <property name="image" value="axe"/>
     <property name="swingspeed" value="10"/>
    </properties>
   </object>
   <object name="sword" type="weapon" gid="2055" x="64" y="79">
    <properties>
-    <property name="image" value="sword"/>
     <property name="damage" value="5"/>
     <property name="hci" value="1"/>
+    <property name="image" value="sword"/>
     <property name="swingspeed" value="3"/>
    </properties>
   </object>
   <object name="helmet" gid="515" x="271" y="219">
-  <object name="sword" gid="555" x="302" y="218"/>
    <properties>
-    <property name="image" value="sword"/>
     <property name="damage" value="5"/>
     <property name="hci" value="1"/>
+    <property name="image" value="sword"/>
     <property name="swingspeed" value="3"/>
    </properties>
   </object>

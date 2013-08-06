@@ -30,6 +30,7 @@ var playerEntity = me.ObjectEntity.extend({
     this.moving = false;
 	this.stance = "normal";
 	this.actionActive = false;
+	this.interationActive = false;
 	this.collidable=true;
 	//stats
 	this.stage = "alive";
@@ -103,6 +104,9 @@ var playerEntity = me.ObjectEntity.extend({
 		    this.actionActive = false;
 		} 
 		if (me.input.isKeyPressed('interact')) {
+			this.interationActive = true;
+		} else {
+			this.interationActive = false;
 			//var newSpider = me.entityPool.newInstanceOf("spider", this.x + 16, this.y)
 			//me.game.add(newSpider, this.z);
 			//me.game.sort();
@@ -118,7 +122,7 @@ var playerEntity = me.ObjectEntity.extend({
 		{	
 		    // weapon collition
 		    if (res.obj.type == "weapon") {
-		        if (this.actionActive == true) {
+		        if (this.interationActive == true) {
 		            this.swing = false;
     		        // unequip
     		        if(this.equipweapon){
@@ -146,7 +150,7 @@ var playerEntity = me.ObjectEntity.extend({
 		    else if (res.obj.type == "container"){
 		        this.swing = false;
     			// What do do if interacts
-    			if (this.actionActive == true) {
+    			if (this.interationActive == true) {
     				res.obj.OnInteract(this);
     			};
     			// What to do if Collides
@@ -160,7 +164,7 @@ var playerEntity = me.ObjectEntity.extend({
 			else if (res.obj.type == "portal"){
 		        this.swing = false;
     			// What do do if interacts
-    			if (this.actionActive == true) {
+    			if (this.interationActive == true) {
     				res.obj.OnInteract(this);
     			};
     			// What to do if Collides
