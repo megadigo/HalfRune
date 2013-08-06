@@ -102,6 +102,11 @@ var playerEntity = me.ObjectEntity.extend({
 		} else {
 		    this.actionActive = false;
 		} 
+		if (me.input.isKeyPressed('interact')) {
+			//var newSpider = me.entityPool.newInstanceOf("spider", this.x + 16, this.y)
+			//me.game.add(newSpider, this.z);
+			//me.game.sort();
+		} 
 	    //
 	    //
 		// check collision

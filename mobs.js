@@ -43,7 +43,7 @@ var spiderEntity = me.ObjectEntity.extend({
     this.addAnimation("normal_right",[1386,1387]);
     this.addAnimation("normal_down",[1388,1389]);
     this.addAnimation("normal_left",[1390,1391]);
-    this.addAnimation("dead_stand",[1261]);
+    this.addAnimation("dead_stand",[1261])
     this.setCurrentAnimation(this.stance + "_" + this.direction);
     },
 	/* -----
@@ -115,6 +115,11 @@ var spiderEntity = me.ObjectEntity.extend({
 		this.updateMovement();
 		  		
   		// update animation if necessary
+      if (stage='dead') {
+        this.setCurrentAnimation(this.stance + "_" + this.direction);
+            this.parent(this);
+            return true;
+          };
 	    if (this.vel.x!=0 || this.vel.y!=0) {
             this.setCurrentAnimation(this.stance + "_" + this.direction);
             this.parent(this);
@@ -239,7 +244,7 @@ var spiderEntity = me.ObjectEntity.extend({
        this.collidable = false;
        this.stance='dead'
        this.direction="stand";
-       this.setCurrentAnimation(this.stance + "_" + this.direction)
+       this.setCurrentAnimation(this.stance + "_" + this.direction);
        if (this.timetospawn == 0){
             this.stage = "respawn";
             this.timetospawn=100+Math.round(Math.random()*100,0);
