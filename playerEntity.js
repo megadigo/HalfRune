@@ -10,11 +10,11 @@ var playerEntity = me.ObjectEntity.extend({
  
     constructor
  
-    ------ */
+    ------ */ 
    
     init: function(x, y, settings) {
         
-    // settings
+    // settings 
     settings.type = "player";
     settings.image = "avatar";
     settings.spritewidth = 16;
@@ -32,6 +32,7 @@ var playerEntity = me.ObjectEntity.extend({
 	this.actionActive = false;
 	this.interationActive = false;
 	this.collidable=true;
+
 	//stats
 	this.stage = "alive";
 	this.hp = 100;
@@ -43,7 +44,7 @@ var playerEntity = me.ObjectEntity.extend({
 	this.hci = 0;
 	this.swingspeed = 0;
 
-	
+	this.alwaysUpdate= true;
 	
 	
     //weapon
@@ -60,11 +61,11 @@ var playerEntity = me.ObjectEntity.extend({
     //this.hpValue = new me.Font('font8', 8, 'white');
     
     //animation
-    this.addAnimation("normal_up",[0,1,2]);
-    this.addAnimation("normal_right",[4,5,6]);
-    this.addAnimation("normal_down",[8,9,10]);
-    this.addAnimation("normal_left",[12,13,14]);
-    this.setCurrentAnimation(this.stance + "_" + this.direction);
+    this.renderable.addAnimation("normal_up",[0,1,2]);
+    this.renderable.addAnimation("normal_right",[4,5,6]);
+    this.renderable.addAnimation("normal_down",[8,9,10]);
+    this.renderable.addAnimation("normal_left",[12,13,14]);
+    this.renderable.setCurrentAnimation(this.stance + "_" + this.direction);
     
     // adjust the bounding box x,w,y,h
     this.updateColRect(5,10 , 5, 10);
@@ -107,9 +108,6 @@ var playerEntity = me.ObjectEntity.extend({
 			this.interationActive = true;
 		} else {
 			this.interationActive = false;
-			//var newSpider = me.entityPool.newInstanceOf("spider", this.x + 16, this.y)
-			//me.game.add(newSpider, this.z);
-			//me.game.sort();
 		} 
 	    //
 	    //
@@ -215,7 +213,7 @@ var playerEntity = me.ObjectEntity.extend({
 	    } else if (this.direction == "down") {
 	       this.vel.y +=  this.accel.y * me.timer.tick
 	    }
-	    this.setCurrentAnimation(this.stance + "_" + this.direction)
+	    this.renderable.setCurrentAnimation(this.stance + "_" + this.direction)
 	}, 
     doStand : function(up) {
         this.moving = false;

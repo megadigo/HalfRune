@@ -14,8 +14,8 @@ var portalEntity = me.ObjectEntity.extend({
         this.collidable = true;
         this.status = "stand";
         //animation
-        this.addAnimation("stand",[650]);
-        this.setCurrentAnimation("stand");
+        this.renderable.addAnimation("stand",[650]);
+        this.renderable.setCurrentAnimation("stand");
     },
     OnInteract: function(obj){
         

@@ -28,6 +28,7 @@ var g_resources = [
 	{name: "bar100",		            type: "image",     src: "data/sprites/bar100.png"},
 	{name: "metatiles16x16",            type: "image",	   src: "data/sprites/metatiles16x16.png"},
 	{name: "MAP0101",		            type: "tmx",	   src: "data/MAP0101.tmx"},
+	{name: "MAP0000",		            type: "tmx",	   src: "data/MAP0000.tmx"},
 	{name: "CAVE0101",                  type: "tmx",       src: "data/CAVE0101.tmx"},
 	{name: "heroicdemise",              type: "audio",     src: "data/sounds/",    channel:1},
 	{name: "fs_dirt_a",                 type: "audio",     src: "data/sounds/",    channel:1},
@@ -60,7 +61,7 @@ var jsApp	=
 	{
 
 		// init the video
-		if (!me.video.init('jsapp',320, 240, true, 1.2))
+		if (!me.video.init('jsapp',320, 240, true, 1))
 		{
 			alert("Sorry but your browser does not support html 5 canvas.");
 	 return;
@@ -123,6 +124,9 @@ var jsApp	=
 	me.entityPool.add("barrel", barrelEntity);
 	me.entityPool.add("package", packageEntity);
 	me.entityPool.add("vase", vaseEntity);
+
+	// zones
+	me.entityPool.add("mobzone", zoneEntity);
 	
 	// enable the keyboard
 	me.input.bindKey(me.input.KEY.LEFT, "left");
@@ -132,9 +136,8 @@ var jsApp	=
 	me.input.bindKey(me.input.KEY.Z, "action",true);
 	me.input.bindKey(me.input.KEY.X, "interact",true);
  
-
     // Menu Screen
-    me.state.change(me.state.PLAY,"MAP0101");  
+    me.state.change(me.state.PLAY,"MAP0000");  
  
 }
 
