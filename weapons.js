@@ -99,6 +99,7 @@ var weaponEntity = me.ObjectEntity.extend({
 		        res.obj.doDamage(this, this.hci, this.damage);
 		    }	
 		};
+		return false;
     },
     /* -----
 

@@ -67,6 +67,11 @@ var jsApp	=
 	 return;
 		}
 
+		if (document.location.hash === "#debug") {
+			window.onReady(function () {
+				me.plugin.register.defer(debugPanel, "debug");
+			});
+		}
 		// initialize the "audio"
 		me.audio.init("mp3,ogg");
 
