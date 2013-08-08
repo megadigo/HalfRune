@@ -9,6 +9,9 @@
  <tileset firstgid="343" name="avatar" tilewidth="16" tileheight="16">
   <image source="sprites/avatar.png" trans="ff00ff" width="256" height="16"/>
  </tileset>
+ <tileset firstgid="359" name="u6tiles" tilewidth="16" tileheight="16">
+  <image source="sprites/u6tiles.png" trans="ffffff" width="512" height="1024"/>
+ </tileset>
  <layer name="collision" width="30" height="30">
   <data>
    <tile gid="0"/>
@@ -894,11 +897,11 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="1"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
    <tile gid="1"/>
    <tile gid="1"/>
    <tile gid="1"/>
@@ -1817,6 +1820,34 @@
    <tile gid="226"/>
   </data>
  </layer>
+ <objectgroup color="#00ff00" name="zones" width="30" height="30">
+  <object name="mobzone" type="zone" x="370" y="180" width="77" height="71">
+   <properties>
+    <property name="level" value="2"/>
+    <property name="mob" value="spider"/>
+    <property name="mobcount" value="5"/>
+   </properties>
+  </object>
+  <object name="mobzone" type="zone" x="77" y="67" width="70" height="63">
+   <properties>
+    <property name="level" value="2"/>
+    <property name="mob" value="spider"/>
+    <property name="mobcount" value="5"/>
+   </properties>
+  </object>
+  <object name="mobzone" type="zone" x="224" y="362" width="88" height="77">
+   <properties>
+    <property name="level" value="2"/>
+    <property name="mob" value="spider"/>
+    <property name="mobcount" value="10"/>
+   </properties>
+  </object>
+  <object name="portal" type="portal" gid="2358" x="259" y="464">
+   <properties>
+    <property name="warpto" value="MAP0101"/>
+   </properties>
+  </object>
+ </objectgroup>
  <layer name="Walls" width="30" height="30">
   <data>
    <tile gid="0"/>
@@ -2674,7 +2705,7 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
-   <tile gid="121"/>
+   <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>

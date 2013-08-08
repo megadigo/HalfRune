@@ -33,10 +33,10 @@ var playScreen = me.ScreenObject.extend({
 
 
         // make sure everyhting is in the right order
-        me.game.sort();
          // reserve player to a var
         player = me.game.getEntityByName("mainPlayer")[0];
 
+        // mobzones
         var mobzones = me.game.getEntityByName("mobzone");
         var mobzone = {};
         for (var i=0;i<mobzones.length;i++){
@@ -44,16 +44,24 @@ var playScreen = me.ScreenObject.extend({
             var level = mobzone.level;
             var mob = mobzone.mob;
             var mobcount = mobzone.mobcount;
+            var mobzx = mobzone.pos.x;
+            var mobzy = mobzone.pos.y;
+            var mobzw = mobzone.width;
+            var mobzh = mobzone.height;
             for (var c=0;c<mobcount;c++){
-                //me.game.add(me.entityPool.newInstanceOf(mob, this.x + 16, this.y), 1);
+                var mobx = mobzx + Math.round(Math.random() * mobzw,0);
+                var moby = mobzy + Math.round(Math.random() * mobzh,0);
+                me.game.add(me.entityPool.newInstanceOf(mob, mobx, moby), 3);
             }
         }
+        me.game.sort();
     },
 
     /*  
     action to perform when game is finished (state change)
  
     --- */
+
     onDestroyEvent: function() {
         // remove the HUD
         me.game.disableHUD();

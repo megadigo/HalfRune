@@ -8,11 +8,11 @@ var portalEntity = me.ObjectEntity.extend({
         settings.spritewidth = 16;
         settings.spriteheight = 16;
         this.parent(x, y, settings);
-        
         // set props
         this.type="portal";
         this.collidable = true;
         this.status = "stand";
+        this.warpto=settings.warpto;
         //animation
         this.renderable.addAnimation("stand",[650]);
         this.renderable.setCurrentAnimation("stand");
@@ -21,8 +21,9 @@ var portalEntity = me.ObjectEntity.extend({
         
     },
     OnCollide: function(res,obj){
-        me.state.change(me.state.PLAY,"CAVE0101");  
         //this.doBounce(res,obj);
+        this.collidable = false;
+        me.state.change(me.state.PLAY, this.warpto);  
     }, 
     doBounce: function(res,obj) {
         if (res.x<0 && obj.vel.x<0){

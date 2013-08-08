@@ -9,6 +9,9 @@
  <tileset firstgid="2065" name="sword" tilewidth="16" tileheight="16">
   <image source="sprites/sword.png" trans="ffffff" width="128" height="16"/>
  </tileset>
+ <tileset firstgid="2073" name="cave" tilewidth="15" tileheight="16">
+  <image source="sprites/cave.png" width="256" height="336"/>
+ </tileset>
  <layer name="Floor" width="24" height="24">
   <data>
    <tile gid="0"/>
@@ -646,6 +649,17 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
+   <tile gid="231"/>
+   <tile gid="231"/>
+   <tile gid="231"/>
+   <tile gid="231"/>
+   <tile gid="231"/>
+   <tile gid="231"/>
+   <tile gid="231"/>
+   <tile gid="231"/>
+   <tile gid="231"/>
+   <tile gid="231"/>
+   <tile gid="231"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -659,6 +673,17 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
+   <tile gid="231"/>
+   <tile gid="109"/>
+   <tile gid="109"/>
+   <tile gid="109"/>
+   <tile gid="109"/>
+   <tile gid="109"/>
+   <tile gid="109"/>
+   <tile gid="109"/>
+   <tile gid="109"/>
+   <tile gid="109"/>
+   <tile gid="231"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -672,6 +697,17 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
+   <tile gid="231"/>
+   <tile gid="109"/>
+   <tile gid="109"/>
+   <tile gid="109"/>
+   <tile gid="109"/>
+   <tile gid="109"/>
+   <tile gid="109"/>
+   <tile gid="109"/>
+   <tile gid="109"/>
+   <tile gid="109"/>
+   <tile gid="231"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -685,6 +721,17 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
+   <tile gid="231"/>
+   <tile gid="109"/>
+   <tile gid="109"/>
+   <tile gid="109"/>
+   <tile gid="109"/>
+   <tile gid="109"/>
+   <tile gid="109"/>
+   <tile gid="109"/>
+   <tile gid="109"/>
+   <tile gid="109"/>
+   <tile gid="231"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -698,6 +745,17 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
+   <tile gid="231"/>
+   <tile gid="109"/>
+   <tile gid="109"/>
+   <tile gid="109"/>
+   <tile gid="109"/>
+   <tile gid="109"/>
+   <tile gid="109"/>
+   <tile gid="109"/>
+   <tile gid="109"/>
+   <tile gid="109"/>
+   <tile gid="231"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -711,6 +769,17 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
+   <tile gid="231"/>
+   <tile gid="109"/>
+   <tile gid="109"/>
+   <tile gid="109"/>
+   <tile gid="109"/>
+   <tile gid="109"/>
+   <tile gid="109"/>
+   <tile gid="109"/>
+   <tile gid="109"/>
+   <tile gid="109"/>
+   <tile gid="231"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -724,6 +793,17 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
+   <tile gid="231"/>
+   <tile gid="109"/>
+   <tile gid="109"/>
+   <tile gid="109"/>
+   <tile gid="109"/>
+   <tile gid="109"/>
+   <tile gid="109"/>
+   <tile gid="109"/>
+   <tile gid="109"/>
+   <tile gid="109"/>
+   <tile gid="231"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -737,6 +817,17 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
+   <tile gid="231"/>
+   <tile gid="109"/>
+   <tile gid="109"/>
+   <tile gid="109"/>
+   <tile gid="109"/>
+   <tile gid="109"/>
+   <tile gid="109"/>
+   <tile gid="109"/>
+   <tile gid="109"/>
+   <tile gid="109"/>
+   <tile gid="231"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -750,105 +841,17 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
+   <tile gid="231"/>
+   <tile gid="231"/>
+   <tile gid="231"/>
+   <tile gid="231"/>
+   <tile gid="231"/>
+   <tile gid="231"/>
+   <tile gid="231"/>
+   <tile gid="231"/>
+   <tile gid="231"/>
+   <tile gid="231"/>
+   <tile gid="231"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -1172,7 +1175,7 @@
  <objectgroup name="Furnitures" width="24" height="24"/>
  <objectgroup name="Mobs" width="24" height="24"/>
  <objectgroup name="Weopons" width="24" height="24">
-  <object name="sword" type="weapon" gid="2065" x="162" y="220">
+  <object name="sword" type="weapon" gid="2065" x="221" y="67">
    <properties>
     <property name="damage" value="5"/>
     <property name="hci" value="1"/>
@@ -1180,16 +1183,18 @@
     <property name="swingspeed" value="3"/>
    </properties>
   </object>
- </objectgroup>
- <objectgroup color="#00ff00" name="Entities" width="24" height="24">
-  <object name="mainPlayer" gid="2058" x="159" y="137"/>
-  <object name="spider" type="mob" gid="1385" x="116" y="221">
+  <object name="portal" gid="2000" x="234" y="154">
    <properties>
-    <property name="hp" value="30"/>
+    <property name="warpto" value="MAP0101"/>
    </properties>
   </object>
-  <object name="chest" type="container" gid="621" x="202" y="219"/>
-  <object name="mobzone" type="zone" x="190" y="87" width="123" height="97">
+ </objectgroup>
+ <objectgroup color="#00ff00" name="Entities" width="24" height="24">
+  <object name="mainPlayer" gid="2058" x="233" y="66"/>
+  <object name="chest" type="container" gid="621" x="130" y="156"/>
+ </objectgroup>
+ <objectgroup color="#00ff00" name="zones" width="24" height="24">
+  <object name="mobzone" type="zone" x="136" y="65" width="104" height="83">
    <properties>
     <property name="level" value="2"/>
     <property name="mob" value="spider"/>

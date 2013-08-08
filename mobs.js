@@ -10,12 +10,14 @@ var spiderEntity = me.ObjectEntity.extend({
  
     ------ */
    
-    init: function(x, y, settings) {
-    // call the constructor
-    settings.image = "u6tiles";
-    settings.spritewidth = 16;
-    settings.spriteheight = 16;
-    this.parent(x, y, settings);  
+  init: function(x, y, settings) {
+  // call the constructor
+  var settings = {};
+  settings.image = "u6tiles";
+  settings.spritewidth = 16;
+  settings.spriteheight = 16;
+  settings.hp=100;
+  this.parent(x, y, settings); 
   // set prods
   this.type='mobs';
   this.setVelocity(0.5, 0.5);
@@ -36,15 +38,14 @@ var spiderEntity = me.ObjectEntity.extend({
 	this.respawnY=this.pos.y;
 	this.sensedistance = 64;
   this.alwaysUpdate= true;
-  me.debug.renderHitBox = false;
-    
-    //animation
-    this.renderable.addAnimation("normal_up",[1384,1385]);
-    this.renderable.addAnimation("normal_right",[1386,1387]);
-    this.renderable.addAnimation("normal_down",[1388,1389]);
-    this.renderable.addAnimation("normal_left",[1390,1391]);
-    this.renderable.addAnimation("dead_stand",[1261])
-    this.renderable.setCurrentAnimation(this.stance + "_" + this.direction);
+  //animation
+  this.renderable.addAnimation("normal_up",[1384,1385]);
+  this.renderable.addAnimation("normal_right",[1386,1387]);
+  this.renderable.addAnimation("normal_down",[1388,1389]);
+  this.renderable.addAnimation("normal_left",[1390,1391]);
+  this.renderable.addAnimation("dead_stand",[1261])
+  this.renderable.setCurrentAnimation(this.stance + "_" + this.direction);
+  return true;
     },
 	/* -----
  

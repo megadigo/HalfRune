@@ -1828,6 +1828,22 @@
    <tile gid="3"/>
   </data>
  </layer>
+ <objectgroup color="#00ff00" name="zones" width="30" height="30">
+  <object name="mobzone" type="zone" x="371" y="116" width="102" height="209">
+   <properties>
+    <property name="level" value="2"/>
+    <property name="mob" value="spider"/>
+    <property name="mobcount" value="10"/>
+   </properties>
+  </object>
+  <object name="mobzone" type="zone" x="19" y="304" width="239" height="125">
+   <properties>
+    <property name="level" value="2"/>
+    <property name="mob" value="spider"/>
+    <property name="mobcount" value="10"/>
+   </properties>
+  </object>
+ </objectgroup>
  <layer name="Walls" width="30" height="30">
   <data>
    <tile gid="0"/>
@@ -2741,10 +2757,9 @@
   <object name="chest" type="container" gid="621" x="303" y="191"/>
   <object name="chest" type="container" gid="621" x="289" y="191"/>
   <object name="chest" type="container" gid="621" x="271" y="191"/>
-  <object name="table" gid="741" x="304" y="224"/>
+  <object name="table" gid="741" x="323" y="224"/>
   <object name="table" gid="741" x="288" y="224"/>
-  <object name="table" gid="741" x="272" y="224"/>
-  <object name="table" gid="741" x="320" y="224"/>
+  <object name="table" gid="741" x="274" y="224"/>
   <object name="package" gid="758" x="80" y="224"/>
   <object name="vase" gid="755" x="80" y="240"/>
   <object name="vase" gid="755" x="128" y="224"/>
@@ -2759,142 +2774,10 @@
   <object name="barrel" gid="770" x="432" y="384"/>
   <object name="barrel" gid="771" x="416" y="400"/>
   <object name="barrel" gid="772" x="432" y="400"/>
-  <object name="helmet" gid="515" x="271" y="219"/>
  </objectgroup>
  <objectgroup name="Furnitures1" width="30" height="30">
   <object name="candle" gid="648" x="287" y="221"/>
- </objectgroup>
- <objectgroup name="Mobs" width="30" height="30">
-  <object name="spider" type="mob" gid="1385" x="160" y="192">
-   <properties>
-    <property name="hp" value="30"/>
-   </properties>
-  </object>
-  <object name="spider" type="mob" gid="1385" x="233" y="210">
-   <properties>
-    <property name="hp" value="30"/>
-   </properties>
-  </object>
-  <object name="spider" type="mob" gid="1385" x="274" y="148">
-   <properties>
-    <property name="hp" value="30"/>
-   </properties>
-  </object>
-  <object name="spider" type="mob" gid="1385" x="256" y="304">
-   <properties>
-    <property name="hp" value="30"/>
-   </properties>
-  </object>
-  <object name="spider" type="mob" gid="1385" x="352" y="288">
-   <properties>
-    <property name="hp" value="30"/>
-   </properties>
-  </object>
-  <object name="spider" type="mob" gid="1385" x="128" y="320">
-   <properties>
-    <property name="hp" value="30"/>
-   </properties>
-  </object>
-  <object name="spider" type="mob" gid="1385" x="200" y="333">
-   <properties>
-    <property name="hp" value="30"/>
-   </properties>
-  </object>
-  <object name="spider" type="mob" gid="1385" x="281" y="345">
-   <properties>
-    <property name="hp" value="30"/>
-   </properties>
-  </object>
-  <object name="spider" type="mob" gid="1385" x="187" y="255">
-   <properties>
-    <property name="hp" value="30"/>
-   </properties>
-  </object>
-  <object name="spider" type="mob" gid="1385" x="419" y="333">
-   <properties>
-    <property name="hp" value="30"/>
-   </properties>
-  </object>
-  <object name="spider" type="mob" gid="1385" x="366" y="245">
-   <properties>
-    <property name="hp" value="30"/>
-   </properties>
-  </object>
-  <object name="spider" type="mob" gid="1385" x="389" y="174">
-   <properties>
-    <property name="hp" value="30"/>
-   </properties>
-  </object>
-  <object name="spider" type="mob" gid="1385" x="320" y="112">
-   <properties>
-    <property name="hp" value="30"/>
-   </properties>
-  </object>
-  <object name="spider" type="mob" gid="1385" x="304" y="80">
-   <properties>
-    <property name="hp" value="30"/>
-   </properties>
-  </object>
-  <object name="spider" type="mob" gid="1385" x="288" y="48">
-   <properties>
-    <property name="hp" value="30"/>
-   </properties>
-  </object>
-  <object name="spider" type="mob" gid="1385" x="257" y="401">
-   <properties>
-    <property name="hp" value="30"/>
-   </properties>
-  </object>
-  <object name="spider" type="mob" gid="1385" x="336" y="464">
-   <properties>
-    <property name="hp" value="30"/>
-   </properties>
-  </object>
-  <object name="spider" type="mob" gid="1385" x="426" y="435">
-   <properties>
-    <property name="hp" value="30"/>
-   </properties>
-  </object>
-  <object name="spider" type="mob" gid="1385" x="38" y="449">
-   <properties>
-    <property name="hp" value="30"/>
-   </properties>
-  </object>
-  <object name="spider" type="mob" gid="1385" x="160" y="400">
-   <properties>
-    <property name="hp" value="30"/>
-   </properties>
-  </object>
-  <object name="spider" type="mob" gid="1385" x="32" y="364">
-   <properties>
-    <property name="hp" value="30"/>
-   </properties>
-  </object>
-  <object name="spider" type="mob" gid="1385" x="32" y="224">
-   <properties>
-    <property name="hp" value="30"/>
-   </properties>
-  </object>
-  <object name="spider" type="mob" gid="1385" x="25" y="41">
-   <properties>
-    <property name="hp" value="30"/>
-   </properties>
-  </object>
-  <object name="spider" type="mob" gid="1385" x="140" y="31">
-   <properties>
-    <property name="hp" value="30"/>
-   </properties>
-  </object>
-  <object name="spider" type="mob" gid="1385" x="193" y="118">
-   <properties>
-    <property name="hp" value="30"/>
-   </properties>
-  </object>
-  <object name="spider" type="mob" gid="1385" x="424" y="118">
-   <properties>
-    <property name="hp" value="30"/>
-   </properties>
-  </object>
+  <object name="helmet" gid="515" x="272" y="218"/>
  </objectgroup>
  <objectgroup color="#ffffff" name="Weapons" width="30" height="30">
   <object name="axe" type="weapon" gid="2063" x="224" y="79">
@@ -2916,6 +2799,15 @@
  </objectgroup>
  <objectgroup color="#00ff00" name="Entities" width="30" height="30">
   <object name="mainPlayer" gid="2080" x="80" y="96"/>
-  <object name="portal" gid="2000" x="200" y="96"/>
+  <object name="portal" gid="2000" x="435" y="32">
+   <properties>
+    <property name="warpto" value="CAVE0101"/>
+   </properties>
+  </object>
+  <object name="portal" gid="2000" x="369" y="368">
+   <properties>
+    <property name="map" value="MAP0000"/>
+   </properties>
+  </object>
  </objectgroup>
 </map>
