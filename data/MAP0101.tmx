@@ -2759,6 +2759,7 @@
   <object name="barrel" gid="770" x="432" y="384"/>
   <object name="barrel" gid="771" x="416" y="400"/>
   <object name="barrel" gid="772" x="432" y="400"/>
+  <object name="helmet" gid="515" x="271" y="219"/>
  </objectgroup>
  <objectgroup name="Furnitures1" width="30" height="30">
   <object name="candle" gid="648" x="287" y="221"/>
@@ -2905,14 +2906,6 @@
    </properties>
   </object>
   <object name="sword" type="weapon" gid="2055" x="64" y="79">
-   <properties>
-    <property name="damage" value="5"/>
-    <property name="hci" value="1"/>
-    <property name="image" value="sword"/>
-    <property name="swingspeed" value="3"/>
-   </properties>
-  </object>
-  <object name="helmet" gid="515" x="271" y="219">
    <properties>
     <property name="damage" value="5"/>
     <property name="hci" value="1"/>

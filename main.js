@@ -142,7 +142,7 @@ var jsApp	=
 	me.input.bindKey(me.input.KEY.X, "interact",true);
  
     // Menu Screen
-    me.state.change(me.state.PLAY,"MAP0000");  
+    me.state.change(me.state.PLAY,"MAP0101");  
  
 }
 
