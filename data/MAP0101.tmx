@@ -1829,18 +1829,11 @@
   </data>
  </layer>
  <objectgroup color="#00ff00" name="zones" width="30" height="30">
-  <object name="mobzone" type="zone" x="371" y="116" width="102" height="209">
+  <object name="mobzone" type="zone" x="157" y="317" width="101" height="60">
    <properties>
     <property name="level" value="2"/>
     <property name="mob" value="spider"/>
-    <property name="mobcount" value="10"/>
-   </properties>
-  </object>
-  <object name="mobzone" type="zone" x="19" y="304" width="239" height="125">
-   <properties>
-    <property name="level" value="2"/>
-    <property name="mob" value="spider"/>
-    <property name="mobcount" value="10"/>
+    <property name="mobcount" value="1"/>
    </properties>
   </object>
  </objectgroup>
@@ -2806,7 +2799,7 @@
   </object>
   <object name="portal" gid="2000" x="369" y="368">
    <properties>
-    <property name="map" value="MAP0000"/>
+    <property name="warpto" value="MAP0000"/>
    </properties>
   </object>
  </objectgroup>

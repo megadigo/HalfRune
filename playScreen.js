@@ -39,6 +39,7 @@ var playScreen = me.ScreenObject.extend({
         // mobzones
         var mobzones = me.game.getEntityByName("mobzone");
         var mobzone = {};
+        var newmob = {};
         for (var i=0;i<mobzones.length;i++){
             mobzone=mobzones[i];
             var level = mobzone.level;
@@ -46,12 +47,15 @@ var playScreen = me.ScreenObject.extend({
             var mobcount = mobzone.mobcount;
             var mobzx = mobzone.pos.x;
             var mobzy = mobzone.pos.y;
+            var mobzz = mobzone.z;
             var mobzw = mobzone.width;
             var mobzh = mobzone.height;
             for (var c=0;c<mobcount;c++){
                 var mobx = mobzx + Math.round(Math.random() * mobzw,0);
                 var moby = mobzy + Math.round(Math.random() * mobzh,0);
-                me.game.add(me.entityPool.newInstanceOf(mob, mobx, moby), 3);
+                newmob = me.entityPool.newInstanceOf(mob, mobx, moby)
+                newmob.hp=10;
+                me.game.add(newmob, mobzz);
             }
         }
         me.game.sort();

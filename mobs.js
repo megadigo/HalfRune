@@ -16,7 +16,6 @@ var spiderEntity = me.ObjectEntity.extend({
   settings.image = "u6tiles";
   settings.spritewidth = 16;
   settings.spriteheight = 16;
-  settings.hp=100;
   this.parent(x, y, settings); 
   // set prods
   this.type='mobs';
@@ -27,9 +26,9 @@ var spiderEntity = me.ObjectEntity.extend({
   this.direction = "left";
   this.spritedirection = "left";
 	this.stance = "normal";
-	this.hp = settings.hp;
-	this.hci = 1;
-	this.damage=5;
+	//this.hp = 10;
+	//this.hci = 1;
+	//this.damage=5;
 	this.type = "mob";
 	this.stage = "random"; //chase, attack, dead, respawn
 	this.randomlenght = 0;

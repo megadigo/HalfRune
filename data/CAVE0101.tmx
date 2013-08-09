@@ -2,6 +2,11 @@
 <map version="1.0" orientation="orthogonal" width="30" height="30" tilewidth="16" tileheight="16">
  <tileset firstgid="1" name="metatiles16x16" tilewidth="16" tileheight="16">
   <image source="sprites/metatiles16x16.png" trans="ff00ff" width="96" height="16"/>
+  <tile id="0">
+   <properties>
+    <property name="type" value="solid"/>
+   </properties>
+  </tile>
  </tileset>
  <tileset firstgid="7" name="cave" tilewidth="16" tileheight="16">
   <image source="sprites/cave.png" trans="ff00ff" width="256" height="336"/>
@@ -1821,30 +1826,23 @@
   </data>
  </layer>
  <objectgroup color="#00ff00" name="zones" width="30" height="30">
-  <object name="mobzone" type="zone" x="370" y="180" width="77" height="71">
+  <object name="portal" type="portal" gid="2358" x="259" y="464">
    <properties>
-    <property name="level" value="2"/>
-    <property name="mob" value="spider"/>
-    <property name="mobcount" value="5"/>
+    <property name="warpto" value="MAP0101"/>
    </properties>
   </object>
-  <object name="mobzone" type="zone" x="77" y="67" width="70" height="63">
-   <properties>
-    <property name="level" value="2"/>
-    <property name="mob" value="spider"/>
-    <property name="mobcount" value="5"/>
-   </properties>
-  </object>
-  <object name="mobzone" type="zone" x="224" y="362" width="88" height="77">
+  <object name="mobzone" type="zone" x="128" y="206" width="253" height="63">
    <properties>
     <property name="level" value="2"/>
     <property name="mob" value="spider"/>
     <property name="mobcount" value="10"/>
    </properties>
   </object>
-  <object name="portal" type="portal" gid="2358" x="259" y="464">
+  <object name="mobzone" type="zone" x="214" y="284" width="94" height="157">
    <properties>
-    <property name="warpto" value="MAP0101"/>
+    <property name="level" value="2"/>
+    <property name="mob" value="spider"/>
+    <property name="mobcount" value="10"/>
    </properties>
   </object>
  </objectgroup>

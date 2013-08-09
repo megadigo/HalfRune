@@ -21,8 +21,6 @@ var portalEntity = me.ObjectEntity.extend({
         
     },
     OnCollide: function(res,obj){
-        //this.doBounce(res,obj);
-        this.collidable = false;
         me.state.change(me.state.PLAY, this.warpto);  
     }, 
     doBounce: function(res,obj) {
