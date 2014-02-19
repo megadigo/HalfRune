@@ -17,7 +17,7 @@ var playScreen = me.ScreenObject.extend({
         me.game.HUD.addItem("border", new borderObject(0,0))
         
         me.game.HUD.addItem("hp", new hpObject(5, 5));
-        me.game.HUD.setItemValue("hp", 0);
+        me.game.HUD.setItemValue("hp", 100);
         
         me.game.HUD.addItem("damage", new damageObject(50, 5));
         me.game.HUD.setItemValue("damage", "+3");
