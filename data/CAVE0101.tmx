@@ -2,20 +2,12 @@
 <map version="1.0" orientation="orthogonal" width="30" height="30" tilewidth="16" tileheight="16">
  <tileset firstgid="1" name="metatiles16x16" tilewidth="16" tileheight="16">
   <image source="sprites/metatiles16x16.png" trans="ff00ff" width="96" height="16"/>
-  <tile id="0">
-   <properties>
-    <property name="type" value="solid"/>
-   </properties>
-  </tile>
  </tileset>
  <tileset firstgid="7" name="cave" tilewidth="16" tileheight="16">
   <image source="sprites/cave.png" trans="ff00ff" width="256" height="336"/>
  </tileset>
  <tileset firstgid="343" name="avatar" tilewidth="16" tileheight="16">
   <image source="sprites/avatar.png" trans="ff00ff" width="256" height="16"/>
- </tileset>
- <tileset firstgid="359" name="u6tiles" tilewidth="16" tileheight="16">
-  <image source="sprites/u6tiles.png" trans="ffffff" width="512" height="1024"/>
  </tileset>
  <layer name="collision" width="30" height="30">
   <data>
@@ -902,11 +894,11 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
    <tile gid="1"/>
    <tile gid="1"/>
    <tile gid="1"/>
@@ -1825,27 +1817,6 @@
    <tile gid="226"/>
   </data>
  </layer>
- <objectgroup color="#00ff00" name="zones" width="30" height="30">
-  <object name="portal" type="portal" gid="2358" x="259" y="464">
-   <properties>
-    <property name="warpto" value="MAP0101"/>
-   </properties>
-  </object>
-  <object name="mobzone" type="zone" x="128" y="206" width="253" height="63">
-   <properties>
-    <property name="level" value="2"/>
-    <property name="mob" value="spider"/>
-    <property name="mobcount" value="10"/>
-   </properties>
-  </object>
-  <object name="mobzone" type="zone" x="214" y="284" width="94" height="157">
-   <properties>
-    <property name="level" value="2"/>
-    <property name="mob" value="spider"/>
-    <property name="mobcount" value="10"/>
-   </properties>
-  </object>
- </objectgroup>
  <layer name="Walls" width="30" height="30">
   <data>
    <tile gid="0"/>
@@ -2703,7 +2674,7 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
-   <tile gid="0"/>
+   <tile gid="121"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>

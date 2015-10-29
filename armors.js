@@ -5,8 +5,8 @@
 var helmetEntity = me.ObjectEntity.extend({
     init: function(x, y, settings) {
         // call the constructor
-        settings.type = "armor";
-        settings.image = "u6tiles";
+        settings.type = "container";
+        //settings.image = "u6tiles";
         settings.spritewidth = 16;
         settings.spriteheight = 16;
         this.parent(x, y, settings);  
@@ -15,8 +15,8 @@ var helmetEntity = me.ObjectEntity.extend({
         this.collidable = true;
         this.status = "stand";
         //animation
-        this.renderable.addAnimation("stand",[515]);
-        this.renderable.setCurrentAnimation("stand"); 
+        this.addAnimation("stand",[515]);
+        this.setCurrentAnimation("stand"); 
     },
     OnInteract: function(obj){
         

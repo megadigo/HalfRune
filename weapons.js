@@ -28,10 +28,10 @@ var weaponEntity = me.ObjectEntity.extend({
     
     
     //animation
-    this.renderable.animationspeed = this.swingspeed;
-    this.renderable.addAnimation("idle",[0]);
-    this.renderable.addAnimation("swing",[1,3]);
-    this.renderable.setCurrentAnimation ("idle");
+    this.animationspeed = this.swingspeed;
+    this.addAnimation("idle",[0]);
+    this.addAnimation("swing",[1,3]);
+    this.setCurrentAnimation("idle");
     
     },
  
@@ -76,10 +76,10 @@ var weaponEntity = me.ObjectEntity.extend({
 		if (this.direction == "left") {
 			this.angle = Number.prototype.degToRad(270);
 		};
+		
 		// check if need to swing;
 		if (this.entityEquip.swing == true && this.entityEquip.actionActive == true) {
-		    this.renderable.setCurrentAnimation("swing", this.OnAfterSwing());
-		    
+		    this.setCurrentAnimation("swing",this.OnAfterSwing);
 		};	
 		this.parent();
 		return true;
@@ -88,7 +88,7 @@ var weaponEntity = me.ObjectEntity.extend({
     
     OnAfterSwing: function() {
     	 me.audio.play("swing");
-		 this.renderable.setCurrentAnimation("idle");
+    	 this.setCurrentAnimation("idle");
     	 //check collition
 		res = me.game.collide(this);
 		if (res)
@@ -99,7 +99,6 @@ var weaponEntity = me.ObjectEntity.extend({
 		        res.obj.doDamage(this, this.hci, this.damage);
 		    }	
 		};
-		return false;
     },
     /* -----
 

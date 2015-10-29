@@ -20,19 +20,19 @@ var chestEntity = me.ObjectEntity.extend({
         this.status = "close";
         this.updateme = true;
         //animation
-        this.renderable.addAnimation("open",[619]);
-        this.renderable.addAnimation("close",[620]);
-        this.renderable.setCurrentAnimation("close");
+        this.addAnimation("open",[619]);
+        this.addAnimation("close",[620]);
+        this.setCurrentAnimation("close");
     },
  
    	OnInteract: function(obj){
    		if (this.status=="close"){
    		    me.audio.play("chest_wood_open");
-   			this.renderable.setCurrentAnimation("open");
+   			this.setCurrentAnimation("open");
    			this.status="open"	
    		} else {
    			me.audio.play("chest_wood_closed");
-   			this.renderable.setCurrentAnimation("close");
+   			this.setCurrentAnimation("close");
    			this.status="close"
    		};	
   		this.updateme = true;	
@@ -87,8 +87,8 @@ var vaseEntity = me.ObjectEntity.extend({
     this.collidable = true;
     this.status = "close";
     //animation
-    this.renderable.addAnimation("close",[755]);
-    this.renderable.setCurrentAnimation("close");
+    this.addAnimation("close",[755]);
+    this.setCurrentAnimation("close");
     
     
     
@@ -136,8 +136,8 @@ var barrelEntity = me.ObjectEntity.extend({
         this.collidable = true;
         this.status = "close";
         //animation
-        this.renderable.addAnimation("close",[757]);
-        this.renderable.setCurrentAnimation("close");
+        this.addAnimation("close",[757]);
+        this.setCurrentAnimation("close");
     },
     OnInteract: function(obj){
         
@@ -181,8 +181,8 @@ var packageEntity = me.ObjectEntity.extend({
         this.collidable = true;
         this.status = "close";
         //animation
-        this.renderable.addAnimation("close",[758]);
-        this.renderable.setCurrentAnimation("close");
+        this.addAnimation("close",[758]);
+        this.setCurrentAnimation("close");
     },
     OnInteract: function(obj){
         
