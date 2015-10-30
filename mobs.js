@@ -35,7 +35,8 @@ var spiderEntity = me.ObjectEntity.extend({
 	this.respawnX=this.pos.x;
 	this.respawnY=this.pos.y;
 	this.sensedistance = 64;
-
+	this.alwaysUpdate= true;
+	
     me.debug.renderHitBox = false;
     
     //animation

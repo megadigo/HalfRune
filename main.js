@@ -124,6 +124,10 @@ var jsApp	=
 	me.entityPool.add("package", packageEntity);
 	me.entityPool.add("vase", vaseEntity);
 	
+	// zones
+	me.entityPool.add("mobzone", zoneEntity);
+	
+	
 	// enable the keyboard
 	me.input.bindKey(me.input.KEY.LEFT, "left");
 	me.input.bindKey(me.input.KEY.RIGHT, "right");

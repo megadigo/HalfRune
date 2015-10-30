@@ -18,6 +18,11 @@ var playScreen = me.ScreenObject.extend({
         
         me.game.HUD.addItem("hp", new hpObject(5, 5));
         me.game.HUD.setItemValue("hp", 0);
+        me.game.HUD.addItem("damage", new damageObject(50, 5));
+        me.game.HUD.setItemValue("damage", "+3");
+ 
+        me.game.HUD.addItem("armor", new armorObject(100, 5));
+        me.game.HUD.setItemValue("armor", "100%");
  
          // quests
         var quests = new questEntity();
@@ -27,6 +32,22 @@ var playScreen = me.ScreenObject.extend({
         me.game.sort();
          // reserve player to a var
         player = me.game.getEntityByName("mainPlayer")[0];   
+		
+		var mobzones = me.game.getEntityByName("mobzone");
+        var mobzone = {};
+        for (var i=0;i<mobzones.length;i++){
+            mobzone=mobzones[i];
+            var level = mobzone.level;
+            var mob = mobzone.mob;
+            var mobcount = mobzone.mobcount;
+            for (var c=0;c<mobcount;c++){
+                //me.game.add(me.entityPool.newInstanceOf(mob, this.x + 16, this.y), 1);
+            }
+        }
+		
+		
+		
+		
     },
     
     /*  
