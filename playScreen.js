@@ -28,24 +28,35 @@ var playScreen = me.ScreenObject.extend({
         var quests = new questEntity();
         me.game.add(quests);
 
-        // make sure everyhting is in the right order
-        me.game.sort();
+        
          // reserve player to a var
         player = me.game.getEntityByName("mainPlayer")[0];   
 		
-		var mobzones = me.game.getEntityByName("mobzone");
+		// mobzones
+        var mobzones = me.game.getEntityByName("mobzone");
         var mobzone = {};
+		var newmob = {};
         for (var i=0;i<mobzones.length;i++){
             mobzone=mobzones[i];
             var level = mobzone.level;
             var mob = mobzone.mob;
             var mobcount = mobzone.mobcount;
+            var mobzx = mobzone.pos.x;
+            var mobzy = mobzone.pos.y;
+			var mobzz = mobzone.z;
+            var mobzw = mobzone.width;
+            var mobzh = mobzone.height;
             for (var c=0;c<mobcount;c++){
-                //me.game.add(me.entityPool.newInstanceOf(mob, this.x + 16, this.y), 1);
+                var mobx = mobzx + Math.round(Math.random() * mobzw,0);
+                var moby = mobzy + Math.round(Math.random() * mobzh,0);
+                newmob = me.entityPool.newInstanceOf(mob, mobx, moby)
+                newmob.hp=10;
+                me.game.add(newmob, mobzz);
             }
         }
 		
-		
+		// make sure everyhting is in the right order
+        me.game.sort();
 		
 		
     },

@@ -13,6 +13,7 @@ var portalEntity = me.ObjectEntity.extend({
         this.type="portal";
         this.collidable = true;
         this.status = "stand";
+		this.warpto=settings.warpto;
         //animation
         this.addAnimation("stand",[650]);
         this.setCurrentAnimation("stand");
@@ -21,8 +22,8 @@ var portalEntity = me.ObjectEntity.extend({
         
     },
     OnCollide: function(res,obj){
-        me.state.change(me.state.PLAY,"CAVE0101");  
-        //this.doBounce(res,obj);
+         
++        me.state.change(me.state.PLAY, this.warpto);  
     }, 
     doBounce: function(res,obj) {
         if (res.x<0 && obj.vel.x<0){

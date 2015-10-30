@@ -10,28 +10,26 @@ var spiderEntity = me.ObjectEntity.extend({
  
     ------ */
    
-    init: function(x, y, settings) {
-    // call the constructor
-    settings.image = "u6tiles";
-    settings.spritewidth = 16;
-    settings.spriteheight = 16;
-    this.parent(x, y, settings);  
-  // set prods
-  this.type='mobs';
-  this.setVelocity(0.5, 0.5);
-  this.gravity=0;
-  this.updateme = true;
-  this.collidable = true;
-  this.direction = "left";
-  this.spritedirection = "left";
+init: function(x, y, settings) {
+// call the constructor
+	var settings = {};
+	settings.image = "u6tiles";
+	settings.spritewidth = 16;
+	settings.spriteheight = 16;
+	this.parent(x, y, settings);  
+// set prods
+	this.type='mobs';
+	this.setVelocity(0.5, 0.5);
+	this.gravity=0;
+	this.updateme = true;
+	this.collidable = true;
+	this.direction = "left";
+	this.spritedirection = "left";
 	this.stance = "normal";
-	this.hp = settings.hp;
-	this.hci = 1;
-	this.damage=5;
 	this.type = "mob";
 	this.stage = "random"; //chase, attack, dead, respawn
 	this.randomlenght = 0;
-  this.timetospawn = 100+Math.round(Math.random()*100,0);
+	this.timetospawn = 100+Math.round(Math.random()*100,0);
 	this.respawnX=this.pos.x;
 	this.respawnY=this.pos.y;
 	this.sensedistance = 64;
