@@ -2763,161 +2763,29 @@
  <objectgroup name="Furnitures1" width="30" height="30">
   <object name="candle" gid="648" x="287" y="221"/>
  </objectgroup>
- <objectgroup name="Mobs" width="30" height="30">
-  <object name="spider" type="mob" gid="1385" x="160" y="192">
-   <properties>
-    <property name="hp" value="30"/>
-   </properties>
-  </object>
-  <object name="spider" type="mob" gid="1385" x="233" y="210">
-   <properties>
-    <property name="hp" value="30"/>
-   </properties>
-  </object>
-  <object name="spider" type="mob" gid="1385" x="274" y="148">
-   <properties>
-    <property name="hp" value="30"/>
-   </properties>
-  </object>
-  <object name="spider" type="mob" gid="1385" x="256" y="304">
-   <properties>
-    <property name="hp" value="30"/>
-   </properties>
-  </object>
-  <object name="spider" type="mob" gid="1385" x="352" y="288">
-   <properties>
-    <property name="hp" value="30"/>
-   </properties>
-  </object>
-  <object name="spider" type="mob" gid="1385" x="128" y="320">
-   <properties>
-    <property name="hp" value="30"/>
-   </properties>
-  </object>
-  <object name="spider" type="mob" gid="1385" x="200" y="333">
-   <properties>
-    <property name="hp" value="30"/>
-   </properties>
-  </object>
-  <object name="spider" type="mob" gid="1385" x="281" y="345">
-   <properties>
-    <property name="hp" value="30"/>
-   </properties>
-  </object>
-  <object name="spider" type="mob" gid="1385" x="187" y="255">
-   <properties>
-    <property name="hp" value="30"/>
-   </properties>
-  </object>
-  <object name="spider" type="mob" gid="1385" x="419" y="333">
-   <properties>
-    <property name="hp" value="30"/>
-   </properties>
-  </object>
-  <object name="spider" type="mob" gid="1385" x="366" y="245">
-   <properties>
-    <property name="hp" value="30"/>
-   </properties>
-  </object>
-  <object name="spider" type="mob" gid="1385" x="389" y="174">
-   <properties>
-    <property name="hp" value="30"/>
-   </properties>
-  </object>
-  <object name="spider" type="mob" gid="1385" x="320" y="112">
-   <properties>
-    <property name="hp" value="30"/>
-   </properties>
-  </object>
-  <object name="spider" type="mob" gid="1385" x="304" y="80">
-   <properties>
-    <property name="hp" value="30"/>
-   </properties>
-  </object>
-  <object name="spider" type="mob" gid="1385" x="288" y="48">
-   <properties>
-    <property name="hp" value="30"/>
-   </properties>
-  </object>
-  <object name="spider" type="mob" gid="1385" x="257" y="401">
-   <properties>
-    <property name="hp" value="30"/>
-   </properties>
-  </object>
-  <object name="spider" type="mob" gid="1385" x="336" y="464">
-   <properties>
-    <property name="hp" value="30"/>
-   </properties>
-  </object>
-  <object name="spider" type="mob" gid="1385" x="426" y="435">
-   <properties>
-    <property name="hp" value="30"/>
-   </properties>
-  </object>
-  <object name="spider" type="mob" gid="1385" x="38" y="449">
-   <properties>
-    <property name="hp" value="30"/>
-   </properties>
-  </object>
-  <object name="spider" type="mob" gid="1385" x="160" y="400">
-   <properties>
-    <property name="hp" value="30"/>
-   </properties>
-  </object>
-  <object name="spider" type="mob" gid="1385" x="32" y="364">
-   <properties>
-    <property name="hp" value="30"/>
-   </properties>
-  </object>
-  <object name="spider" type="mob" gid="1385" x="32" y="224">
-   <properties>
-    <property name="hp" value="30"/>
-   </properties>
-  </object>
-  <object name="spider" type="mob" gid="1385" x="25" y="41">
-   <properties>
-    <property name="hp" value="30"/>
-   </properties>
-  </object>
-  <object name="spider" type="mob" gid="1385" x="140" y="31">
-   <properties>
-    <property name="hp" value="30"/>
-   </properties>
-  </object>
-  <object name="spider" type="mob" gid="1385" x="193" y="118">
-   <properties>
-    <property name="hp" value="30"/>
-   </properties>
-  </object>
-  <object name="spider" type="mob" gid="1385" x="424" y="118">
-   <properties>
-    <property name="hp" value="30"/>
-   </properties>
-  </object>
- </objectgroup>
+ <objectgroup name="Mobs" width="30" height="30"/>
  <objectgroup color="#ffffff" name="Weapons" width="30" height="30">
   <object name="axe" type="weapon" gid="2063" x="224" y="79">
    <properties>
-    <property name="image" value="axe"/>
     <property name="damage" value="8"/>
     <property name="hci" value="1"/>
+    <property name="image" value="axe"/>
     <property name="swingspeed" value="10"/>
    </properties>
   </object>
   <object name="sword" type="weapon" gid="2055" x="64" y="79">
    <properties>
-    <property name="image" value="sword"/>
     <property name="damage" value="5"/>
     <property name="hci" value="1"/>
+    <property name="image" value="sword"/>
     <property name="swingspeed" value="3"/>
    </properties>
   </object>
   <object name="helmet" gid="515" x="271" y="219">
-  <object name="sword" gid="555" x="302" y="218"/>
    <properties>
-    <property name="image" value="sword"/>
     <property name="damage" value="5"/>
     <property name="hci" value="1"/>
+    <property name="image" value="sword"/>
     <property name="swingspeed" value="3"/>
    </properties>
   </object>
@@ -2925,5 +2793,14 @@
  <objectgroup color="#00ff00" name="Entities" width="30" height="30">
   <object name="mainPlayer" gid="2080" x="80" y="96"/>
   <object name="portal" gid="2000" x="200" y="96"/>
+ </objectgroup>
+ <objectgroup color="#00ff00" name="zones" width="30" height="30">
+  <object name="mobzone" type="zones" x="80" y="304" width="176" height="144">
+   <properties>
+    <property name="level" value="1"/>
+    <property name="mob" value="spider"/>
+    <property name="mobcount" value="10"/>
+   </properties>
+  </object>
  </objectgroup>
 </map>
