@@ -18,6 +18,7 @@ var playScreen = me.ScreenObject.extend({
         
         me.game.HUD.addItem("hp", new hpObject(5, 5));
         me.game.HUD.setItemValue("hp", 0);
+		
         me.game.HUD.addItem("damage", new damageObject(50, 5));
         me.game.HUD.setItemValue("damage", "+3");
  
@@ -27,8 +28,7 @@ var playScreen = me.ScreenObject.extend({
          // quests
         var quests = new questEntity();
         me.game.add(quests);
-
-        
+		 		 
          // reserve player to a var
         player = me.game.getEntityByName("mainPlayer")[0];   
 		
@@ -49,22 +49,19 @@ var playScreen = me.ScreenObject.extend({
             for (var c=0;c<mobcount;c++){
                 var mobx = mobzx + Math.round(Math.random() * mobzw,0);
                 var moby = mobzy + Math.round(Math.random() * mobzh,0);
-                newmob = me.entityPool.newInstanceOf(mob, mobx, moby)
-                newmob.hp=10;
+                newmob = me.entityPool.newInstanceOf(mob, mobx, moby);
+				newmob.hp=10;
                 me.game.add(newmob, mobzz);
             }
         }
-		
-		// make sure everyhting is in the right order
         me.game.sort();
-		
-		
     },
     
     /*  
     action to perform when game is finished (state change)
  
     --- */
+	
     onDestroyEvent: function() {
         // remove the HUD
         me.game.disableHUD();

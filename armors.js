@@ -15,8 +15,8 @@ var helmetEntity = me.ObjectEntity.extend({
         this.collidable = true;
         this.status = "stand";
         //animation
-        this.addAnimation("stand",[515]);
-        this.setCurrentAnimation("stand"); 
+        this.renderable.addAnimation("stand",[515]);
+        this.renderable.setCurrentAnimation("stand"); 
     },
     OnInteract: function(obj){
         

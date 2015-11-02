@@ -60,11 +60,11 @@ var playerEntity = me.ObjectEntity.extend({
     //this.hpValue = new me.Font('font8', 8, 'white');
     
     //animation
-    this.addAnimation("normal_up",[0,1,2]);
-    this.addAnimation("normal_right",[4,5,6]);
-    this.addAnimation("normal_down",[8,9,10]);
-    this.addAnimation("normal_left",[12,13,14]);
-    this.setCurrentAnimation(this.stance + "_" + this.direction);
+    this.renderable.addAnimation("normal_up",[0,1,2]);
+    this.renderable.addAnimation("normal_right",[4,5,6]);
+    this.renderable.addAnimation("normal_down",[8,9,10]);
+    this.renderable.addAnimation("normal_left",[12,13,14]);
+    this.renderable.setCurrentAnimation(this.stance + "_" + this.direction);
     
     // adjust the bounding box x,w,y,h
     this.updateColRect(5,10 , 5, 10);
@@ -212,7 +212,7 @@ var playerEntity = me.ObjectEntity.extend({
 	    } else if (this.direction == "down") {
 	       this.vel.y +=  this.accel.y * me.timer.tick
 	    }
-	    this.setCurrentAnimation(this.stance + "_" + this.direction)
+	    this.renderable.setCurrentAnimation(this.stance + "_" + this.direction)
 	}, 
     doStand : function(up) {
         this.moving = false;

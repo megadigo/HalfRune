@@ -15,8 +15,8 @@ var portalEntity = me.ObjectEntity.extend({
         this.status = "stand";
 		this.warpto=settings.warpto;
         //animation
-        this.addAnimation("stand",[650]);
-        this.setCurrentAnimation("stand");
+        this.renderable.addAnimation("stand",[650]);
+        this.renderable.setCurrentAnimation("stand");
     },
     OnInteract: function(obj){
         

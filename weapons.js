@@ -29,9 +29,9 @@ var weaponEntity = me.ObjectEntity.extend({
     
     //animation
     this.animationspeed = this.swingspeed;
-    this.addAnimation("idle",[0]);
-    this.addAnimation("swing",[1,3]);
-    this.setCurrentAnimation("idle");
+    this.renderable.addAnimation("idle",[0]);
+    this.renderable.addAnimation("swing",[1,3]);
+    this.renderable.setCurrentAnimation("idle");
     
     },
  
@@ -79,16 +79,16 @@ var weaponEntity = me.ObjectEntity.extend({
 		
 		// check if need to swing;
 		if (this.entityEquip.swing == true && this.entityEquip.actionActive == true) {
-		    this.setCurrentAnimation("swing",this.OnAfterSwing);
+		    this.renderable.setCurrentAnimation("swing",this.OnAfterSwing(this));
 		};	
 		this.parent();
 		return true;
 			
     },
     
-    OnAfterSwing: function() {
+    OnAfterSwing: function(thiss) {
     	 me.audio.play("swing");
-    	 this.setCurrentAnimation("idle");
+    	 thiss.renderable.setCurrentAnimation("idle");
     	 //check collition
 		res = me.game.collide(this);
 		if (res)

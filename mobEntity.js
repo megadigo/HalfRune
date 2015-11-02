@@ -7,12 +7,12 @@ var exampleEntity = me.mobEntity.extend({
     init: function(x, y, settings) {
     	this.parent(x, y, settings);
     	//animation
-	    this.addAnimation("normal_up",[1384,1385]);
-	    this.addAnimation("normal_right",[1386,1387]);
-	    this.addAnimation("normal_down",[1388,1389]);
-	    this.addAnimation("normal_left",[1390,1391]);
-	    this.addAnimation("normal_stand",[1000]);
-	    this.setCurrentAnimation(this.stance + "_" + this.direction);    	
+	    this.renderable.addAnimation("normal_up",[1384,1385]);
+	    this.renderable.addAnimation("normal_right",[1386,1387]);
+	    this.renderable.addAnimation("normal_down",[1388,1389]);
+	    this.renderable.addAnimation("normal_left",[1390,1391]);
+	    this.renderable.addAnimation("normal_stand",[1000]);
+	    this.renderable.setCurrentAnimation(this.stance + "_" + this.direction);    	
     },
     
    	update: function() {

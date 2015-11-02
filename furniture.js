@@ -20,8 +20,8 @@ var bedEntity = me.ObjectEntity.extend({
         this.collidable = true;
         this.status = "stand";
         //animation
-        this.addAnimation("stand",[711]);
-        this.setCurrentAnimation("stand");
+        this.renderable.addAnimation("stand",[711]);
+        this.renderable.setCurrentAnimation("stand");
     },
     
      OnInteract: function(obj){
@@ -69,8 +69,8 @@ var chairEntity = me.ObjectEntity.extend({
         this.collidable = true;
         this.status = "stand";
         //animation
-        this.addAnimation("stand",[701]);
-        this.setCurrentAnimation("stand");
+        this.renderable.addAnimation("stand",[701]);
+        this.renderable.setCurrentAnimation("stand");
     },
     OnInteract: function(obj){
         
@@ -114,8 +114,8 @@ var tableEntity = me.ObjectEntity.extend({
         this.collidable = true;
         this.status = "stand";
         //animation
-        this.addAnimation("stand",[741]);
-        this.setCurrentAnimation("stand");
+        this.renderable.addAnimation("stand",[741]);
+        this.renderable.setCurrentAnimation("stand");
     },
     OnInteract: function(obj){
         
@@ -159,8 +159,8 @@ var candleEntity = me.ObjectEntity.extend({
         this.collidable = true;
         this.status = "stand";
         //animation
-        this.addAnimation("stand",[648]);
-        this.setCurrentAnimation("stand");
+        this.renderable.addAnimation("stand",[648]);
+        this.renderable.setCurrentAnimation("stand");
     },
     OnInteract: function(obj){
         
@@ -203,8 +203,8 @@ var fountainEntity = me.ObjectEntity.extend({
         this.collidable = true;
         this.status = "stand";
         //animation
-        this.addAnimation("stand",[796]);
-        this.setCurrentAnimation("stand");
+        this.renderable.addAnimation("stand",[796]);
+        this.renderable.setCurrentAnimation("stand");
     },
     OnInteract: function(obj){
         
