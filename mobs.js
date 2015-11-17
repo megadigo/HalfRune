@@ -3,7 +3,7 @@
  */
 
 
-var spiderEntity = me.ObjectEntity.extend({
+var spiderEntity = me.Entity.extend({
 /* -----
  
     constructor
@@ -11,21 +11,25 @@ var spiderEntity = me.ObjectEntity.extend({
     ------ */
    
 init: function(x, y, settings) {
-// call the constructor
+
+	//settinhgs
 	var settings = {};
-	settings.image = "u6tiles";
-	settings.spritewidth = 16;
-	settings.spriteheight = 16;
-	this.parent(x, y, settings);  
+	settings.type='mobs';
+	settings.spritewidth = 24;
+	settings.spriteheight = 24;
+	settings.image = "creatures";
+	settings.height = 24;
+	settings.width = 24;
+	this._super(me.Entity, 'init',[x, y, settings]);
+	
 // set prods
-	this.type='mobs';
-	this.setVelocity(0.5, 0.5);
-	this.gravity=0;
+	this.body.collisionType = me.collision.types.ENEMY_OBJECT;
+	this.body.setVelocity(0.5, 0.5);
+	this.body.gravity=0;
 	this.updateme = true;
 	this.collidable = true;
 	this.direction = "left";
 	this.spritedirection = "left";
-	this.stance = "normal";
 	this.type = "mob";
 	this.stage = "random"; //chase, attack, dead, respawn
 	this.randomlenght = 0;
@@ -35,15 +39,13 @@ init: function(x, y, settings) {
 	this.sensedistance = 64;
 	this.alwaysUpdate= true;
 	
-    me.debug.renderHitBox = false;
+    //me.debug.renderHitBox = false;
     
     //animation
-    this.renderable.addAnimation("normal_up",[1384,1385]);
-    this.renderable.addAnimation("normal_right",[1386,1387]);
-    this.renderable.addAnimation("normal_down",[1388,1389]);
-    this.renderable.addAnimation("normal_left",[1390,1391]);
-    this.renderable.addAnimation("dead_stand",[1261])
-    this.renderable.setCurrentAnimation(this.stance + "_" + this.direction);
+    this.renderable.addAnimation("walk",[266,286]);
+	this.renderable.addAnimation("stand",[266]);
+    this.renderable.addAnimation("dead",[466])
+    this.renderable.setCurrentAnimation("stand");
     },
 	/* -----
  
@@ -55,10 +57,7 @@ init: function(x, y, settings) {
 		this.updateme = true;	
 	},
   	
-	OnCollide: function(res,obj){
-		//this.doChangeDirection(res,obj);
-		this.doBounce(res,obj);
-	},
+	
    
     /* -----
  
@@ -66,7 +65,7 @@ init: function(x, y, settings) {
  
     ------ */
    
-  update: function() { 
+  update: function(dt) { 
 		
 		// do stage
     		if (this.stage == "random")   this.doRandomWalk();
@@ -77,30 +76,30 @@ init: function(x, y, settings) {
 		
 		// move
 			if (this.direction == "right"){
-				this.vel.x= this.accel.x * me.timer.tick;
-				this.vel.y = 0;	
+				this.body.vel.x= this.body.accel.x * me.timer.tick;
+				this.body.vel.y = 0;	
 			};
 			if (this.direction == "left"){
-				this.vel.x= -this.accel.x * me.timer.tick
-				this.vel.y = 0;
+				this.body.vel.x= -this.body.accel.x * me.timer.tick
+				this.body.vel.y = 0;
 			};
 			if (this.direction == "down"){
-				this.vel.y= this.accel.y * me.timer.tick;
-				this.vel.x = 0;			
+				this.body.vel.y= this.body.accel.y * me.timer.tick;
+				this.body.vel.x = 0;			
 			};
 			if (this.direction == "up"){
-				this.vel.y= -this.accel.y * me.timer.tick
-				this.vel.x = 0;
+				this.body.vel.y= -this.body.accel.y * me.timer.tick
+				this.body.vel.x = 0;
 			};
 			if (this.direction == "stand"){
-                this.vel.y = 0
-                this.vel.x = 0;
+                this.body.vel.y = 0
+                this.body.vel.x = 0;
             };
 
 
 
-		//check collition and attack
-		res = me.game.collide(this);
+		
+	
     if (this.stance == 'normal') {
   		if (res) {
   			if (res.obj.type == "player") {
@@ -110,23 +109,49 @@ init: function(x, y, settings) {
   		    }
   		}
     }
-	 	// check & update spider movement
-		this.updateMovement();
 		  		
   		// update animation if necessary
-      if (stage='dead') {
-        this.renderable.setCurrentAnimation(this.stance + "_" + this.direction);
+      if (this.stage == 'dead') {
+        if (!this.renderable.isCurrentAnimation("dead")) {
+			this.renderable.setCurrentAnimation("dead");
+		}
             this.parent(this);
             return true;
           };
-	    if (this.vel.x!=0 || this.vel.y!=0) {
-            this.renderable.setCurrentAnimation(this.stance + "_" + this.direction);
-            this.parent(this);
-            return true;
-	   	} else {
-		 	return false;
-		};
+	    if (this.body.vel.x!=0 || this.body.vel.y!=0) {
+            if (!this.renderable.isCurrentAnimation("walk")) {
+			this.renderable.setCurrentAnimation("walk");
+			}
+		}
+	//
+	// check collision
+	//
+	//
+	me.collision.check(this);
+	// update player movement
+	return (this._super(me.Entity, 'update', [dt]) || this.body.vel.x !== 0 || this.body.vel.y !== 0);
 	},
+
+
+	onCollision : function (response, other) {
+		var colide = false;
+		switch (response.b.body.collisionType) {
+			case me.collision.types.WORLD_SHAPE:
+				colide = true;
+				break;
+			case me.collision.types.ENEMY_OBJECT:
+				colide = true;
+				break;
+			case me.collision.types.ACTION_OBJECT:
+				colide = true;
+				break;
+			default:
+				colide = false;
+		};
+		return colide
+	},	
+
+
 	
 	/* -----
 
@@ -135,16 +160,16 @@ init: function(x, y, settings) {
     ------ */
    
   doChangeDirection: function(res,obj) {
-   		if (res.x<0 && obj.vel.x<0){
+   		if (res.x<0 && obj.body.vel.x<0){
 			this.direction = "left";
 		};
-		if (res.x>0 && obj.vel.x>0){
+		if (res.x>0 && obj.body.vel.x>0){
 			this.direction = "right";
 		}
-		if (res.y<0 && obj.vel.y<0){
+		if (res.y<0 && obj.body.vel.y<0){
 			this.direction = "up";
 		};
-		if (res.y>0 && obj.vel.y>0){
+		if (res.y>0 && obj.body.vel.y>0){
 			this.direction = "down";
 		}
    },
@@ -154,17 +179,17 @@ init: function(x, y, settings) {
  
     ------ */
   doBounce: function(res,obj) {
-   		if (res.x<0 && obj.vel.x<0){
-			obj.vel.x = 0;
+   		if (res.x < 0 && obj.body.vel.x < 0){
+			obj.body.vel.x = 0;
 		};
-		if (res.x>0 && obj.vel.x>0){
-			obj.vel.x = 0;
+		if (res.x > 0 && obj.body.vel.x > 0){
+			obj.body.vel.x = 0;
 		}
-		if (res.y<0 && obj.vel.y<0){
-			obj.vel.y = 0;
+		if (res.y<0 && obj.body.vel.y<0){
+			obj.body.vel.y = 0;
 		};
-		if (res.y>0 && obj.vel.y>0){
-			obj.vel.y = 0;
+		if (res.y>0 && obj.body.vel.y>0){
+			obj.body.vel.y = 0;
 		}
    },
    
@@ -192,7 +217,7 @@ init: function(x, y, settings) {
        };
       // test if player is near
     
-     var distplayer = this.distanceTo(player)
+     var distplayer = 1//this.distanceTo(player)
      
      if (distplayer<=this.sensedistance) {
          this.stage = "chase"
@@ -205,8 +230,8 @@ init: function(x, y, settings) {
    doChaseWalk: function (){
        
        // find preference direction
-       var difx = (this.pos.x - player.pos.x)
-       var dify = (this.pos.y - player.pos.y)
+       var difx = (this.x - player.x)
+       var dify = (this.y - player.y)
        
        if (Math.abs(Math.abs(difx)-Math.abs(dify)) >= 16) {
 	       if (Math.abs(difx) >= Math.abs(dify) && Math.abs(difx) > 16){
@@ -243,7 +268,9 @@ init: function(x, y, settings) {
        this.collidable = false;
        this.stance='dead'
        this.direction="stand";
-       this.renderable.setCurrentAnimation(this.stance + "_" + this.direction);
+       if (!this.renderable.isCurrentAnimation("dead")) {
+			this.renderable.setCurrentAnimation("dead");
+		}
        if (this.timetospawn == 0){
             this.stage = "respawn";
             this.timetospawn=100+Math.round(Math.random()*100,0);

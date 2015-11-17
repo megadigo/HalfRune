@@ -1,13 +1,13 @@
 /**
  * @author megadigo
  */ 
-var portalEntity = me.ObjectEntity.extend({
+var portalEntity = me.Entity.extend({
     init: function(x, y, settings) {
         // call the constructor
         settings.image = "u6tiles";
         settings.spritewidth = 16;
         settings.spriteheight = 16;
-        this.parent(x, y, settings);
+        this._super(portalEntity, 'init',(x, y, settings));
         
         // set props
         this.type="portal";

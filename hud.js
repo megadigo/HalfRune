@@ -4,13 +4,13 @@
 // create a "score object" that will use a Bitmap font
 // to display the score value
 
-var hpObject = me.HUD_Item.extend(
+var hpObject = me.Container.extend(
 {   
    // constructor
    init: function(x, y)
    {
       // call the parent constructor
-      this.parent(x, y);
+      this._super(me.Entity, 'init',[x, y, settings]);
       // create a font
       this.font = new me.BitmapFont("font8", 8);
       this.icon = me.loader.getImage("hp")
@@ -24,7 +24,7 @@ var hpObject = me.HUD_Item.extend(
    }
 });
 
-var damageObject = me.HUD_Item.extend(
+var damageObject = me.Container.extend(
 {   
    // constructor
    init: function(x, y)
@@ -44,7 +44,7 @@ var damageObject = me.HUD_Item.extend(
    }
 });
 
-var armorObject = me.HUD_Item.extend(
+var armorObject = me.Container.extend(
 {   
    // constructor
    init: function(x, y)
@@ -64,7 +64,7 @@ var armorObject = me.HUD_Item.extend(
    }
 });
 
-var borderObject = me.HUD_Item.extend(
+var borderObject = me.Container.extend(
 {   
    // constructor
    init: function(x, y)

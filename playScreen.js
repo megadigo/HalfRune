@@ -7,33 +7,33 @@ var playScreen = me.ScreenObject.extend({
     
     onResetEvent: function(newlevel) {
         
-    	me.audio.playTrack("heroicdemise");
+    	//me.audio.playTrack("heroicdemise");
 	
         me.levelDirector.loadLevel(newlevel);
     
         // add a default HUD to the game mngr
-        me.game.addHUD(0, 0, 320, 240);
+        //me.game.addHUD(0, 0, 320, 240);
       
-        me.game.HUD.addItem("border", new borderObject(0,0))
+        //me.game.HUD.addItem("border", new borderObject(0,0))
         
-        me.game.HUD.addItem("hp", new hpObject(5, 5));
-        me.game.HUD.setItemValue("hp", 0);
+        //me.game.HUD.addItem("hp", new hpObject(5, 5));
+        //me.game.HUD.setItemValue("hp", 0);
 		
-        me.game.HUD.addItem("damage", new damageObject(50, 5));
-        me.game.HUD.setItemValue("damage", "+3");
+        //me.game.HUD.addItem("damage", new damageObject(50, 5));
+        //me.game.HUD.setItemValue("damage", "+3");
  
-        me.game.HUD.addItem("armor", new armorObject(100, 5));
-        me.game.HUD.setItemValue("armor", "100%");
+        //me.game.HUD.addItem("armor", new armorObject(100, 5));
+        //me.game.HUD.setItemValue("armor", "100%");
  
          // quests
-        var quests = new questEntity();
-        me.game.add(quests);
+        //var quests = new questEntity();
+        //me.game.world.addChild(quests);
 		 		 
          // reserve player to a var
-        player = me.game.getEntityByName("mainPlayer")[0];   
+        player = me.game.world.getChildByName("mainPlayer");   
 		
 		// mobzones
-        var mobzones = me.game.getEntityByName("mobzone");
+        var mobzones = me.game.world.getChildByName("mobzone");
         var mobzone = {};
 		var newmob = {};
         for (var i=0;i<mobzones.length;i++){
@@ -49,12 +49,12 @@ var playScreen = me.ScreenObject.extend({
             for (var c=0;c<mobcount;c++){
                 var mobx = mobzx + Math.round(Math.random() * mobzw,0);
                 var moby = mobzy + Math.round(Math.random() * mobzh,0);
-                newmob = me.entityPool.newInstanceOf(mob, mobx, moby);
+                newmob = me.pool.pull(mob, mobx, moby);
 				newmob.hp=10;
-                me.game.add(newmob, mobzz);
+                me.game.world.addChild(newmob, mobzz);
             }
         }
-        me.game.sort();
+        me.game.world.sort();
     },
     
     /*  

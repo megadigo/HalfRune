@@ -3,6 +3,7 @@
  */
 var questEntity =  Object.extend({
   init: function() {
+		
       this.counterupdate=0;
       this.counterdraw=0;
   },

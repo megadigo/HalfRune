@@ -2,7 +2,7 @@
  * @author RCordeiro
  */
 
-var weaponEntity = me.ObjectEntity.extend({
+var weaponEntity = me.Entity.extend({
     /* -----
  
     constructor
@@ -13,10 +13,10 @@ var weaponEntity = me.ObjectEntity.extend({
     // call the constructor
     settings.spritewidth = 16;
     settings.spriteheight = 16;
-    this.parent(x, y, settings);
+    this._super(me.Entity, 'init',[x, y, settings]);
     
     // set props
-    this.type="weapon";
+    this.type="items";
     this.status = "stop";
     this.direction = "left";
     this.entityEquip = {};
@@ -32,7 +32,7 @@ var weaponEntity = me.ObjectEntity.extend({
     this.renderable.addAnimation("idle",[0]);
     this.renderable.addAnimation("swing",[1,3]);
     this.renderable.setCurrentAnimation("idle");
-    
+    this.alwaysUpdate= true
     },
  
 
@@ -79,16 +79,16 @@ var weaponEntity = me.ObjectEntity.extend({
 		
 		// check if need to swing;
 		if (this.entityEquip.swing == true && this.entityEquip.actionActive == true) {
-		    this.renderable.setCurrentAnimation("swing",this.OnAfterSwing(this));
+		    this.renderable.setCurrentAnimation("swing",this.OnAfterSwing());
 		};	
 		this.parent();
 		return true;
 			
     },
     
-    OnAfterSwing: function(thiss) {
-    	 me.audio.play("swing");
-    	 thiss.renderable.setCurrentAnimation("idle");
+    OnAfterSwing: function() {
+    	 //me.audio.play("swing");
+    	 this.renderable.setCurrentAnimation("idle");
     	 //check collition
 		res = me.game.collide(this);
 		if (res)
@@ -106,17 +106,17 @@ var weaponEntity = me.ObjectEntity.extend({
  
     ------ */
    doBounce: function(res,obj) {
-   		if (res.x<0 && obj.vel.x<0){
-			obj.vel.x = 0;
+   		if (res.x<0 && obj.body.vel.x<0){
+			obj.body.vel.x = 0;
 		};
-		if (res.x>0 && obj.vel.x>0){
-			obj.vel.x = 0;
+		if (res.x>0 && obj.body.vel.x>0){
+			obj.body.vel.x = 0;
 		}
-		if (res.y<0 && obj.vel.y<0){
-			obj.vel.y = 0;
+		if (res.y<0 && obj.body.vel.y<0){
+			obj.body.vel.y = 0;
 		};
-		if (res.y>0 && obj.vel.y>0){
-			obj.vel.y = 0;
+		if (res.y>0 && obj.body.vel.y>0){
+			obj.body.vel.y = 0;
 		}
    },
    

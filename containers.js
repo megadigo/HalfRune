@@ -1,7 +1,7 @@
 /**
  * @author megadigo
  */
-var chestEntity = me.ObjectEntity.extend({
+var chestEntity = me.Entity.extend({
     /* -----
  
     constructor
@@ -10,10 +10,10 @@ var chestEntity = me.ObjectEntity.extend({
    
     init: function(x, y, settings) {
         // call the constructor
-        settings.image = "u6tiles";
+        settings.image = "items";
         settings.spritewidth = 16;
         settings.spriteheight = 16;
-        this.parent(x, y, settings);
+        this._super(me.Entity, 'init',[x, y, settings]);
         // set props
         this.type="container";
         this.collidable = true;
@@ -58,29 +58,29 @@ var chestEntity = me.ObjectEntity.extend({
  
     ------ */
    doBounce: function(res,obj) {
-   		if (res.x<0 && obj.vel.x<0){
-			obj.vel.x = 0;
+   		if (res.x<0 && obj.body.vel.x<0){
+			obj.body.vel.x = 0;
 		};
-		if (res.x>0 && obj.vel.x>0){
-			obj.vel.x = 0;
+		if (res.x>0 && obj.body.vel.x>0){
+			obj.body.vel.x = 0;
 		}
-		if (res.y<0 && obj.vel.y<0){
-			obj.vel.y = 0;
+		if (res.y<0 && obj.body.vel.y<0){
+			obj.body.vel.y = 0;
 		};
-		if (res.y>0 && obj.vel.y>0){
-			obj.vel.y = 0;
+		if (res.y>0 && obj.body.vel.y>0){
+			obj.body.vel.y = 0;
 		}
    }
 }
 );
 
-var vaseEntity = me.ObjectEntity.extend({
+var vaseEntity = me.Entity.extend({
     init: function(x, y, settings) {
     // call the constructor
     settings.image = "u6tiles";
     settings.spritewidth = 16;
     settings.spriteheight = 16;
-    this.parent(x, y, settings);
+    this._super(vaseEntity, 'init',[x, y, settings]);
     
     // set props
     this.type="container";
@@ -100,17 +100,17 @@ var vaseEntity = me.ObjectEntity.extend({
         this.doBounce(res,obj);
     }, 
     doBounce: function(res,obj) {
-        if (res.x<0 && obj.vel.x<0){
-            obj.vel.x = 0;
+        if (res.x<0 && obj.body.vel.x<0){
+            obj.body.vel.x = 0;
         };
-        if (res.x>0 && obj.vel.x>0){
-            obj.vel.x = 0;
+        if (res.x>0 && obj.body.vel.x>0){
+            obj.body.vel.x = 0;
         }
-        if (res.y<0 && obj.vel.y<0){
-            obj.vel.y = 0;
+        if (res.y<0 && obj.body.vel.y<0){
+            obj.body.vel.y = 0;
         };
-        if (res.y>0 && obj.vel.y>0){
-            obj.vel.y = 0;
+        if (res.y>0 && obj.body.vel.y>0){
+            obj.body.vel.y = 0;
         }
    }, 
    update: function() { 
@@ -123,13 +123,13 @@ var vaseEntity = me.ObjectEntity.extend({
     
 });
 
-var barrelEntity = me.ObjectEntity.extend({
+var barrelEntity = me.Entity.extend({
     init: function(x, y, settings) {
         // call the constructor
         settings.image = "u6tiles";
         settings.spritewidth = 16;
         settings.spriteheight = 16;
-        this.parent(x, y, settings);
+        this._super(barrelEntity, 'init',[x, y, settings]);
 
         // set props
         this.type="container";
@@ -146,17 +146,17 @@ var barrelEntity = me.ObjectEntity.extend({
         this.doBounce(res,obj);
     }, 
     doBounce: function(res,obj) {
-        if (res.x<0 && obj.vel.x<0){
-            obj.vel.x = 0;
+        if (res.x<0 && obj.body.vel.x<0){
+            obj.body.vel.x = 0;
         };
-        if (res.x>0 && obj.vel.x>0){
-            obj.vel.x = 0;
+        if (res.x>0 && obj.body.vel.x>0){
+            obj.body.vel.x = 0;
         }
-        if (res.y<0 && obj.vel.y<0){
-            obj.vel.y = 0;
+        if (res.y<0 && obj.body.vel.y<0){
+            obj.body.vel.y = 0;
         };
-        if (res.y>0 && obj.vel.y>0){
-            obj.vel.y = 0;
+        if (res.y>0 && obj.body.vel.y>0){
+            obj.body.vel.y = 0;
         }
    }, 
    update: function() { 
@@ -169,13 +169,13 @@ var barrelEntity = me.ObjectEntity.extend({
     
 });
 
-var packageEntity = me.ObjectEntity.extend({
+var packageEntity = me.Entity.extend({
     init: function(x, y, settings) {
         // call the constructor
         settings.image = "u6tiles";
         settings.spritewidth = 16;
         settings.spriteheight = 16;
-        this.parent(x, y, settings);
+        this._super(packageEntity, 'init',[x, y, settings]);
         // set props
         this.type="container";
         this.collidable = true;
@@ -191,17 +191,17 @@ var packageEntity = me.ObjectEntity.extend({
         this.doBounce(res,obj);
     }, 
     doBounce: function(res,obj) {
-        if (res.x<0 && obj.vel.x<0){
-            obj.vel.x = 0;
+        if (res.x<0 && obj.body.vel.x<0){
+            obj.body.vel.x = 0;
         };
-        if (res.x>0 && obj.vel.x>0){
-            obj.vel.x = 0;
+        if (res.x>0 && obj.body.vel.x>0){
+            obj.body.vel.x = 0;
         }
-        if (res.y<0 && obj.vel.y<0){
-            obj.vel.y = 0;
+        if (res.y<0 && obj.body.vel.y<0){
+            obj.body.vel.y = 0;
         };
-        if (res.y>0 && obj.vel.y>0){
-            obj.vel.y = 0;
+        if (res.y>0 && obj.body.vel.y>0){
+            obj.body.vel.y = 0;
         }
    }, 
    update: function() { 

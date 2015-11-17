@@ -4,7 +4,7 @@ a player entity
 
 -------------------- */
 
-var playerEntity = me.ObjectEntity.extend({
+var playerEntity = me.Entity.extend({
  
     /* -----
  
@@ -12,66 +12,31 @@ var playerEntity = me.ObjectEntity.extend({
  
     ------ */
    
-    init: function(x, y, settings) {
-        
+init: function(x, y, settings) {
+  
+    // player Vars
+	var moving = false;
+	var actionActive = false;
+	var interationActive = false;
+	var facing = "left";
+	
     // settings
     settings.type = "player";
-    settings.image = "avatar";
-    settings.spritewidth = 16;
-    settings.spriteheight = 16;
-    // this.transparent_color="ffffff";
-    // call the constructor
-    this.parent(x, y, settings);
+    settings.image = "creatures";
+	this._super(me.Entity, 'init',[x, y, settings]); 
 
-    this.setVelocity(2, 2);
-    this.gravity=0;
-    
-    this.direction = "left";
-    this.moving = false;
-	this.stance = "normal";
-	this.actionActive = false;
-	this.interationActive = false;
-	this.collidable=true;
-	//stats
-	this.stage = "alive";
-	this.hp = 100;
-	this.mp = 40;
-	this.str = 120;
-	this.itl = 40;
-	this.dex = 120
-	this.damage = 0;
-	this.hci = 0;
-	this.swingspeed = 0;
-
-	this.alwaysUpdate= true;
-	
-	
-    //weapon
-    this.swing = false;
-    this.weapon = {};
-    this.equipweapon = false;
-    
-    
-    me.debug.renderHitBox = false;
-    
-    
-    // head info
-    
-    //this.hpValue = new me.Font('font8', 8, 'white');
-    
-    //animation
-    this.renderable.addAnimation("normal_up",[0,1,2]);
-    this.renderable.addAnimation("normal_right",[4,5,6]);
-    this.renderable.addAnimation("normal_down",[8,9,10]);
-    this.renderable.addAnimation("normal_left",[12,13,14]);
-    this.renderable.setCurrentAnimation(this.stance + "_" + this.direction);
-    
-    // adjust the bounding box x,w,y,h
-    this.updateColRect(5,10 , 5, 10);
- 
-    // set the display to follow our position on both axis
+	this.body.collisionType = me.collision.types.PLAYER_OBJECT;
+	this.body.setVelocity(2, 2);
+	this.body.gravity = 0;
     me.game.viewport.follow(this.pos, me.game.viewport.AXIS.BOTH);
- 
+	this.alwaysUpdate = true;
+   
+    //animation
+    this.renderable.addAnimation("stand",[21]);
+	this.renderable.addAnimation("walk",[21,41]);
+    this.renderable.setCurrentAnimation("stand");
+    this.renderable.anchorPoint.set(0.5, 1.0);
+	
     },
  
     /* -----
@@ -79,145 +44,111 @@ var playerEntity = me.ObjectEntity.extend({
     update the player pos
  
     ------ */
-   update: function() { 
-       
-       
- //
-        //
-		// Handle Inputs
-		//
-		//
-		if (me.input.isKeyPressed('left')) {
-		    this.doWalk("left");
-		} else if (me.input.isKeyPressed('right')) {
-		    this.doWalk("right");
-		} else if (me.input.isKeyPressed('up')) {
-			this.doWalk("up");
-		} else if (me.input.isKeyPressed('down')) {
-			this.doWalk("down");
-		} else {
-            this.doStand();
-        };
-		if (me.input.isKeyPressed('action')) {
-			this.actionActive = true;
-		} else {
-		    this.actionActive = false;
-		} 
-		if (me.input.isKeyPressed('interact')) {
-			this.interationActive = true;
-		} else {
-			this.interationActive = false;
-		} 
-	    //
-	    //
-		// check collision
-		//
-		//
-		this.swing = true;
-		res = me.game.collide(this);
-		if (res)
-		{	
-		    // weapon collition
-		    if (res.obj.type == "weapon") {
-		        if (this.interationActive  == true) {
-		            this.swing = false;
-    		        // unequip
-    		        if(this.equipweapon){
-    		          this.weapon.obj.doUnEquip();
-    		          this.equipweapon = false;
-    		        };
-    		        // equip  
-    		        this.weapon = res;
-    		        res.obj.doEquip(this.GUID);
-    		        this.equipweapon=true;
-		        };
-		    };
-		    // mob collition
-		    if (res.obj.type == "mob") {
-		        this.swing = true;
-		        res.obj.OnCollide(res,this);
-		    }
-		    // furniture collition
-		    else if (res.obj.type == "furniture") {
-                this.swing = true;
-                // What to do if Collides
-                res.obj.OnCollide(res,this);
-            }
-		    // container collition
-		    else if (res.obj.type == "container"){
-		        this.swing = false;
-    			// What do do if interacts
-    			if (this.interationActive  == true) {
-    				res.obj.OnInteract(this);
-    			};
-    			// What to do if Collides
-    			res.obj.OnCollide(res,this);
-			}
-			// npc
-			else if (res.obj.type == "npc") {
-			  this.swing = false;
-			}
-			// portal
-			else if (res.obj.type == "portal"){
-		        this.swing = false;
-    			// What do do if interacts
-    			if (this.interationActive  == true) {
-    				res.obj.OnInteract(this);
-    			};
-    			// What to do if Collides
-    			res.obj.OnCollide(res,this);
-			   
-			}
-			else {
-			 this.swing = true;
-			};
+update: function(dt) { 
+	//
+	//
+	// Handle Inputs
+	//
+	//
+	if (me.input.isKeyPressed('left')) {
+		this.doWalk("left");
+		this.moving=true;
+	} else if (me.input.isKeyPressed('right')) {
+		this.doWalk("right");
+		this.moving=true;
+	} else if (me.input.isKeyPressed('up')) {
+		this.doWalk("up");
+		this.moving=true;
+	} else if (me.input.isKeyPressed('down')) {
+		this.doWalk("down");
+		this.moving=true;
+	} else {
+		this.doStand();
+		this.moving=false;
+	};
+	if (me.input.isKeyPressed('action')) {
+		this.actionActive = true;
+	} else {
+		this.actionActive = false;
+	} 
+	if (me.input.isKeyPressed('interact')) {
+		this.interationActive = true;
+	} else {
+		this.interationActive = false;
+	} 
+	
+	if(this.moving == true) {
+		if (!this.renderable.isCurrentAnimation("walk")) {
+			this.renderable.setCurrentAnimation("walk");
+		}
+		this.body.update(dt);
+	} else {
+		if (!this.renderable.isCurrentAnimation("stand")) {
+			this.renderable.setCurrentAnimation("stand");
+		}
+	}
+	
+	//
+	//
+	// check collision
+	//
+	//
+	me.collision.check(this);
+	
+	// update player movement
+	return (this._super(me.Entity, 'update', [dt]) || this.body.vel.x !== 0 || this.body.vel.y !== 0);
+	},
+	
+	onCollision : function (response, other) {
+		var colide = false;
+		switch (response.b.body.collisionType) {
+			case me.collision.types.WORLD_SHAPE:
+				colide = true;
+				break;
+			case me.collision.types.ENEMY_OBJECT:
+				colide = true;
+				break;
+			case me.collision.types.ACTION_OBJECT:
+				colide = true;
+				break;
+			default:
+				colide = false;
 		};
-		
-		// update player movement
-		if (this.moving == true) {
-    	   this.updateMovement();
-           this.parent(this);
-           return true;
-        } else {    
-    	   return false	    
-		}	
-		
-	  // check next level 
-	  
-	  // me.state.current().nextLevel();
-		
-	},
-	
-	draw: function (context) 
-	{    
-	   //context.drawImage(me.loader.getImage("bar100"), this.pos.x - me.game.viewport.pos.x, this.pos.y - me.game.viewport.pos.y-(6+1));         
-	   //this.hpValue.draw(context, this.hp, this.pos.x - me.game.viewport.pos.x, this.pos.y - me.game.viewport.pos.y);
-	   this.parent(context);
-	},
-	
-	
-	
-	
-	
-	
+		return colide
+	},	
 	doWalk: function(newDirection){
-	    this.moving = true;
+		//
+		// facing
+		//
+		if (newDirection == 'left') {
+			if (this.facing='right') {
+				this.facing="left";	
+				this.renderable.flipX(false);
+				}
+		};
+		if (newDirection == "right") {
+			if (this.facing="left") {
+				this.facing="right";
+				this.renderable.flipX(true);
+			}
+		};
+		//
+		// moving
+		//
 	    this.direction=newDirection;
 	    if (this.direction == "left") {
-	       this.vel.x +=  -this.accel.x * me.timer.tick
+	       this.body.vel.x +=  -this.body.accel.x * me.timer.tick;
 	    } else if (this.direction == "right") {
-	       this.vel.x +=  this.accel.x * me.timer.tick
+	       this.body.vel.x +=  this.body.accel.x * me.timer.tick;
 	    } else if (this.direction == "up") {
-	       this.vel.y +=  -this.accel.y * me.timer.tick
+	       this.body.vel.y +=  -this.body.accel.y * me.timer.tick;
 	    } else if (this.direction == "down") {
-	       this.vel.y +=  this.accel.y * me.timer.tick
+	       this.body.vel.y +=  this.body.accel.y * me.timer.tick;
 	    }
-	    this.renderable.setCurrentAnimation(this.stance + "_" + this.direction)
 	}, 
-    doStand : function(up) {
-        this.moving = false;
-        this.vel.y = 0;
-		this.vel.x = 0;
+    doStand : function() {
+        this.body.vel.y = 0;
+		this.body.vel.x = 0;
     },
     // Receive Damage
        doDamage: function(attacker,hci,damage) {

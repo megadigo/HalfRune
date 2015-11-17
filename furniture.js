@@ -1,7 +1,7 @@
 /**
  * @author megadigo
  */
-var bedEntity = me.ObjectEntity.extend({
+var bedEntity = me.Entity.extend({
  
     /* -----
  
@@ -11,10 +11,10 @@ var bedEntity = me.ObjectEntity.extend({
    
     init: function(x, y, settings) {
         // call the constructor
-        settings.image = "u6tiles";
+        settings.image = "items";
         settings.spritewidth = 16;
         settings.spriteheight = 16;
-        this.parent(x, y, settings);
+        this._super(me.Entity, 'init',[x, y, settings]);
         // set props
         this.type="furniture";
         this.collidable = true;
@@ -32,17 +32,17 @@ var bedEntity = me.ObjectEntity.extend({
      }, 
      
      doBounce: function(res,obj) {
-        if (res.x<0 && obj.vel.x<0){
-            obj.vel.x = 0;
+        if (res.x<0 && obj.body.vel.x<0){
+            obj.body.vel.x = 0;
         };
-        if (res.x>0 && obj.vel.x>0){
-            obj.vel.x = 0;
+        if (res.x>0 && obj.body.vel.x>0){
+            obj.body.vel.x = 0;
         }
-        if (res.y<0 && obj.vel.y<0){
-            obj.vel.y = 0;
+        if (res.y<0 && obj.body.vel.y<0){
+            obj.body.vel.y = 0;
         };
-        if (res.y>0 && obj.vel.y>0){
-            obj.vel.y = 0;
+        if (res.y>0 && obj.body.vel.y>0){
+            obj.body.vel.y = 0;
         }
      },
      
@@ -56,13 +56,13 @@ var bedEntity = me.ObjectEntity.extend({
     }
 }
 );
-var chairEntity = me.ObjectEntity.extend({
+var chairEntity = me.Entity.extend({
     init: function(x, y, settings) {
         // call the constructor
         settings.image = "u6tiles";
         settings.spritewidth = 16;
         settings.spriteheight = 16;
-        this.parent(x, y, settings);
+        this._super(chairEntity, 'init',[x, y, settings]);
         
         // set props
         this.type="furniture";
@@ -79,17 +79,17 @@ var chairEntity = me.ObjectEntity.extend({
         this.doBounce(res,obj);
     }, 
     doBounce: function(res,obj) {
-        if (res.x<0 && obj.vel.x<0){
-            obj.vel.x = 0;
+        if (res.x<0 && obj.body.vel.x<0){
+            obj.body.vel.x = 0;
         };
-        if (res.x>0 && obj.vel.x>0){
-            obj.vel.x = 0;
+        if (res.x>0 && obj.body.vel.x>0){
+            obj.body.vel.x = 0;
         }
-        if (res.y<0 && obj.vel.y<0){
-            obj.vel.y = 0;
+        if (res.y<0 && obj.body.vel.y<0){
+            obj.body.vel.y = 0;
         };
-        if (res.y>0 && obj.vel.y>0){
-            obj.vel.y = 0;
+        if (res.y>0 && obj.body.vel.y>0){
+            obj.body.vel.y = 0;
         }
    }, 
    update: function() { 
@@ -101,13 +101,13 @@ var chairEntity = me.ObjectEntity.extend({
     },
     
 });
-var tableEntity = me.ObjectEntity.extend({
+var tableEntity = me.Entity.extend({
     init: function(x, y, settings) {
         // call the constructor
         settings.image = "u6tiles";
         settings.spritewidth = 16;
         settings.spriteheight = 16;
-        this.parent(x, y, settings);
+        this._super(tableEntity, 'init',[x, y, settings]);
         
         // set props
         this.type="furniture";
@@ -124,17 +124,17 @@ var tableEntity = me.ObjectEntity.extend({
         this.doBounce(res,obj);
     }, 
     doBounce: function(res,obj) {
-        if (res.x<0 && obj.vel.x<0){
-            obj.vel.x = 0;
+        if (res.x<0 && obj.body.vel.x<0){
+            obj.body.vel.x = 0;
         };
-        if (res.x>0 && obj.vel.x>0){
-            obj.vel.x = 0;
+        if (res.x>0 && obj.body.vel.x>0){
+            obj.body.vel.x = 0;
         }
-        if (res.y<0 && obj.vel.y<0){
-            obj.vel.y = 0;
+        if (res.y<0 && obj.body.vel.y<0){
+            obj.body.vel.y = 0;
         };
-        if (res.y>0 && obj.vel.y>0){
-            obj.vel.y = 0;
+        if (res.y>0 && obj.body.vel.y>0){
+            obj.body.vel.y = 0;
         }
    }, 
    update: function() { 
@@ -146,13 +146,13 @@ var tableEntity = me.ObjectEntity.extend({
     },
     
 });
-var candleEntity = me.ObjectEntity.extend({
+var candleEntity = me.Entity.extend({
     init: function(x, y, settings) {
         // call the constructor
         settings.image = "u6tiles";
         settings.spritewidth = 16;
         settings.spriteheight = 16;
-        this.parent(x, y, settings);
+        this._super(candleEntity, 'init',[x, y, settings]);
         
         // set props
         this.type="furniture";
@@ -169,17 +169,17 @@ var candleEntity = me.ObjectEntity.extend({
         this.doBounce(res,obj);
     }, 
     doBounce: function(res,obj) {
-        if (res.x<0 && obj.vel.x<0){
-            obj.vel.x = 0;
+        if (res.x<0 && obj.body.vel.x<0){
+            obj.body.vel.x = 0;
         };
-        if (res.x>0 && obj.vel.x>0){
-            obj.vel.x = 0;
+        if (res.x>0 && obj.body.vel.x>0){
+            obj.body.vel.x = 0;
         }
-        if (res.y<0 && obj.vel.y<0){
-            obj.vel.y = 0;
+        if (res.y<0 && obj.body.vel.y<0){
+            obj.body.vel.y = 0;
         };
-        if (res.y>0 && obj.vel.y>0){
-            obj.vel.y = 0;
+        if (res.y>0 && obj.body.vel.y>0){
+            obj.body.vel.y = 0;
         }
    }, 
    update: function() { 
@@ -191,13 +191,13 @@ var candleEntity = me.ObjectEntity.extend({
     },
     
 });
-var fountainEntity = me.ObjectEntity.extend({
+var fountainEntity = me.Entity.extend({
     init: function(x, y, settings) {
         // call the constructor
         settings.image = "u6tiles";
         settings.spritewidth = 16;
         settings.spriteheight = 16;
-        this.parent(x, y, settings);
+        this._super(fountainEntity, 'init',[x, y, settings]);
         // set props
         this.type="furniture";
         this.collidable = true;
@@ -213,17 +213,17 @@ var fountainEntity = me.ObjectEntity.extend({
         this.doBounce(res,obj);
     }, 
     doBounce: function(res,obj) {
-        if (res.x<0 && obj.vel.x<0){
-            obj.vel.x = 0;
+        if (res.x<0 && obj.body.vel.x<0){
+            obj.body.vel.x = 0;
         };
-        if (res.x>0 && obj.vel.x>0){
-            obj.vel.x = 0;
+        if (res.x>0 && obj.body.vel.x>0){
+            obj.body.vel.x = 0;
         }
-        if (res.y<0 && obj.vel.y<0){
-            obj.vel.y = 0;
+        if (res.y<0 && obj.body.vel.y<0){
+            obj.body.vel.y = 0;
         };
-        if (res.y>0 && obj.vel.y>0){
-            obj.vel.y = 0;
+        if (res.y>0 && obj.body.vel.y>0){
+            obj.body.vel.y = 0;
         }
    }, 
    update: function() { 

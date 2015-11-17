@@ -5,7 +5,7 @@
 var exampleEntity = me.mobEntity.extend({
 
     init: function(x, y, settings) {
-    	this.parent(x, y, settings);
+    	this._super(me.Entity, 'init',[x, y, settings]);
     	//animation
 	    this.renderable.addAnimation("normal_up",[1384,1385]);
 	    this.renderable.addAnimation("normal_right",[1386,1387]);
@@ -24,10 +24,10 @@ var exampleEntity = me.mobEntity.extend({
 
 
 
-var mobEntity = me.ObjectEntity.extend({
+var mobEntity = me.Entity.extend({
 	init: function(x, y, settings) {
 	// call the constructor
-    this.parent(x, y, settings)
+    this._super(mobEntity, 'init',[x, y, settings]);
     
     // ENTITY VARS
     this.type=				settings.type;

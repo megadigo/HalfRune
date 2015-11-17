@@ -2,14 +2,14 @@
  * @author RCordeiro
  */
 
-var helmetEntity = me.ObjectEntity.extend({
+var helmetEntity = me.Entity.extend({
     init: function(x, y, settings) {
         // call the constructor
         settings.type = "armor";
-        //settings.image = "u6tiles";
+        //settings.image = "items";
         settings.spritewidth = 16;
         settings.spriteheight = 16;
-        this.parent(x, y, settings);  
+        this._super(me.Entity, 'init',[x, y, settings]);
         
         // set props
         this.collidable = true;
@@ -25,17 +25,17 @@ var helmetEntity = me.ObjectEntity.extend({
         this.doBounce(res,obj);
     }, 
     doBounce: function(res,obj) {
-        if (res.x<0 && obj.vel.x<0){
-            obj.vel.x = 0;
+        if (res.x<0 && obj.body.vel.x<0){
+            obj.body.vel.x = 0;
         };
-        if (res.x>0 && obj.vel.x>0){
-            obj.vel.x = 0;
+        if (res.x>0 && obj.body.vel.x>0){
+            obj.body.vel.x = 0;
         }
-        if (res.y<0 && obj.vel.y<0){
-            obj.vel.y = 0;
+        if (res.y<0 && obj.body.vel.y<0){
+            obj.body.vel.y = 0;
         };
-        if (res.y>0 && obj.vel.y>0){
-            obj.vel.y = 0;
+        if (res.y>0 && obj.body.vel.y>0){
+            obj.body.vel.y = 0;
         }
    }, 
    update: function() { 
