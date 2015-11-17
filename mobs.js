@@ -25,7 +25,7 @@ init: function(x, y, settings) {
 // set prods
 	this.body.collisionType = me.collision.types.ENEMY_OBJECT;
 	this.body.setVelocity(0.5, 0.5);
-	this.body.gravity=0;
+	this.body.gravity = 0;
 	this.updateme = true;
 	this.collidable = true;
 	this.direction = "left";
@@ -78,22 +78,27 @@ init: function(x, y, settings) {
 			if (this.direction == "right"){
 				this.body.vel.x= this.body.accel.x * me.timer.tick;
 				this.body.vel.y = 0;	
+				this.renderable.angle = -1.57;
 			};
 			if (this.direction == "left"){
 				this.body.vel.x= -this.body.accel.x * me.timer.tick
 				this.body.vel.y = 0;
+				this.renderable.angle = 1.57;
 			};
 			if (this.direction == "down"){
 				this.body.vel.y= this.body.accel.y * me.timer.tick;
-				this.body.vel.x = 0;			
+				this.body.vel.x = 0;	
+				this.renderable.angle = 0;
 			};
 			if (this.direction == "up"){
 				this.body.vel.y= -this.body.accel.y * me.timer.tick
 				this.body.vel.x = 0;
+				this.renderable.angle = 3.14;
 			};
 			if (this.direction == "stand"){
                 this.body.vel.y = 0
                 this.body.vel.x = 0;
+				this.renderable.angle = 0;
             };
 
 
@@ -110,18 +115,17 @@ init: function(x, y, settings) {
   		}
     }
 		  		
-  		// update animation if necessary
-      if (this.stage == 'dead') {
-        if (!this.renderable.isCurrentAnimation("dead")) {
-			this.renderable.setCurrentAnimation("dead");
-		}
-            this.parent(this);
-            return true;
-          };
+  		// update animation if necessary	
+		if (this.stage == 'dead') {
+			if (!this.renderable.isCurrentAnimation("dead")) {
+				this.renderable.setCurrentAnimation("dead");
+			}
+		};
 	    if (this.body.vel.x!=0 || this.body.vel.y!=0) {
             if (!this.renderable.isCurrentAnimation("walk")) {
 			this.renderable.setCurrentAnimation("walk");
 			}
+			this.body.update(dt);
 		}
 	//
 	// check collision
@@ -138,6 +142,7 @@ init: function(x, y, settings) {
 		switch (response.b.body.collisionType) {
 			case me.collision.types.WORLD_SHAPE:
 				colide = true;
+				this.randomlenght = 0;
 				break;
 			case me.collision.types.ENEMY_OBJECT:
 				colide = true;
@@ -217,9 +222,9 @@ init: function(x, y, settings) {
        };
       // test if player is near
     
-     var distplayer = 1//this.distanceTo(player)
+     var distplayer = 99 //this.distanceTo(player)
      
-     if (distplayer<=this.sensedistance) {
+     if (distplayer <= this.sensedistance) {
          this.stage = "chase"
          
      }

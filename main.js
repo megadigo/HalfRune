@@ -20,8 +20,8 @@ var g_resources = [
 	{name: "items",    					type: "image",  src: "data/sprites/items.png"},
 	{name: "tiles",        				type: "image",  src: "data/sprites/tiles.png"},
 	{name: "world",        				type: "image",  src: "data/sprites/world.png"},
-	{name: "metatiles24x24",            		type: "image",	src: "data/sprites/metatiles24x24.png"},
-	{name: "Florest",		            		type: "tmx",	src: "data/Florest.tmx"}
+	{name: "metatiles24x24",            type: "image",	src: "data/sprites/metatiles24x24.png"},
+	{name: "Florest",		            type: "tmx",	src: "data/Florest.tmx"}
 	//{name: "heroicdemise",              type: "audio",     src: "data/sounds/",    channel:1},
 	//{name: "fs_dirt_a",                 type: "audio",     src: "data/sounds/",    channel:1},
 	//{name: "fs_dirt_b",                 type: "audio",     src: "data/sounds/",    channel:1},
@@ -56,11 +56,21 @@ var jsApp	=
 		if (!me.video.init(640, 480, {wrapper : "screen", scale : "auto"}))
 		{
 			alert("Sorry but your browser does not support html 5 canvas.");
-	 return;
+			return;
+		}
+		
+		// add "#debug" to the URL to enable the debug Panel
+		if (me.game.HASH.debug === true) {
+		  window.onReady(function () {
+			me.plugin.register.defer(this, me.debug.Panel, "debug", me.input.KEY.V);
+		  });
 		}
 
 		// initialize the "audio"
-		//me.audio.init("mp3,ogg");
+		if (!me.audio.init("mp3,ogg")) {
+			alert("Sorry but your browser does not support html 5 audio !");
+			return;
+		}
 
 		// set all resources to be loaded
 		me.loader.onload = this.loaded.bind(this);
