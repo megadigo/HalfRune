@@ -154,7 +154,7 @@ update: function(dt) {
        doDamage: function(attacker,hci,damage) {
        		// calculate hc and do damage;   		
        		this.hp -= damage;
-       		me.game.HUD.setItemValue("hp", this.hp);
+       		//me.game.HUD.setItemValue("hp", this.hp);
        		// little bounce
     		if (attacker.direction == "left") {
     			this.pos.x-=10
@@ -169,7 +169,7 @@ update: function(dt) {
     			this.pos.y+=10
     		};
     		// check if die
-    		if (this.hp<=0){
+    		if (this.hp <= 0){
     		    this.stage = "dead"
                 me.game.remove(this);
     		}

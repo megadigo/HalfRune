@@ -58,10 +58,10 @@ var chestEntity = me.Entity.extend({
  
     ------ */
    doBounce: function(res,obj) {
-   		if (res.x<0 && obj.body.vel.x<0){
+   		if (res.pos.x<0 && obj.body.vel.x<0){
 			obj.body.vel.x = 0;
 		};
-		if (res.x>0 && obj.body.vel.x>0){
+		if (res.pos.x>0 && obj.body.vel.x>0){
 			obj.body.vel.x = 0;
 		}
 		if (res.y<0 && obj.body.vel.y<0){
@@ -100,10 +100,10 @@ var vaseEntity = me.Entity.extend({
         this.doBounce(res,obj);
     }, 
     doBounce: function(res,obj) {
-        if (res.x<0 && obj.body.vel.x<0){
+        if (res.pos.x<0 && obj.body.vel.x<0){
             obj.body.vel.x = 0;
         };
-        if (res.x>0 && obj.body.vel.x>0){
+        if (res.pos.x>0 && obj.body.vel.x>0){
             obj.body.vel.x = 0;
         }
         if (res.y<0 && obj.body.vel.y<0){
@@ -146,10 +146,10 @@ var barrelEntity = me.Entity.extend({
         this.doBounce(res,obj);
     }, 
     doBounce: function(res,obj) {
-        if (res.x<0 && obj.body.vel.x<0){
+        if (res.pos.x<0 && obj.body.vel.x<0){
             obj.body.vel.x = 0;
         };
-        if (res.x>0 && obj.body.vel.x>0){
+        if (res.pos.x>0 && obj.body.vel.x>0){
             obj.body.vel.x = 0;
         }
         if (res.y<0 && obj.body.vel.y<0){

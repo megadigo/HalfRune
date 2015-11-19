@@ -10,27 +10,9 @@ var playScreen = me.ScreenObject.extend({
     	//me.audio.playTrack("heroicdemise");
 	
         me.levelDirector.loadLevel(newlevel);
-    
-        // add a default HUD to the game mngr
-        //me.game.addHUD(0, 0, 320, 240);
-      
-        //me.game.HUD.addItem("border", new borderObject(0,0))
-        
-        //me.game.HUD.addItem("hp", new hpObject(5, 5));
-        //me.game.HUD.setItemValue("hp", 0);
-		
-        //me.game.HUD.addItem("damage", new damageObject(50, 5));
-        //me.game.HUD.setItemValue("damage", "+3");
- 
-        //me.game.HUD.addItem("armor", new armorObject(100, 5));
-        //me.game.HUD.setItemValue("armor", "100%");
- 
-         // quests
-        //var quests = new questEntity();
-        //me.game.world.addChild(quests);
-		 		 
+     		 
          // reserve player to a var
-        player = me.game.world.getChildByName("mainPlayer");   
+        player = me.game.world.getChildByName("mainPlayer")[0];   
 		
 		// mobzones
         var mobzones = me.game.world.getChildByName("mobzone");

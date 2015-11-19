@@ -1,42 +1,42 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
-	<head>
-		<title>HalfRune</title>
-	</head>
-	<style type="text/css"> 
-	#jsapp {
-	    position:fixed;
-	    top: 50%;
-	    left: 50%;
-	    width:20em;
-	    height:18em;
-	    margin-top: -9em; /*set to a negative number 1/2 of your height*/
-	    margin-left: -10em; /*set to a negative number 1/2 of your width*/
-	    border: 0px solid #ccc;
-	    background-color: "black" ;
-	}
-	</style>
-	<body bgcolor="black">
-      <div id="info">
-		<div id="fps" style="float: right;">
-			<font color="#FFFFFF", style ="font-size: 10px; font-family: Courier New">
-			<span id="framecounter">(0/0 fps)</span>
-			</font>
-		</div></div>
-		<div id="jsapp">
+    <head>
+        <title>HalfRune</title>
+        <link rel="stylesheet" type="text/css" media="screen" href="index.css">
+        <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    </head>
+    <body>
+        <!-- Canvas placeholder -->
+        <div id="screen"></div>
+
+        <!-- Plugin(s) -->
+        <script type="text/javascript" src="lib/plugins/debug/debugPanel.js"></script>
+		
+        <!-- melonJS Library -->
+        <!-- build:js js/app.min.js -->
 		<script type="text/javascript" src="lib/melonJS-2.1.3.js"></script>
+		<script type="text/javascript" src="resources.js"></script>
 		<script type="text/javascript" src="main.js"></script>
+		<script type="text/javascript" src="game.js"></script>
 		<script type="text/javascript" src="playScreen.js"></script>
 		<script type="text/javascript" src="playerEntity.js"></script>
-		<script type="text/javascript" src="containers.js"></script>
-		<script type="text/javascript" src="furniture.js"></script>
 		<script type="text/javascript" src="mobs.js"></script>
-		<script type="text/javascript" src="weapons.js"></script>
-	    <script type="text/javascript" src="armors.js"></script>
-		<script type="text/javascript" src="portal.js"></script>
-		<script type="text/javascript" src="hud.js"></script>
-		<script type="text/javascript" src="questEntity.js"></script>
 		<script type="text/javascript" src="zoneEntity.js"></script>
-		</div>
-	</body>
+        <!-- /build -->
+        <!-- Bootstrap & Mobile optimization tricks -->
+        <script type="text/javascript">
+            window.onReady(function onReady() {
+                game.onload();
+                // Mobile browser hacks
+                if (me.device.isMobile && !navigator.isCocoonJS) {
+                    // Prevent the webview from moving on a swipe
+                    window.document.addEventListener("touchmove", function (e) {
+                        e.preventDefault();
+                        window.scroll(0, 0);
+                        return false;
+                    }, false);
+                }
+            });
+        </script>
+    </body>
 </html>
