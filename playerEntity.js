@@ -15,10 +15,11 @@ var playerEntity = me.Entity.extend({
 init: function(x, y, settings) {
   
     // player Vars
-	var moving = false;
-	var actionActive = false;
-	var interationActive = false;
-	var facing = "left";
+	this.moving = false;
+	this.actionActive = false;
+	this.interationActive = false;
+	this.facing = "left";
+	this.hp = 1000;
 	
     // settings
     settings.type = "player";
@@ -151,27 +152,27 @@ update: function(dt) {
 		this.body.vel.x = 0;
     },
     // Receive Damage
-       doDamage: function(attacker,hci,damage) {
-       		// calculate hc and do damage;   		
-       		this.hp -= damage;
-       		//me.game.HUD.setItemValue("hp", this.hp);
-       		// little bounce
-    		if (attacker.direction == "left") {
-    			this.pos.x-=10
-    		}; 
-    		if (attacker.direction == "right") {
-    			this.pos.x+=10
-    		};
-    		if (attacker.direction == "up") {
-    			this.pos.y-=10
-    		};
-    		if (attacker.direction == "down") { 
-    			this.pos.y+=10
-    		};
-    		// check if die
-    		if (this.hp <= 0){
-    		    this.stage = "dead"
-                me.game.remove(this);
-    		}
-    	}
+doDamage: function(attacker, hci, damage) {
+	// calculate hc and do damage;   		
+	this.hp -= damage;
+	//me.game.HUD.setItemValue("hp", this.hp);
+	// little bounce
+	if (attacker.direction == "left") {
+		this.pos.x-= 10
+	}; 
+	if (attacker.direction == "right") {
+		this.pos.x+= 10
+	};
+	if (attacker.direction == "up") {
+		this.pos.y-= 10
+	};
+	if (attacker.direction == "down") { 
+		this.pos.y+= 10
+	};
+	// check if die
+	if (this.hp <= 0){
+		this.stage = "dead"
+		me.game.world.removeChild(this);
+	}
+}
 });

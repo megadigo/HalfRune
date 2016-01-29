@@ -5,7 +5,7 @@
 
 var spiderEntity = me.Entity.extend({   
 init: function(x, y, settings) {
-//settinhgs
+//settings
 	var settings = {};
 	settings.type='mobs';
 	settings.spritewidth = 24;
@@ -16,6 +16,9 @@ init: function(x, y, settings) {
 	this._super(me.Entity, 'init',[x, y, settings]);
 	
 // set prods
+	this.hp = 100;
+	this.damage = 10;
+	this.hci = 10;
 	this.body.collisionType = me.collision.types.ENEMY_OBJECT;
 	this.body.setVelocity(0.5, 0.5);
 	this.body.gravity = 0;

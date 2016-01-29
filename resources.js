@@ -9,6 +9,7 @@ var g_resources = [
 	{name: "tiles",        				type: "image",  src: "data/sprites/tiles.png"},
 	{name: "world",        				type: "image",  src: "data/sprites/world.png"},
 	{name: "metatiles24x24",            type: "image",	src: "data/sprites/metatiles24x24.png"},
+	{name: "titlescreen",            	type: "image",	src: "data/sprites/HALFRUNELOGO.PNG"},
 	{name: "Florest",		            type: "tmx",	src: "data/Florest.tmx"}
 	//{name: "heroicdemise",              type: "audio",     src: "data/sounds/",    channel:1},
 	//{name: "fs_dirt_a",                 type: "audio",     src: "data/sounds/",    channel:1},

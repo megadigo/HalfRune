@@ -67,9 +67,13 @@ var game = {
     --- */
     "loaded": function() {
     
-  
+	// set title screen
+	//me.state.set(me.state.PLAY, new titleScreen());
+	
 	// set the "Play/Ingame" Screen Object
 	me.state.set(me.state.PLAY, new playScreen());
+	
+	
      
 	// set a global fading transition for the screen
 	me.state.transition("fade", "#FFFFFF", 250);
