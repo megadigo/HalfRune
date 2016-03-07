@@ -46,7 +46,7 @@ var playScreen = me.ScreenObject.extend({
 	
     onDestroyEvent: function() {
         // remove the HUD
-        me.game.disableHUD();
+        //me.game.disableHUD();
 	// stop the current audio track
 	//me.audio.stopTrack();
     }

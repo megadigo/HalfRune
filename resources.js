@@ -10,7 +10,8 @@ var g_resources = [
 	{name: "world",        				type: "image",  src: "data/sprites/world.png"},
 	{name: "metatiles24x24",            type: "image",	src: "data/sprites/metatiles24x24.png"},
 	{name: "titlescreen",            	type: "image",	src: "data/sprites/HALFRUNELOGO.PNG"},
-	{name: "Florest",		            type: "tmx",	src: "data/Florest.tmx"}
+	{name: "Florest",		            type: "tmx",	src: "data/Florest.tmx"},
+	{name: "room0",		            type: "tmx",	src: "data/room0.tmx"}
 	//{name: "heroicdemise",              type: "audio",     src: "data/sounds/",    channel:1},
 	//{name: "fs_dirt_a",                 type: "audio",     src: "data/sounds/",    channel:1},
 	//{name: "fs_dirt_b",                 type: "audio",     src: "data/sounds/",    channel:1},

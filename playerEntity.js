@@ -36,7 +36,7 @@ init: function(x, y, settings) {
     this.renderable.addAnimation("stand",[21]);
 	this.renderable.addAnimation("walk",[21,41]);
     this.renderable.setCurrentAnimation("stand");
-    this.renderable.anchorPoint.set(0.5, 1.0);
+    //this.renderable.anchorPoint.set(0.5, 1.0);
 	
     },
  

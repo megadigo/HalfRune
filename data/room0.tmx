@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="10" height="10" tilewidth="24" tileheight="24" nextobjectid="41">
+ <tileset firstgid="1" name="creatures" tilewidth="24" tileheight="24" tilecount="540">
+  <image source="sprites/creatures.png" trans="ffffff" width="480" height="648"/>
+ </tileset>
+ <tileset firstgid="541" name="metatiles24x24" tilewidth="24" tileheight="24" tilecount="5">
+  <image source="sprites/metatiles24x24.png" trans="ffffff" width="120" height="24"/>
+  <tile id="0">
+   <properties>
+    <property name="type" value="solid"/>
+   </properties>
+  </tile>
+ </tileset>
+ <tileset firstgid="546" name="fx" tilewidth="24" tileheight="24" tilecount="552">
+  <image source="sprites/fx.png" trans="ffffff" width="564" height="592"/>
+ </tileset>
+ <tileset firstgid="1098" name="world" tilewidth="24" tileheight="24" tilecount="2296">
+  <image source="sprites/world.png" trans="ffffff" width="1366" height="1007"/>
+ </tileset>
+ <tileset firstgid="3394" name="items" tilewidth="16" tileheight="16" tilecount="456">
+  <image source="sprites/items.png" trans="ffffff" width="384" height="304"/>
+ </tileset>
+ <objectgroup name="collision">
+  <object id="3" gid="541" x="216" y="24" width="24" height="24"/>
+  <object id="4" gid="541" x="216" y="48" width="24" height="24"/>
+  <object id="5" gid="541" x="216" y="72" width="24" height="24"/>
+  <object id="6" gid="541" x="216" y="96" width="24" height="24"/>
+  <object id="7" gid="541" x="216" y="120" width="24" height="24"/>
+  <object id="8" gid="541" x="216" y="168" width="24" height="24"/>
+  <object id="9" gid="541" x="216" y="192" width="24" height="24"/>
+  <object id="10" gid="541" x="216" y="216" width="24" height="24"/>
+  <object id="11" gid="541" x="216" y="240" width="24" height="24"/>
+  <object id="12" gid="541" x="216" y="144" width="24" height="24"/>
+  <object id="13" gid="541" x="192" y="24" width="24" height="24"/>
+  <object id="14" gid="541" x="168" y="24" width="24" height="24"/>
+  <object id="15" gid="541" x="144" y="24" width="24" height="24"/>
+  <object id="16" gid="541" x="120" y="24" width="24" height="24"/>
+  <object id="17" gid="541" x="96" y="24" width="24" height="24"/>
+  <object id="18" gid="541" x="72" y="24" width="24" height="24"/>
+  <object id="19" gid="541" x="48" y="24" width="24" height="24"/>
+  <object id="20" gid="541" x="24" y="24" width="24" height="24"/>
+  <object id="21" gid="541" x="0" y="24" width="24" height="24"/>
+  <object id="22" gid="541" x="0" y="48" width="24" height="24"/>
+  <object id="23" gid="541" x="0" y="72" width="24" height="24"/>
+  <object id="24" gid="541" x="0" y="96" width="24" height="24"/>
+  <object id="25" gid="541" x="0" y="120" width="24" height="24"/>
+  <object id="26" gid="541" x="0" y="144" width="24" height="24"/>
+  <object id="27" gid="541" x="0" y="192" width="24" height="24"/>
+  <object id="28" gid="541" x="0" y="240" width="24" height="24"/>
+  <object id="29" gid="541" x="0" y="216" width="24" height="24"/>
+  <object id="30" gid="541" x="0" y="168" width="24" height="24"/>
+  <object id="31" gid="541" x="24" y="240" width="24" height="24"/>
+  <object id="32" gid="541" x="48" y="240" width="24" height="24"/>
+  <object id="33" gid="541" x="72" y="240" width="24" height="24"/>
+  <object id="34" gid="541" x="96" y="240" width="24" height="24"/>
+  <object id="35" gid="541" x="120" y="240" width="24" height="24"/>
+  <object id="36" gid="541" x="144" y="240" width="24" height="24"/>
+  <object id="37" gid="541" x="168" y="240" width="24" height="24"/>
+  <object id="38" gid="541" x="192" y="240" width="24" height="24"/>
+ </objectgroup>
+ <layer name="floor" width="10" height="10">
+  <data encoding="base64">
+   gAYAAIAGAACABgAAgAYAAIAGAACABgAAgAYAAIAGAACABgAAgAYAAIAGAACABgAAgAYAAIAGAACABgAAgAYAAIAGAACABgAAgAYAAIAGAACABgAAgAYAAIAGAACABgAAgAYAAIAGAACABgAAgAYAAIAGAACABgAAgAYAAIAGAACABgAAgAYAAIAGAACABgAAgAYAAIAGAACABgAAgAYAAIAGAACABgAAgAYAAIAGAACABgAAgAYAAIAGAACABgAAgAYAAIAGAACABgAAgAYAAIAGAACABgAAgAYAAIAGAACABgAAgAYAAIAGAACABgAAgAYAAIAGAACABgAAgAYAAIAGAACABgAAgAYAAIAGAACABgAAgAYAAIAGAACABgAAgAYAAIAGAACABgAAgAYAAIAGAACABgAAgAYAAIAGAACABgAAgAYAAIAGAACABgAAgAYAAIAGAACABgAAgAYAAIAGAACABgAAgAYAAIAGAACABgAAgAYAAIAGAACABgAAgAYAAIAGAACABgAAgAYAAA==
+  </data>
+ </layer>
+ <objectgroup name="objects">
+  <object id="40" gid="3636" x="192" y="120" width="16" height="16"/>
+ </objectgroup>
+ <objectgroup name="zones">
+  <object id="1" name="mobzone" type="zone" x="48" y="72" width="144" height="120">
+   <properties>
+    <property name="level" value="1"/>
+    <property name="mob" value="spider"/>
+    <property name="mobcount" value="10"/>
+   </properties>
+  </object>
+  <object id="39" gid="3395" x="-72" y="24" width="24" height="24"/>
+ </objectgroup>
+ <layer name="walls" width="10" height="10">
+  <data encoding="base64">
+   gwQAAIMEAACDBAAAgwQAAIMEAACDBAAAgwQAAIMEAACDBAAAgwQAAIMEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIMEAACDBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACDBAAAgwQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgwQAAIMEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIMEAACDBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACDBAAAgwQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgwQAAIMEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIMEAACDBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACDBAAAgwQAAIMEAACDBAAAgwQAAIMEAACDBAAAgwQAAIMEAACDBAAAgwQAAA==
+  </data>
+ </layer>
+ <objectgroup name="entities">
+  <object id="2" name="mainPlayer" gid="22" x="24" y="48" width="24" height="24"/>
+ </objectgroup>
+</map>

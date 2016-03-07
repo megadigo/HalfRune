@@ -97,7 +97,8 @@ var game = {
  
 
     // Menu Screen
-    me.state.change(me.state.PLAY,"Florest");  
+    //me.state.change(me.state.PLAY,"Florest");  
+	me.state.change(me.state.PLAY,"room0");  
  
 }
 
