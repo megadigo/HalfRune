@@ -100,7 +100,7 @@ update: function(dt) {
 	return (this._super(me.Entity, 'update', [dt]) || this.body.vel.x !== 0 || this.body.vel.y !== 0);
 	},
 	
-	onCollision : function (response, other) {
+onCollision : function (response, other) {
 		var colide = false;
 		switch (response.b.body.collisionType) {
 			case me.collision.types.WORLD_SHAPE:
@@ -117,7 +117,7 @@ update: function(dt) {
 		};
 		return colide
 	},	
-	doWalk: function(newDirection){
+doWalk: function(newDirection){
 		//
 		// facing
 		//
@@ -147,7 +147,7 @@ update: function(dt) {
 	       this.body.vel.y +=  this.body.accel.y * me.timer.tick;
 	    }
 	}, 
-    doStand : function() {
+doStand : function() {
         this.body.vel.y = 0;
 		this.body.vel.x = 0;
     },

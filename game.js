@@ -87,6 +87,9 @@ var game = {
 	// zones
 	me.pool.register("mobzone", zoneEntity);
 	
+	//objects
+	me.pool.register("weapon", weaponEntity);
+	
 	// enable the keyboard
 	me.input.bindKey(me.input.KEY.LEFT, "left");
 	me.input.bindKey(me.input.KEY.RIGHT, "right");

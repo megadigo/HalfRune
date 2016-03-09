@@ -2,16 +2,18 @@
  * @author RCordeiro
  */
 
-var weaponEntity = me.ObjectEntity.extend({
+  
+var weaponEntity = me.Entity.extend({
 init: function(x, y, settings) {
-//settings
+	this._super(me.Entity, 'init',[x, y, settings]);
+	//settings
 	var settings = {};
 	settings.type='weapon';
-	settings.spritewidth = 24;
-	settings.spriteheight = 24;
+	settings.spritewidth = 16;
+	settings.spriteheight = 16;
 	settings.image = "items";
-	settings.height = 24;
-	settings.width = 24;
+	settings.height = 16;
+	settings.width = 16;
 	this._super(me.Entity, 'init',[x, y, settings]);
     
 	// get props
@@ -19,7 +21,7 @@ init: function(x, y, settings) {
 	this.swingspeed = settings.swingspeed;
 	
     // set props
-    this.status = "stop";
+    this.status = "stop"; //stop, swing, attack
     this.direction = "left";
 	
     this.entityEquip = {};
@@ -27,8 +29,8 @@ init: function(x, y, settings) {
 	    
     //animation
     this.renderable.animationspeed = this.swingspeed;
-    this.renderable.addAnimation("idle",[100]);
-    this.renderable.addAnimation("swing",[100,101]);
+    this.renderable.addAnimation("idle",[242]);
+    this.renderable.addAnimation("swing",[242,242]);
     this.renderable.setCurrentAnimation ("idle");
     
     },
@@ -39,7 +41,7 @@ init: function(x, y, settings) {
     update
  
     ------ */
-   update: function() { 
+   update: function(dt) { 
 	   	if (this.entityEquip.facing == "left"){
 	   		this.pos.x= this.entityEquip.pos.x - 5;
  			this.pos.y= this.entityEquip.pos.y - 10;	
@@ -60,35 +62,60 @@ init: function(x, y, settings) {
 		};
 		// check if need to swing;
 		if (this.entityEquip.actionActive == true) {
+			this.status="swing";
 		    this.renderable.setCurrentAnimation("swing", this.OnAfterSwing());
-		    
 		};	
-		this.parent();
-		return true;
+//
+// check collision
+//
+//
+me.collision.check(this);
+// update movement
+return (this._super(me.Entity, 'update', [dt]) || this.body.vel.x !== 0 || this.body.vel.y !== 0);
 			
-    },
+},
+	
+	
+onCollision : function (response, other) {
+	var colide = false;
+	switch (response.b.body.collisionType) {
+		case me.collision.types.WORLD_SHAPE:
+			colide = true;
+			this.randomlenght = 0;
+			break;
+		case me.collision.types.ENEMY_OBJECT:
+			colide = true;
+			if(this.status == "attack") {
+				res.obj.doDamage(this, this.hci, this.damage);
+			}
+			break;
+		case me.collision.types.ACTION_OBJECT:
+			colide = true;
+			break;
+		case me.collision.types.PLAYER_OBJECT:
+			colide = true;
+			this.doEquip(response.b)
+			this.body.collisionType = me.collision.types.NO_OBJECT;
+			break;
+		default:
+			colide = false;
+	};
+	return colide
+},	
     
     OnAfterSwing: function() {
-    	 me.audio.play("swing");
+    	 //me.audio.play("swing");
 		 this.renderable.setCurrentAnimation("idle");
-    	 //check collition
-		res = me.game.collide(this);
-		if (res)
-		{
-			// enemy collition
-		    if (res.obj.type == "mob") {
-		        //me.audio.play("sword_hit_metal_a");
-		        res.obj.doDamage(this, this.hci, this.damage);
-		    }	
-		};
-		return false;
+		 this.status="attack";
+			me.collision.check(this);
+		 this.status="stop";
     },
     /* -----
 
     bounce
  
     ------ */
-   doBounce: function(res,obj) {
+doBounce: function(res,obj) {
    		if (res.x<0 && obj.vel.x<0){
 			obj.vel.x = 0;
 		};
@@ -103,14 +130,14 @@ init: function(x, y, settings) {
 		}
    },
    
-   doEquip: function(guid){
-        this.entityEquip = me.game.getEntityByGUID(guid);
+doEquip: function(anchorEntity){
+        this.entityEquip = anchorEntity;
         this.entityEquip.damage += this.damage;
         this.entityEquip.hci += this.hci;
         this.entityEquip.swingspeed += this.swingspeed;
         this.collidable = false;
     },
-   doUnEquip: function(){
+doUnEquip: function(){
         this.entityEquip = {};
         this.entityEquip.damage -= this.damage;
         this.entityEquip.hci -= this.hci;

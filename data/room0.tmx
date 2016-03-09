@@ -64,14 +64,19 @@
   </data>
  </layer>
  <objectgroup name="objects">
-  <object id="40" gid="3636" x="192" y="120" width="16" height="16"/>
+  <object id="40" name="weapon" gid="3636" x="192" y="120" width="16" height="16">
+   <properties>
+    <property name="damage" value="10"/>
+    <property name="swingspeed" value="10"/>
+   </properties>
+  </object>
  </objectgroup>
  <objectgroup name="zones">
   <object id="1" name="mobzone" type="zone" x="48" y="72" width="144" height="120">
    <properties>
     <property name="level" value="1"/>
     <property name="mob" value="spider"/>
-    <property name="mobcount" value="10"/>
+    <property name="mobcount" value="1"/>
    </properties>
   </object>
   <object id="39" gid="3395" x="-72" y="24" width="24" height="24"/>
