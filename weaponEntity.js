@@ -52,7 +52,6 @@ init: function(x, y, settings) {
  			this.pos.y= this.entityEquip.pos.y + 10;
  			this.direction = "right"	
 	   	}
-		this.updateme = true;
 		// rotate sword
 		if (this.direction == "left") {
 			this.angle = Number.prototype.degToRad(0);
@@ -81,16 +80,17 @@ onCollision : function (response, other) {
 	switch (response.b.body.collisionType) {
 		case me.collision.types.WORLD_SHAPE:
 			colide = true;
-			this.randomlenght = 0;
 			break;
 		case me.collision.types.ENEMY_OBJECT:
-			colide = true;
 			if(this.status == "attack") {
+				colide = true;
 				res.obj.doDamage(this, this.hci, this.damage);
+			} else {
+				colide = false;	
 			}
 			break;
 		case me.collision.types.ACTION_OBJECT:
-			colide = true;
+			colide = false;
 			break;
 		case me.collision.types.PLAYER_OBJECT:
 			colide = true;
@@ -135,14 +135,12 @@ doEquip: function(anchorEntity){
         this.entityEquip.damage += this.damage;
         this.entityEquip.hci += this.hci;
         this.entityEquip.swingspeed += this.swingspeed;
-        this.collidable = false;
     },
 doUnEquip: function(){
         this.entityEquip = {};
         this.entityEquip.damage -= this.damage;
         this.entityEquip.hci -= this.hci;
         this.entityEquip.swingspeed -= this.swingspeed;
-        this.collidable = true;
     },
 }
 );

@@ -117,7 +117,7 @@ onCollision : function (response, other) {
 			colide = false;
 			break;
 		case me.collision.types.ACTION_OBJECT:
-			colide = true;
+			colide = false;
 			break;
 		case me.collision.types.PLAYER_OBJECT:
 			response.b.doDamage(this, this.hci, this.damage);
