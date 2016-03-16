@@ -5,7 +5,6 @@
   
 var weaponEntity = me.Entity.extend({
 init: function(x, y, settings) {
-	this._super(me.Entity, 'init',[x, y, settings]);
 	//settings
 	var settings = {};
 	settings.type='weapon';
@@ -21,18 +20,21 @@ init: function(x, y, settings) {
 	this.swingspeed = settings.swingspeed;
 	
     // set props
-    this.status = "stop"; //stop, swing, attack
+    this.status = "idle"; //idle, swing, attack
     this.direction = "left";
+	this.angle = -45;
+	this.swingangle =0;
 	
     this.entityEquip = {};
 	this.body.collisionType = me.collision.types.ACTION_OBJECT;
 	    
     //animation
-    this.renderable.animationspeed = this.swingspeed;
-    this.renderable.addAnimation("idle",[242]);
-    this.renderable.addAnimation("swing",[242,242]);
-    this.renderable.setCurrentAnimation ("idle");
     
+    this.renderable.addAnimation("idle",[242]);
+	this.renderable.addAnimation("swing",[250,256,257,258]);
+    this.renderable.setCurrentAnimation ("idle");
+	this.renderable.animationspeed = 1000 //this.swingspeed;
+	this.renderable.angle = Number.prototype.degToRad(this.angle);
     },
  
 
@@ -43,27 +45,32 @@ init: function(x, y, settings) {
     ------ */
    update: function(dt) { 
 	   	if (this.entityEquip.facing == "left"){
-	   		this.pos.x= this.entityEquip.pos.x - 5;
- 			this.pos.y= this.entityEquip.pos.y - 10;	
+	   		this.pos.x= this.entityEquip.pos.x - 14;
+ 			this.pos.y= this.entityEquip.pos.y + 8;	
  			this.direction = "left"
 	   	};
 	   	if (this.entityEquip.facing == "right" ){
-	   		this.pos.x= this.entityEquip.pos.x + 5;
- 			this.pos.y= this.entityEquip.pos.y + 10;
+	   		this.pos.x= this.entityEquip.pos.x + 22;
+ 			this.pos.y= this.entityEquip.pos.y + 8;
  			this.direction = "right"	
 	   	}
 		// rotate sword
 		if (this.direction == "left") {
-			this.angle = Number.prototype.degToRad(0);
+			this.angle=-45;
 		};
 		if (this.direction == "right") {
-			this.angle = Number.prototype.degToRad(90);
+			this.angle=-45+180;
 		};
+		this.renderable.angle = Number.prototype.degToRad(this.angle + this.swingangle);
 		// check if need to swing;
-		if (this.entityEquip.actionActive == true) {
+		if (this.entityEquip.actionActive == true && this.status == "idle") {
 			this.status="swing";
 		    this.renderable.setCurrentAnimation("swing", this.OnAfterSwing());
-		};	
+		};		
+		if (this.entityEquip.actionActive == false) {
+			this.status="idle";
+			this.renderable.setCurrentAnimation("idle");
+		}
 //
 // check collision
 //
@@ -72,6 +79,12 @@ me.collision.check(this);
 // update movement
 return (this._super(me.Entity, 'update', [dt]) || this.body.vel.x !== 0 || this.body.vel.y !== 0);
 			
+},
+			
+OnAfterSwing: function() {
+	//me.audio.play("swing");
+	this.status="attack";
+	me.collision.check(this);
 },
 	
 	
@@ -103,13 +116,7 @@ onCollision : function (response, other) {
 	return colide
 },	
     
-    OnAfterSwing: function() {
-    	 //me.audio.play("swing");
-		 this.renderable.setCurrentAnimation("idle");
-		 this.status="attack";
-			me.collision.check(this);
-		 this.status="stop";
-    },
+
     /* -----
 
     bounce

@@ -110,7 +110,7 @@ onCollision : function (response, other) {
 				colide = true;
 				break;
 			case me.collision.types.ACTION_OBJECT:
-				colide = true;
+				colide = false;
 				break;
 			default:
 				colide = false;
