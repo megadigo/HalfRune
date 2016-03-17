@@ -23,17 +23,15 @@ init: function(x, y, settings) {
     this.status = "idle"; //idle, swing, attack
     this.direction = "left";
 	this.angle = -45;
-	this.swingangle =0;
 	
     this.entityEquip = {};
 	this.body.collisionType = me.collision.types.ACTION_OBJECT;
 	    
     //animation
     
-    this.renderable.addAnimation("idle",[242]);
-	this.renderable.addAnimation("swing",[250,256,257,258]);
+    this.renderable.addAnimation("idle",[243]);
+	this.renderable.addAnimation("swing",[300,301,302,303],200);
     this.renderable.setCurrentAnimation ("idle");
-	this.renderable.animationspeed = 1000 //this.swingspeed;
 	this.renderable.angle = Number.prototype.degToRad(this.angle);
     },
  
@@ -45,12 +43,12 @@ init: function(x, y, settings) {
     ------ */
    update: function(dt) { 
 	   	if (this.entityEquip.facing == "left"){
-	   		this.pos.x= this.entityEquip.pos.x - 14;
+	   		this.pos.x= this.entityEquip.pos.x - 11;
  			this.pos.y= this.entityEquip.pos.y + 8;	
  			this.direction = "left"
 	   	};
 	   	if (this.entityEquip.facing == "right" ){
-	   		this.pos.x= this.entityEquip.pos.x + 22;
+	   		this.pos.x= this.entityEquip.pos.x + 19;
  			this.pos.y= this.entityEquip.pos.y + 8;
  			this.direction = "right"	
 	   	}
@@ -61,16 +59,14 @@ init: function(x, y, settings) {
 		if (this.direction == "right") {
 			this.angle=-45+180;
 		};
-		this.renderable.angle = Number.prototype.degToRad(this.angle + this.swingangle);
+		this.renderable.angle = Number.prototype.degToRad(this.angle);
 		// check if need to swing;
 		if (this.entityEquip.actionActive == true && this.status == "idle") {
-			this.status="swing";
-		    this.renderable.setCurrentAnimation("swing", this.OnAfterSwing());
+			if (!this.renderable.isCurrentAnimation("swing")) {
+				this.status="swing";
+				this.renderable.setCurrentAnimation("swing", this.OnAfterSwing());
+			}
 		};		
-		if (this.entityEquip.actionActive == false) {
-			this.status="idle";
-			this.renderable.setCurrentAnimation("idle");
-		}
 //
 // check collision
 //
@@ -83,8 +79,8 @@ return (this._super(me.Entity, 'update', [dt]) || this.body.vel.x !== 0 || this.
 			
 OnAfterSwing: function() {
 	//me.audio.play("swing");
-	this.status="attack";
-	me.collision.check(this);
+	this.status="idle";
+	this.renderable.setCurrentAnimation("idle");
 },
 	
 	
@@ -142,6 +138,8 @@ doEquip: function(anchorEntity){
         this.entityEquip.damage += this.damage;
         this.entityEquip.hci += this.hci;
         this.entityEquip.swingspeed += this.swingspeed;
+		this.pos.x= this.entityEquip.pos.x - 14;
+ 		this.pos.y= this.entityEquip.pos.y + 8;
     },
 doUnEquip: function(){
         this.entityEquip = {};

@@ -76,7 +76,7 @@
    <properties>
     <property name="level" value="1"/>
     <property name="mob" value="spider"/>
-    <property name="mobcount" value="3"/>
+    <property name="mobcount" value="1"/>
    </properties>
   </object>
   <object id="39" gid="3395" x="-72" y="24" width="24" height="24"/>
