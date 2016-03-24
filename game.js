@@ -37,6 +37,7 @@ var game = {
 			me.plugin.register.defer(this, me.debug.Panel, "debug", me.input.KEY.V);
 		  });
 		}
+	
 
 		// initialize the "audio"
 		if (!me.audio.init("mp3,ogg")) {

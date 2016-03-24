@@ -30,7 +30,7 @@ init: function(x, y, settings) {
     //animation
     
     this.renderable.addAnimation("idle",[243]);
-	this.renderable.addAnimation("swing",[300,301,302,303],200);
+	this.renderable.addAnimation("swing",[300,301,302,301],200);
     this.renderable.setCurrentAnimation ("idle");
 	this.renderable.angle = Number.prototype.degToRad(this.angle);
     },
@@ -64,12 +64,13 @@ init: function(x, y, settings) {
 		if (this.entityEquip.actionActive == true && this.status == "idle") {
 			if (!this.renderable.isCurrentAnimation("swing")) {
 				this.status="swing";
-				this.renderable.setCurrentAnimation("swing", this.OnAfterSwing());
+			var self = this;
+			this.renderable.setCurrentAnimation("swing",function(){self.OnAfterSwing(self)});
+			
 			}
 		};		
-//
+//this.OnAfterSwing(this)
 // check collision
-//
 //
 me.collision.check(this);
 // update movement
@@ -77,10 +78,11 @@ return (this._super(me.Entity, 'update', [dt]) || this.body.vel.x !== 0 || this.
 			
 },
 			
-OnAfterSwing: function() {
+OnAfterSwing: function(thiss) {
 	//me.audio.play("swing");
-	this.status="idle";
-	this.renderable.setCurrentAnimation("idle");
+	thiss.status="idle";
+	thiss.renderable.setCurrentAnimation("idle");
+	return true
 },
 	
 	
