@@ -4,7 +4,6 @@
  *   http://www.melonjs.org
  *   HalfRune - The Game
  *   megadigo - DigoSoft Productions
- *   A MelonJS HTML5 Game
  *
  **/
 
