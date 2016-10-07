@@ -1,5 +1,5 @@
 Half Rune
-=====
+=========
 
 Half Rune is an old project i have. For about 10 years i have this project i would like to finish.It is a classic RPG game.
 
@@ -28,3 +28,7 @@ Try it at http://www.megadigo.pt or follow project in http://megadigo.github.com
 2016
 
 **megadigo@digosoftProductions**
+
+
+
+
